@@ -34,7 +34,7 @@ Einige technische Herausforderungen, wie die Übertragung von Testdaten an ELSTE
     - Wrapper named `PyEric` for the `libericapi.so` using `ctypes`
     - Uses a local test certificate (not included in the repo, but in the live demo)
     - Generates a confirmation as PDF
-    - Displays server response and tranfer ticket
+    - Displays server response and transfer ticket
 - Landing page and information pages match latest design iteration
 - Multi step flow that maintains its state even on force-refresh and browser history navigation
 - Expiry and deletion of test entries after 10 minutes
@@ -47,6 +47,7 @@ The prototype flow is initialised with test data when opened the first time.
 - Not all fields are mapped to ELSTER identifiers (i.e. they will not appear in the confirmation PDF)
 - Everything related to login and registration is simulated to allow easy testing
 - Not all fields are validated
+- Not all pages match the latest design iteration.
 
 
 ## For Developers 👩‍💻 👨‍💻
@@ -57,8 +58,8 @@ For developing I suggest running the Flask app locally. Assuming that you are on
 
 ```bash
 # Only first-time setup
-git clone git@github.com:tech4germany/steuerlotse-internal.git;
-cd steuerlotse-internal;
+git clone git@github.com:tech4germany/steuerlotse.git;
+cd steuerlotse;
 python3 -m venv venv;
 source venv/bin/activate;
 pip3 install -r requirements.txt;
@@ -69,7 +70,7 @@ export FLASK_ENV=debug;
 
 # After every translation change (new strings, updated .po file)
 # and also during first-time setup
-./babel_run.sh;
+./scripts/babel_run.sh;
 
 # After major code changes (rest should re-load automatically)
 flask run;
