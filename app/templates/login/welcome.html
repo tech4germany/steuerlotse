@@ -1,0 +1,29 @@
+{% extends 'base_form.html' %}
+
+{% block app_content %}
+<h3 class="mb-3">{{_('login.welcome-title')}}</h3>
+<hr />
+<div class="row mt-5 justify-content-center">
+
+    <div class="card col-md-5 mb-4 mx-4 px-4">
+        <h5 class="py-3 font-weight-bolder">
+            <img src="/static/icons/user_account.png" width="32px" alt="" class="pr-2" />
+            {{_('login.create-user-account')}}
+        </h5>
+        <p>{{_('login.create-user-account-desc')}}</p>
+        <a href="{{ url_for('login_create') }}"
+            class="btn btn-primary px-4 mb-4">{{ _('login.create-user-account-button')}}</a>
+    </div>
+
+    <div class="card col-md-5 mb-4 mx-4 px-4">
+        <h5 class="py-3 font-weight-bolder">
+            <img src="/static/icons/login.png" width="32px" alt="" class="pr-2" />
+            {{_('login.sign-in-again')}}
+        </h5>
+        <p>{{_('login.sign-in-again-desc')}}</p>
+        <a href="{{ url_for('login_auth') }}"
+            class="btn btn-outline-primary px-4 mb-4">{{_('login.sign-in-again-button')}}</a>
+    </div>
+</div>
+</div>>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base_form.html' %}
+
+{% block app_content %}
+<small>{{ render_info.flow_title }}</small>
+<hr />
+
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">{{ render_info.step_title }}</h4>
+  <ul class="reasons-success mt-4">
+    {%- for reason in reasons[:-1] %}
+    <li>{{reason}}</li>
+    <li class="and">{{ _('form.eligibility.reasons-and') }}</li>
+    {% endfor -%}
+    {%- for reason in reasons[-1:] %}
+    <li>{{reason}}</li>
+    {% endfor -%}
+  </ul>
+</div>
+
+<a href="{{ url_for('howitworks') }}" class="btn btn-primary my-4">{{ _('form.eligibility.continue-informations') }}</a>
+
+{% endblock %}

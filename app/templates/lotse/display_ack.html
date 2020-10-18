@@ -1,0 +1,56 @@
+{% extends 'base_form_display.html' %}
+
+{% block app_content %}
+<small>{{ render_info.flow_title }}</small>
+<hr />
+
+{% if eric_data['was_successful'] %}
+<div class="alert alert-success" role="alert">
+  <h3 class="alert-heading">{{_('form.lotse.ack-success-title')}}</h3>
+  <p>Ihr digitales Transferticket von ELSTER: <span class="text-monospace font-weight-bolder">{{ eric_data['transfer_ticket'] }}</span> (Testübertragung)</p>
+</div>
+{% else %}
+<div class="alert alert-danger" role="alert">
+  <h3 class="alert-heading">{{ _('form.lotse.ack-failure-title') }}</h3>
+</div>
+{% endif %}
+
+{% if eric_data['was_successful'] %}
+<h4 class="mt-4">{{ _('form.lotse.ack-pdf-download-title') }}</h4>
+<p>{{ _('form.lotse.ack-pdf-download-text') }}</p>
+<a class="btn btn-primary" href="{{ eric_data['pdf_link'] }}" target="_blank">{{ _('form.lotse.ack-pdf-download-button') }}</a>
+{% endif %}
+
+<h4 class="mt-4">{{ _('form.lotse.ack-show-logs-title') }}</h4>
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse"
+    data-target="#collapse_server">server_response.xml</button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse"
+    data-target="#collapse_eric">eric_response.xml</button>
+</p>
+<div class="collapse multi-collapse mb-2" id="collapse_server">
+  <div class="card card-body">
+    <pre><code>{{ eric_data['server_response'] }}</code></pre>
+  </div>
+</div>
+    <div class="collapse multi-collapse" id="collapse_eric">
+      <div class="card card-body">
+        <pre><code>{{ eric_data['eric_response'] }}</code></pre>
+      </div>
+    </div>
+
+{% if eric_data['was_successful'] %}
+<h4 class="mt-4">{{ _('form.lotse.ack-next-steps') }}</h4>
+<ol>
+  <li class="mt-2">{{ _('form.lotse.ack-next-steps-1') }}</li>
+  <li class="mt-2">{{ _('form.lotse.ack-next-steps-2') }}</li>
+  <li class="mt-2">{{ _('form.lotse.ack-next-steps-3') }}</li>
+  <li class="mt-2">{{ _('form.lotse.ack-next-steps-4') }}</li>
+</ol>
+{% endif %}
+
+<hr />
+<div class="clearfix">
+<a class="btn btn-secondary float-right" href="/">{{ _('form.back-to-home') }}</a>
+</div>
+{% endblock %}

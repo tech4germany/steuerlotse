@@ -1,0 +1,10 @@
+{% extends 'base_form.html' %}
+
+{% block app_content %}
+<div class="alert alert-success" role="alert">
+    <h3 class="alert-heading"> {{_('login.create-confirm-title')}}</h4>
+  </div>
+<p class="font-weight-bolder">{{_('login.create-confirm-intro')}}</p>
+<p class="mt-4">{{_('login.create-confirm-text')}}</p>
+<a href="{{ url_for('lotse', step='start') }}" class="btn btn-primary px-4 mb-4">{{ _('login.start-filling-button')}}</a>
+{% endblock %}

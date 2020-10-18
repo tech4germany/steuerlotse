@@ -1,0 +1,12 @@
+{% extends 'base_form.html' %}
+
+{% block app_content %}
+<small>{{ render_info.flow_title }}</small>
+<hr />
+
+<h3 class="alert-heading">{{ render_info.step_title }}</h3>
+<p class="font-weight-bolder mt-3">{{ render_info.step_intro }}</p>
+
+<a href="{{ render_info.next_url }}" class="btn btn-primary my-4">{{ _('form.eligibility.check-now-button') }}</a>
+
+{% endblock %}

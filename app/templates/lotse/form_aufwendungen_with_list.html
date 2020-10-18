@@ -1,0 +1,22 @@
+{% extends 'base_form.html' %}
+{% import "macros.html" as macros %}
+
+{% block app_content %}
+{{ macros.form_header(render_info) }}
+
+<ul>
+  {% for item in list_items -%}
+  <li class="mt-2">{{ item }}</li>
+  {% endfor -%}
+</ul>
+
+<form class="" method="POST" action="{{ render_info.submit_url }}">
+  {% for field in form %}
+  <div class="form-row">
+    {{ macros.render_field_cols(field, 6) }}
+  </div>
+  {% endfor %}
+
+  {{ macros.form_nav_buttons(render_info) }}
+</form>
+{% endblock %}

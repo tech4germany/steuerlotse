@@ -1,0 +1,20 @@
+{% extends 'base_content.html' %}
+
+{% block app_content %}
+
+{% macro li(number, text, classes="") %}
+<li class="d-flex align-items-center flex-column mx-1 {{classes}}">
+    <div class="steps-number">
+        <span>{{number}}</span>
+    </div>
+    <small class="pt-1 text-center">{{text}}</small>
+</li>{% endmacro %}
+<ul class="list-unstyled d-flex justify-content-around">
+    {{ li(1, 'Einverständnis', classes="step-active") }}
+    {{ li(2, 'Meine Daten') }}
+    {{ li(3, 'Steuermindernde Aufwendungen') }}
+    {{ li(4, 'Bestätigung') }}
+</ul>
+
+<h2>Über uns</h2>
+{% endblock %}

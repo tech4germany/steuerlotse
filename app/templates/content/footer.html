@@ -1,0 +1,40 @@
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+            <a href="https://tech.4germany.org/" target="_blank" rel="noopener noreferrer">
+                <img class="mb-2" src="{{ url_for('static', filename='images/logo_t4g.png') }}" alt="Logo Tech4Germany"
+                    width="128">
+            </a>
+            <small class="d-block mb-3 text-muted">in Berlin für Bürger_innen entwickelt</small>
+        </div>
+        <div class="col-6 col-md">
+            <ul class="list-unstyled">
+                <li class="mt-1">
+                    <a class="text-muted" href="https://tech.4germany.org/" target="_blank"> {{ _('footer.info-t4g') }}
+                        <img class="pb-1" src="{{ url_for('static', filename='icons/external.svg')}}" /></a>
+                </li>
+                <li class="mt-1">
+                    <a class="text-muted"
+                        href="https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Schlaglichter/Rentenbesteuerung/2020-10-16-steuerlotse.html"
+                        target="_blank"> {{ _('footer.info-bmf') }}
+                        <img class="pb-1" src="{{ url_for('static', filename='icons/external.svg')}}" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <ul class="list-unstyled">
+                <li class="mt-1">
+                    <a class="text-muted" href="https://github.com/tech4germany/steuerlotse" target="_blank">
+                        {{ _('footer.info-github') }}
+                        <img class="pb-1" src="{{ url_for('static', filename='icons/external.svg')}}" /></a>
+                </li>
+                <li class="mt-1">
+                    <a class="text-muted" href="https://tech.4germany.org/impressum/" target="_blank">
+                        {{ _('footer.impressum') }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+        </div>
+    </div>
+</footer>

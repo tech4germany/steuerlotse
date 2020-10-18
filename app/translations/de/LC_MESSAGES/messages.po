@@ -1,0 +1,1544 @@
+# German translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-10-17 23:52+0200\n"
+"PO-Revision-Date: 2020-09-17 11:35+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app/routes.py:27
+msgid "nav.home"
+msgstr "Startseite"
+
+#: app/routes.py:28
+msgid "nav.how-it-works"
+msgstr "So funktioniert's"
+
+#: app/routes.py:29
+msgid "nav.lotse-form"
+msgstr "Meine Steuererklärung"
+
+#: app/routes.py:30
+msgid "nav.about-us"
+msgstr "Kontakt"
+
+#: app/utils.py:12
+msgid "utils.validate-iban.invalid-iban"
+msgstr "Ungültige IBAN Nummer"
+
+#: app/utils.py:15
+msgid "utils.validate-iban.country-code-not-de"
+msgstr "Die IBAN Nummer muss mit DE beginnen"
+
+#: app/content/render_content.py:8
+msgid "howitworks.card-1.heading"
+msgstr "1. Belege und Rechnungen sammeln"
+
+#: app/content/render_content.py:10
+msgid "howitworks.card-1.p1-desc"
+msgstr "Wann?"
+
+#: app/content/render_content.py:10
+msgid "howitworks.card-1.p1-content"
+msgstr "Januar bis Dezember 2020"
+
+#: app/content/render_content.py:11
+msgid "howitworks.card-1.p2-desc"
+msgstr "Was?"
+
+#: app/content/render_content.py:11
+msgid "howitworks.card-1.p2-content"
+msgstr ""
+"Sammeln Sie alle relevanten Belege und Rechnungen. Denn nur mit einem "
+"Nachweis können Sie Ihre Ausgaben von den Steuern absetzen."
+
+#: app/content/render_content.py:12
+msgid "howitworks.card-1.p3-desc"
+msgstr "Wie?"
+
+#: app/content/render_content.py:12
+msgid "howitworks.card-1.p3-content"
+msgstr ""
+"Sie können Ihre Belege und Rechnungen schon von Beginn an nach den "
+"folgenden drei Bereichen sortieren. Dies sind die Bereiche der "
+"vereinfachten Steuererklärung in denen Sie Ihre Ausgaben angeben können."
+
+#: app/content/render_content.py:15
+msgid "howitworks.card-1.list-item-1"
+msgstr ""
+"Vorsorge und Gesundheit: Risikoversicherungen, Unfall- und "
+"Haftpflichtversicherungen, Krankheitskosten, Kurkosten, Pflegekosten, "
+"krankheitsbedingte Fahrtkosten"
+
+#: app/content/render_content.py:16
+msgid "howitworks.card-1.list-item-2"
+msgstr ""
+"Haushalt: haushaltsnahe Dienstleistungen wie Reinigungskosten, Pflege "
+"oder Betreuung, Handwerkerleistungen"
+
+#: app/content/render_content.py:17
+msgid "howitworks.card-1.list-item-3"
+msgstr ""
+"Spenden und Religion: Steuern für Religionsgemeinschaften, Spenden und "
+"besondere Mitgliedsbeiträge"
+
+#: app/content/render_content.py:21
+msgid "howitworks.card-2.heading"
+msgstr "2. Code anfordern und registrieren"
+
+#: app/content/render_content.py:23
+msgid "howitworks.card-2.p1-desc"
+msgstr "Wann?"
+
+#: app/content/render_content.py:23
+msgid "howitworks.card-2.p1-content"
+msgstr "Ab dem 28. März 2021"
+
+#: app/content/render_content.py:24
+msgid "howitworks.card-2.p2-desc"
+msgstr "Was?"
+
+#: app/content/render_content.py:24
+msgid "howitworks.card-2.p2-content"
+msgstr ""
+"Für Ihre Online-Steuererklärung benötigen Sie aus Sicherheitsgründen "
+"einen Code. Diesen Code erhalten Sie per Brief von ELSTER. Nur mit Hilfe "
+"des Codes können Sie die fertige Steuererklärung abschicken. Ausfüllen "
+"können Sie aber auch schon ohne Code."
+
+#: app/content/render_content.py:25
+msgid "howitworks.card-2.p3-desc"
+msgstr "Wie?"
+
+#: app/content/render_content.py:25
+msgid "howitworks.card-2.p3-content"
+msgstr ""
+"Über den letzten Schritt auf dieser Seite oder über den Menüpunkt „Meine "
+"Steuererklärung“ können Sie den Code anfordern und sich gleichzeitig mit "
+"Ihrer E-Mail-Adresse ein Benutzerkonto erstellen (registrieren). Sie "
+"erhalten Ihren Code spätestens nach 5 Werktagen. In der Zwischenzeit "
+"können Sie schon mit dem Ausfüllen beginnen. Der Code ist nur 2 Wochen "
+"gültig. Das heißt Sie müssen den Code nach Erhalt innerhalb von 2 Wochen "
+"online eintragen. Ausfüllen können Sie die Steuererklärung unabhängig von"
+" dem Code bis zum 31. Juli 2020."
+
+#: app/content/render_content.py:30
+msgid "howitworks.card-3.heading"
+msgstr "3. Online-Formular ausfüllen"
+
+#: app/content/render_content.py:32
+msgid "howitworks.card-3.p1-desc"
+msgstr "Wann?"
+
+#: app/content/render_content.py:32
+msgid "howitworks.card-3.p1-content"
+msgstr "Ab dem 28. März 2021"
+
+#: app/content/render_content.py:33
+msgid "howitworks.card-3.p2-desc"
+msgstr "Was?"
+
+#: app/content/render_content.py:33
+msgid "howitworks.card-3.p2-content"
+msgstr ""
+"Nach dem Registrieren können Sie direkt mit dem Ausfüllen Ihrer "
+"Steuererklärung beginnen. Ein Vorteil der vereinfachten Steuererklärung "
+"ist, dass Sie Ihre Einkünfte aus Renten, Pensionen, Kranken- und "
+"Pflegeversicherungen nicht angeben müssen. Diese liegen Ihrem Finanzamt "
+"bereits vor."
+
+#: app/content/render_content.py:34
+msgid "howitworks.card-3.p3-desc"
+msgstr "Wie?"
+
+#: app/content/render_content.py:34
+msgid "howitworks.card-3.p3-content"
+msgstr ""
+"Das Ausfüllen geht auch schon ohne Code und auch nach dem Ablauf der 2 "
+"Wochen. Das einfache Schritt für Schritt Formular führt Sie durch die "
+"Steuererklärung. Erläuterungen und die automatische Fehlererkennung "
+"helfen Ihnen dabei. Sobald Sie im Formular auf eine nächste Seite gehen, "
+"werden Ihre Angaben automatisch gespeichert. Sie können das Ausfüllen "
+"also ohne Probleme unterbrechen und später fortsetzen."
+
+#: app/content/render_content.py:39
+msgid "howitworks.card-4.heading"
+msgstr "4. Überprüfen und abschicken"
+
+#: app/content/render_content.py:41
+msgid "howitworks.card-4.p1-desc"
+msgstr "Wann?"
+
+#: app/content/render_content.py:41
+msgid "howitworks.card-4.p1-content"
+msgstr "Bis zum 31. Juli 2021\""
+
+#: app/content/render_content.py:42
+msgid "howitworks.card-4.p2-desc"
+msgstr "Was?"
+
+#: app/content/render_content.py:42
+msgid "howitworks.card-4.p2-content"
+msgstr ""
+"Durch das Überprüfen Ihrer Angaben vor dem Abschicken können Sie sicher "
+"sein, nichts vergessen zu haben. Für das Abschicken benötigen Sie den "
+"oben erwähnten Code, den Sie innerhalb von 2 Wochen nach Erhalt online "
+"eingeben müssen."
+
+#: app/content/render_content.py:43
+msgid "howitworks.card-4.p3-desc"
+msgstr "Wie?"
+
+#: app/content/render_content.py:43
+msgid "howitworks.card-4.p3-content"
+msgstr ""
+"Bevor Sie Ihre Steuererklärung abschicken, können Sie Ihre Angaben noch "
+"einmal in Ruhe überprüfen. Dann bestätigen Sie Ihre Angaben und schicken "
+"Ihre Steuererklärung digital an das Finanzamt. Zur Bestätigung erhalten "
+"Sie eine E-Mail mit einem PDF Ihrer ausgefüllten Steuererklärung. Dieses "
+"PDF können Sie auch zusätzlich direkt nach dem Abschicken von der Website"
+" herunterladen."
+
+#: app/forms/fields.py:43
+msgid "switch.yes"
+msgstr "Ja"
+
+#: app/forms/fields.py:43
+msgid "switch.no"
+msgstr "Nein"
+
+#: app/forms/fields.py:88
+msgid "confirmation_field_must_be_set"
+msgstr "Sie müssen dieses Feld auswählen, um weiter zu machen."
+
+#: app/forms/fields.py:102
+msgid "jquery_entries.add"
+msgstr "Eintrag hinzufügen"
+
+#: app/forms/flow_demo.py:18
+msgid "form.demo.hello-title"
+msgstr ""
+
+#: app/forms/flow_demo.py:29
+msgid "form.demo.radio-fruit"
+msgstr ""
+
+#: app/forms/flow_demo.py:31
+msgid "form.demo.radio-fruit-apple"
+msgstr ""
+
+#: app/forms/flow_demo.py:32
+msgid "form.demo.radio-fruit-organe"
+msgstr ""
+
+#: app/forms/flow_demo.py:39
+msgid "form.demo.fruit-title"
+msgstr ""
+
+#: app/forms/flow_demo.py:50
+msgid "form.demo.einnahmen"
+msgstr ""
+
+#: app/forms/flow_demo.py:51
+msgid "form.demo.ausgaben"
+msgstr ""
+
+#: app/forms/flow_demo.py:55
+msgid "form.demo.euro-title"
+msgstr ""
+
+#: app/forms/flow_demo.py:80
+msgid "form.demo.end-title"
+msgstr ""
+
+#: app/forms/flow_demo.py:90
+msgid "form.demo.title"
+msgstr ""
+
+#: app/forms/flow_eligibility.py:16
+msgid "form.eligibility.start-title"
+msgstr "Kann ich die vereinfachte Steuererklärung nutzen?"
+
+#: app/forms/flow_eligibility.py:17
+msgid "form.eligibility.start-intro"
+msgstr ""
+"Prüfen Sie schnell und ohne Ihre Daten anzugeben, ob Sie die "
+"Voraussetzungen erfüllen und die vereinfachte Steuererklärung nutzen "
+"können!"
+
+#: app/forms/flow_eligibility.py:27
+msgid "form.eligibility.income-renten"
+msgstr ""
+"Renteneinkünfte (gesetzliche Rente, betriebliche Rente, "
+"Hinterbliebenenrente und andere Altersrenten)"
+
+#: app/forms/flow_eligibility.py:28
+msgid "form.eligibility.income-renten-help"
+msgstr ""
+"Verwenden kann den vereinfachten Vordruck „Erklärung zur Veranlagung von "
+"Alterseinkünften“, wer ausschließlich Renteneinkünfte und/oder Pensionen "
+"(also keinerlei weitere in- oder ausländische Einkünfte) der folgenden "
+"Stellen bezogen hat:<ul><li>Trägern der gesetzlichen "
+"Rentenversicherung</li><li>der landwirtschaftlichen "
+"Alterskasse</li><li>den berufsständischen "
+"Versorgungseinrichtungen</li><li>Pensionskassen, "
+"Pensionsfonds</li><li>Versicherungsunternehmen</li><li>Anbietern von "
+"Verträgen im Sinne des §10 Absatz 1 Nummer 2 Buchstabe b EStG "
+"(zertifizierte Basisrente, sog. „Rürup- Rente“)</li><li>Anbietern im "
+"Sinne des § 80 EStG (z.B. Leistung aus einem zertifizierten "
+"Altersvorsorgevertrag, sog. „Riester-Rente“),</li><li>früheren "
+"Arbeitgebern</li></ul>"
+
+#: app/forms/flow_eligibility.py:29
+msgid "form.eligibility.income-pensionen"
+msgstr "Pension"
+
+#: app/forms/flow_eligibility.py:30
+msgid "form.eligibility.income-geringf"
+msgstr "Geringfügige Beschäftigung bis insgesamt 450€ (Minijob)"
+
+#: app/forms/flow_eligibility.py:31
+msgid "form.eligibility.income-kapital"
+msgstr "Kapitaleinkünfte von denen Abgeltungssteuer abgeführt wurden"
+
+#: app/forms/flow_eligibility.py:32
+msgid "form.eligibility.income-other"
+msgstr "Andere Einkünfte, z. B. Einkünfte aus Vermietung und Verpachtung"
+
+#: app/forms/flow_eligibility.py:36
+msgid "form.eligibility.income-title"
+msgstr "Geben Sie an welche Einkünfte Sie erhalten."
+
+#: app/forms/flow_eligibility.py:53
+msgid "form.eligibility.failure-title"
+msgstr "Sie können das vereinfachte, digitale Formular leider nicht nutzen:"
+
+#: app/forms/flow_eligibility.py:68
+msgid "form.eligibility.success-title"
+msgstr "Ja, Sie können das vereinfachte, digitale Formular nutzen"
+
+#: app/forms/flow_eligibility.py:87
+msgid "form.eligibility.reason-other-income"
+msgstr "Sie haben anderes Einkommen"
+
+#: app/forms/flow_eligibility.py:91
+msgid "form.eligibility.reason-rente-pension"
+msgstr ""
+"Sie Renteneinkünfte und/oder Pensionen beziehen, die von den "
+"Rentenversicherungsträgern oder vom Arbeitgeber automatisch elektronisch "
+"gemeldet werden"
+
+#: app/forms/flow_eligibility.py:93
+msgid "form.eligibility.reason-other-geringf"
+msgstr "Sie haben Einkommen aus geringf. Beschäftigung"
+
+#: app/forms/flow_eligibility.py:95
+msgid "form.eligibility.reason-other-kapital"
+msgstr "Sie haben Kapitaleinkünfte von denen Abgeltungssteuer abgeführt wurden"
+
+#: app/forms/flow_eligibility.py:96
+msgid "form.eligibility.reason-no-other-income"
+msgstr "Sie haben kein anderes Einkommen"
+
+#: app/forms/flow_eligibility.py:106
+msgid "form.eligibility.title"
+msgstr "Prüfung: Kann ich die vereinfachte Steuererklärung nutzen?"
+
+#: app/forms/lotse/flow_lotse.py:19
+msgid "form.lotse.summary-title"
+msgstr "Zusammenfassung"
+
+#: app/forms/lotse/flow_lotse.py:20
+msgid "form.lotse.summary-intro"
+msgstr ""
+"Hier können Sie noch einmal alle Ihre Angaben kontrollieren bevor Sie "
+"Ihre Steuererklärung abschicken."
+
+#: app/forms/lotse/flow_lotse.py:116
+msgid "form.lotse.title"
+msgstr "Meine Steuererklärung"
+
+#: app/forms/lotse/subflow_01_declarations.py:14
+msgid "form.lotse.section-einwilligung-title"
+msgstr "1. Einwilligung"
+
+#: app/forms/lotse/subflow_01_declarations.py:15
+msgid "form.lotse.section-einwilligung-intro"
+msgstr "Das kommt jetzt:"
+
+#: app/forms/lotse/subflow_01_declarations.py:18
+msgid "form.lotse.section-einwilligung-item-1"
+msgstr "Voraussetzungen für die vereinfachte Online-Steuererklärung prüfen"
+
+#: app/forms/lotse/subflow_01_declarations.py:19
+msgid "form.lotse.section-einwilligung-item-2"
+msgstr "Einwilligung für die Finanzbehörde zur Verwendeung der vorliegenden Daten"
+
+#: app/forms/lotse/subflow_01_declarations.py:27
+msgid "form.lotse.field_declaration_incomes"
+msgstr ""
+"Hiermit erkläre ich / erklären wir, dass ich / wir im relevanten "
+"Steuerjahr keine weiteren Einkünfte hatte / hatten, außer der oben "
+"aufgeführten Einkünfte."
+
+#: app/forms/lotse/subflow_01_declarations.py:31
+msgid "form.lotse.declaration-incomes-title"
+msgstr "Erklärung zu weiteren Einkünften"
+
+#: app/forms/lotse/subflow_01_declarations.py:32
+msgid "form.lotse.declaration-incomes-intro"
+msgstr ""
+"Sie können diese vereinfachte Steuererklärung nur nutzen, wenn Sie keine "
+"weiteren Einkünfte hatten, außer"
+
+#: app/forms/lotse/subflow_01_declarations.py:43
+msgid "form.lotse.field_declaration_edaten"
+msgstr ""
+"Ja, die Festsetzung meiner / unserer Einkommenssteuer soll anhand der "
+"elektronischen Daten erfolgen, die bei der Finanzbehörde vorliegen."
+
+#: app/forms/lotse/subflow_01_declarations.py:47
+msgid "form.lotse.declaration-edaten-title"
+msgstr "Elektronisch vorliegende Daten"
+
+#: app/forms/lotse/subflow_01_declarations.py:48
+#: app/templates/lotse/form_declaration_edaten.html:9
+msgid "form.lotse.declaration-edaten-intro"
+msgstr ""
+"Daten zu <strong>Renten, Pensionen und zu Kranken- und "
+"Pflegeversicherungen</strong> erhält die Steuerverwaltung vom jeweiligen "
+"Träger elektronisch. Diese Daten werden vom Finanzamt automatisch "
+"übernommen und müssen von Ihnen nicht in diese Steuererklärung "
+"eingetragen werden."
+
+#: app/forms/lotse/subflow_02_personal_data.py:19
+msgid "form.lotse.section-meine-daten-title"
+msgstr "2. Meine Daten"
+
+#: app/forms/lotse/subflow_02_personal_data.py:20
+msgid "form.lotse.section-meine-daten-intro"
+msgstr "Das fragen wir unter Meine Daten ab:"
+
+#: app/forms/lotse/subflow_02_personal_data.py:23
+msgid "form.lotse.section-meine-daten-item-1"
+msgstr "Steuernummer"
+
+#: app/forms/lotse/subflow_02_personal_data.py:24
+msgid "form.lotse.section-meine-daten-item-2"
+msgstr "Familienstand"
+
+#: app/forms/lotse/subflow_02_personal_data.py:25
+msgid "form.lotse.section-meine-daten-item-3"
+msgstr "Name und Adresse"
+
+#: app/forms/lotse/subflow_02_personal_data.py:26
+msgid "form.lotse.section-meine-daten-item-4"
+msgstr "Religionszugehörigkeit"
+
+#: app/forms/lotse/subflow_02_personal_data.py:27
+msgid "form.lotse.section-meine-daten-item-5"
+msgstr "Behinderungsgrad"
+
+#: app/forms/lotse/subflow_02_personal_data.py:35
+msgid "form.lotse.steuernummer"
+msgstr "Tragen Sie hier Ihre Steuernummer ein"
+
+#: app/forms/lotse/subflow_02_personal_data.py:39
+msgid "form.lotse.steuernummer-title"
+msgstr "Meine Steuernummer"
+
+#: app/forms/lotse/subflow_02_personal_data.py:51
+msgid "form.lotse.field_familienstand"
+msgstr "Mein Familienstand"
+
+#: app/forms/lotse/subflow_02_personal_data.py:53
+msgid "form.lotse.familienstand-single"
+msgstr "ledig"
+
+#: app/forms/lotse/subflow_02_personal_data.py:54
+msgid "form.lotse.familienstand-married"
+msgstr "verheiratet / in eingetragener Lebenspartnerschaft"
+
+#: app/forms/lotse/subflow_02_personal_data.py:55
+msgid "form.lotse.familienstand-widowed"
+msgstr "verwitwet"
+
+#: app/forms/lotse/subflow_02_personal_data.py:56
+msgid "form.lotse.familienstand-divorced"
+msgstr "geschieden / Lebenspartnerschaft aufgehoben"
+
+#: app/forms/lotse/subflow_02_personal_data.py:57
+msgid "form.lotse.familienstand-separated"
+msgstr "dauernd getrennt lebend"
+
+#: app/forms/lotse/subflow_02_personal_data.py:61
+msgid "form.lotse.familienstand_date"
+msgstr "seit dem (nur wenn nicht ledig)"
+
+#: app/forms/lotse/subflow_02_personal_data.py:67
+msgid "form.lotse.validation-familienstand-date"
+msgstr "Wenn nicht 'ledig' ausgewählt wurde muss ein Datum angegeben werden."
+
+#: app/forms/lotse/subflow_02_personal_data.py:71
+msgid "form.lotse.familienstand-title"
+msgstr "Mein Familienstand"
+
+#: app/forms/lotse/subflow_02_personal_data.py:83
+#: app/forms/lotse/subflow_02_personal_data.py:136
+msgid "form.lotse.field_person_idnr"
+msgstr "Identifikationsnummer (IdNr.)"
+
+#: app/forms/lotse/subflow_02_personal_data.py:84
+#: app/forms/lotse/subflow_02_personal_data.py:137
+msgid "form.lotse.field_person_idnr-help"
+msgstr ""
+"Ihre elfstellige <strong>Steueridentifikationsnummer</strong> finden Sie "
+"auf Ihrem letzten Steuerbescheid."
+
+#: app/forms/lotse/subflow_02_personal_data.py:85
+#: app/forms/lotse/subflow_02_personal_data.py:138
+msgid "form.lotse.field_person_dob"
+msgstr "Geburtsdatum"
+
+#: app/forms/lotse/subflow_02_personal_data.py:86
+#: app/forms/lotse/subflow_02_personal_data.py:139
+msgid "form.lotse.field_person_first_name"
+msgstr "Vorname"
+
+#: app/forms/lotse/subflow_02_personal_data.py:87
+#: app/forms/lotse/subflow_02_personal_data.py:140
+msgid "form.lotse.field_person_last_name"
+msgstr "Nachname"
+
+#: app/forms/lotse/subflow_02_personal_data.py:88
+#: app/forms/lotse/subflow_02_personal_data.py:146
+msgid "form.lotse.field_person_street"
+msgstr "Straße"
+
+#: app/forms/lotse/subflow_02_personal_data.py:89
+#: app/forms/lotse/subflow_02_personal_data.py:147
+msgid "form.lotse.field_person_street_number"
+msgstr "Hausnummer"
+
+#: app/forms/lotse/subflow_02_personal_data.py:90
+#: app/forms/lotse/subflow_02_personal_data.py:149
+msgid "form.lotse.field_person_street_number_ext"
+msgstr "Hausnummerzusatz"
+
+#: app/forms/lotse/subflow_02_personal_data.py:91
+#: app/forms/lotse/subflow_02_personal_data.py:150
+msgid "form.lotse.field_person_address_ext"
+msgstr "Adressergänzung"
+
+#: app/forms/lotse/subflow_02_personal_data.py:92
+#: app/forms/lotse/subflow_02_personal_data.py:151
+msgid "form.lotse.field_person_plz"
+msgstr "Postleitzahl"
+
+#: app/forms/lotse/subflow_02_personal_data.py:93
+#: app/forms/lotse/subflow_02_personal_data.py:152
+msgid "form.lotse.field_person_town"
+msgstr "Wohnort"
+
+#: app/forms/lotse/subflow_02_personal_data.py:94
+#: app/forms/lotse/subflow_02_personal_data.py:154
+msgid "form.lotse.field_person_religion"
+msgstr "Religionszugehörigkeit"
+
+#: app/forms/lotse/subflow_02_personal_data.py:95
+#: app/forms/lotse/subflow_02_personal_data.py:155
+msgid "form.lotse.field_person_religion-none"
+msgstr "nicht kirchensteuerpflichtig"
+
+#: app/forms/lotse/subflow_02_personal_data.py:96
+#: app/forms/lotse/subflow_02_personal_data.py:156
+msgid "form.lotse.field_person_religion-ev"
+msgstr "Evangelisch"
+
+#: app/forms/lotse/subflow_02_personal_data.py:97
+#: app/forms/lotse/subflow_02_personal_data.py:157
+msgid "form.lotse.field_person_religion-rk"
+msgstr "Römisch-Katholisch"
+
+#: app/forms/lotse/subflow_02_personal_data.py:98
+#: app/forms/lotse/subflow_02_personal_data.py:158
+msgid "form.lotse.field_person_religion-ak"
+msgstr "Alt-Katholisch"
+
+#: app/forms/lotse/subflow_02_personal_data.py:99
+#: app/forms/lotse/subflow_02_personal_data.py:159
+msgid "form.lotse.field_person_religion-help"
+msgstr ""
+"Sollten Sie einer anderen <strong>Religionsgemeinschaft</strong> "
+"angehören, wenden Sie sich bitte an Ih"
+
+#: app/forms/lotse/subflow_02_personal_data.py:101
+#: app/forms/lotse/subflow_02_personal_data.py:161
+msgid "form.lotse.field_person_beh_grad"
+msgstr "Grad der Behinderung"
+
+#: app/forms/lotse/subflow_02_personal_data.py:102
+#: app/forms/lotse/subflow_02_personal_data.py:162
+msgid "form.lotse.field_person_beh_grad-help"
+msgstr ""
+"Zur Berücksichtigung von Behinderungen legen Sie bitte bei erstmaligen "
+"oder geänderten Sachverhalten eine Kopie des "
+"<strong>Behindertenausweises</strong> vor."
+
+#: app/forms/lotse/subflow_02_personal_data.py:103
+#: app/forms/lotse/subflow_02_personal_data.py:163
+msgid "form.lotse.field_person_blind"
+msgstr "blind / ständig hilflos"
+
+#: app/forms/lotse/subflow_02_personal_data.py:107
+msgid "form.lotse.person-a-title"
+msgstr "Person A"
+
+#: app/forms/lotse/subflow_02_personal_data.py:108
+msgid "form.lotse.person-a-intro"
+msgstr ""
+"Geben Sie hier bitte die Daten des Ehemannes an. Bei "
+"gleichgeschlechtlichen Ehen geben Sie die Person an, deren Namen im "
+"Alphabet zuerst kommt."
+
+#: app/forms/lotse/subflow_02_personal_data.py:142
+msgid "form.lotse.field_person_b_same_address"
+msgstr ""
+
+#: app/forms/lotse/subflow_02_personal_data.py:143
+msgid "form.lotse.field_person_b_same_address-yes"
+msgstr "Mein Partner / Meine Partnerin und ich wohnen zusammen."
+
+#: app/forms/lotse/subflow_02_personal_data.py:144
+msgid "form.lotse.field_person_b_same_address-no"
+msgstr ""
+"Mein Partner / Meine Partnerin und ich wohnen nicht zusammen. Er / Sie "
+"ist wohnhaft in:"
+
+#: app/forms/lotse/subflow_02_personal_data.py:167
+msgid "form.lotse.person-b-title"
+msgstr "Person B"
+
+#: app/forms/lotse/subflow_02_personal_data.py:168
+msgid "form.lotse.person-b-intro"
+msgstr ""
+"Geben Sie hier bitte die Daten der Ehefrau an. Bei gleichgeschlechtlichen"
+" Ehen geben Sie die Person an, deren Namen im Alphabet zuletzt kommt."
+
+#: app/forms/lotse/subflow_02_personal_data.py:179
+msgid "form.lotse.field_iban"
+msgstr "IBAN (inländisches Geldinstitut) "
+
+#: app/forms/lotse/subflow_02_personal_data.py:187
+msgid "form.lotse.iban-title"
+msgstr "Bankverbindung"
+
+#: app/forms/lotse/subflow_02_personal_data.py:188
+msgid "form.lotse.iban-intro"
+msgstr ""
+"Falls Sie Vorauszahlungen getätigt haben, werden eventuelle Erstattungen "
+"auf dieses Konto überwiesen."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:17
+msgid "form.lotse.section-steuerminderung-title"
+msgstr "3. Steuermindernde Aufwendungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:18
+msgid "form.lotse.section-steuerminderung-intro"
+msgstr ""
+"Zu folgenden Bereichen kannst du steuermindernde Aufwendungen geltend "
+"machen:"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:21
+msgid "form.lotse.section-steuerminderung-item-1"
+msgstr "Vorsorge und Gesundheit"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:22
+msgid "form.lotse.section-steuerminderung-item-2"
+msgstr "Haushalt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:23
+msgid "form.lotse.section-steuerminderung-item-3"
+msgstr "Gemeinschaft und Gesellschaft"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:33
+msgid "form.lotse.field_steuerminderung"
+msgstr ""
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:35
+msgid "form.lotse.field_steuerminderung-yes"
+msgstr ""
+"Ja, ich möchte steuermindernde Ausgaben geltend machen und diese jetzt "
+"angeben."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:36
+msgid "form.lotse.field_steuerminderung-no"
+msgstr ""
+"Nein, ich möchte keine steuermindernden Aufwendungen geltend machen und "
+"meine Angaben jetzt bestätigen."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:43
+msgid "form.lotse.steuerminderung-title"
+msgstr "Möchtest du steuermindernde Aufwendungen angeben?"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:44
+msgid "form.lotse.steuerminderung-intro"
+msgstr ""
+"Du kannst steuermindernde Aufwendungen aus den Bereichen Vorsorge und "
+"Gesundheit, Haushalt sowie Gemeinschaft und Gesellschaft geltend machen "
+"und so deine Steuerzahlungen reduzieren."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:63
+msgid "form.lotse.subsection-health-title"
+msgstr "Vorsorge und Gesundheit"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:64
+msgid "form.lotse.subsection-health-intro"
+msgstr ""
+"Hier können Sie folgende außergewöhnliche Belastungen und Ausgaben "
+"geltend machen:"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:67
+msgid "form.lotse.subsection-health-item-1"
+msgstr ""
+"Vorsorgeaufwendungen wie Risikoversicherungen, Unfall- und "
+"Haftpflichtversicherungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:68
+msgid "form.lotse.subsection-health-item-2"
+msgstr ""
+"außergewöhnliche Belastungen (z. B. Krankheitskosten, Kurkosten, "
+"Pflegekosten, krankheitsbedingte Fahrtkosten)"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:77
+msgid "form.lotse.field_vorsorge_summe"
+msgstr "Summe der Rechnungsbeträge"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:78
+msgid "form.lotse.field_vorsorge_summe-help"
+msgstr ""
+"Zu den Vorsorgeaufwendungen gehören Beiträge zu Risikoversicherungen, die"
+" nur für den Todesfall eine Leistung vorsehen sowie Beiträge zu Unfall- "
+"und Haftpflichtversicherungen. Diese wirken sich steuerlich nur aus, wenn"
+" der Höchstbetrag (typischerweise 1.900,- Euro) nicht bereits durch "
+"Beiträge zu Basiskranken- und gesetzlichen Pflegeversicherungen "
+"ausgeschöpft wurde. <p class='mt-2'>Nicht abzugsfähig sind Beiträge zu "
+"Kasko-, Hausrat-, Gebäude- und Rechtsschutzversicherungen."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:82
+msgid "form.lotse.vorsorge-title"
+msgstr "Vorsorgeaufwendungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:83
+msgid "form.lotse.vorsorge-intro"
+msgstr "Geben Sie bitte die Summe Ihrer Beiträge folgender Versicherungen an:"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:91
+msgid "form.lotse.vorsorge-list-item-1"
+msgstr "Risikoversicherungen im Todesfall"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:92
+msgid "form.lotse.vorsorge-list-item-2"
+msgstr "Unfallversicherungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:93
+msgid "form.lotse.vorsorge-list-item-3"
+msgstr "Haftpflichtversicherungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:101
+msgid "form.lotse.field_aussergbela_entries"
+msgstr "Art der Aufwendung"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:102
+msgid "form.lotse.field_aussergbela_entries-help"
+msgstr ""
+"<strong>Außergewöhnliche Belastungen</strong> sind Ausgaben, die aufgrund"
+" besonderer Umstände zwangsläufig anfallen, z.B. die Ausgaben, die durch "
+"Krankheit, Behinderung oder Bestattung eines Angehörigen entstehen. "
+"Hierunter fallen insbesondere die durch <strong>Krankheit, Pflege oder "
+"Behinderung</strong> entstandenen Ausgaben (z. B. für Arzt, Zahnarzt, "
+"Apotheke, Brille oder Hörgerät aber auch für Pflege- und "
+"Pflegeheimkosten, Krankenhausaufenthalte. Dazu zählen auch Fahrtkosten zu"
+" ärztlichen Behandlungen). <strong>Erstattungen</strong> oder zu "
+"erwartende Erstattungen sind separat anzugeben. Ihre Ausgaben wirken sich"
+" für Sie steuerlich aber nur aus, wenn sie eine <strong>zumutbare "
+"Belastung übersteigen</strong>. Die Höhe der zumutbaren Belastung hängt "
+"von der Höhe Ihres Einkommens ab und wird vom Finanzamt automatisch "
+"berechnet."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:103
+msgid "form.lotse.field_aussergbela_summe_aufw"
+msgstr "Summe der Aufwendungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:104
+msgid "form.lotse.field_aussergbela_ansprueche"
+msgstr ""
+"Anspruch auf zu erwartende / erhaltende Versicherungsleistungen, "
+"Beihilfen, Unterstützungen usw."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:108
+msgid "form.lotse.ausserg_bela-title"
+msgstr "Außergewöhnliche Belastungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:109
+msgid "form.lotse.ausserg_bela-intro"
+msgstr ""
+"Andere Aufwendungen (z. B. Krankheitskosten, Kurkosten, Pflegekosten, "
+"krankheitsbedingte Fahrtkosten)"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:121
+msgid "form.lotse.subsection-household-title"
+msgstr "Haushalt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:122
+msgid "form.lotse.subsection-household-intro"
+msgstr "Zur Kategorie Haushalt gehören:"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:125
+msgid "form.lotse.subsection-household-item-1"
+msgstr "Haushaltsnahe Dienstleistungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:126
+msgid "form.lotse.subsection-household-item-2"
+msgstr "Handwerkerleistungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:134
+msgid "form.lotse.field_haushaltsnahe_entries"
+msgstr "Art der Aufwendung"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:135
+msgid "form.lotse.field_haushaltsnahe_entries-help"
+msgstr ""
+"Bei haushaltsnahen Dienstleistungen sind nur die in Rechnung gestellten "
+"Arbeits- und Fahrtkosten einschließlich der auf diese Kosten entfallenden"
+" Umsatzsteuer nach § 35a EStG begünstigt. Voraussetzung ist, dass die "
+"Zahlungen unbar (z.B. per Überweisung oder EC-Kartenzahlung) geleistet "
+"worden sind. Barzahlungen können nicht geltend gemacht werden. <p "
+"class='mt-2'>Haushaltsnahe Tätigkeiten und Dienstleistungen sind z. B. "
+"Reinigung der Wohnung, Gartenpflege, Winterdienst auf oder vor dem "
+"eigenen Grundstück, Zubereitung von Mahlzeiten im Haushalt, Fütterung und"
+" Pflege von Haustieren im Haushalt, Pflege, Versorgung und Betreuung von "
+"kranken, alten und pflegebedürftigen Personen, auch wenn die Pflege- und "
+"Betreuungsleistungen im Haushalt der gepflegten / betreuten Person "
+"ausgeübt werden, und das Hausnotrufsystem innerhalb des betreuten "
+"Wohnens. Zu den haushaltsnahen Dienstleistungen zählt auch die einer "
+"Hilfe im Haushalt vergleichbare Tätigkeit bei Unterbringung in einem "
+"Heim."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:136
+msgid "form.lotse.field_haushaltsnahe_summe"
+msgstr "Summe der Rechnungsbeträge"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:140
+msgid "form.lotse.haushaltsnahe-title"
+msgstr "Haushaltsnahe Dienstleistungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:141
+msgid "form.lotse.haushaltsnahe-intro"
+msgstr "Haushaltsnahe Tätigkeiten und Dienstleistungen wie zum Beispiel:"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:149
+msgid "form.lotse.haushaltsnahe-list-item-1"
+msgstr "Reinigung der Wohnung, Gartenpflege, Winterdienst"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:150
+msgid "form.lotse.haushaltsnahe-list-item-2"
+msgstr "Zubereitung von Mahlzeiten im Haushalt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:151
+msgid "form.lotse.haushaltsnahe-list-item-3"
+msgstr "Pflege, Versorgung und Betreuung von pflegebedürftigen Personen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:152
+msgid "form.lotse.haushaltsnahe-list-item-4"
+msgstr "Fütterung und Pflege von Haustieren im Haushalt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:160
+msgid "form.lotse.field_handwerker_entries"
+msgstr "Art der Aufwendung"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:161
+msgid "form.lotse.field_handwerker_entries-help"
+msgstr ""
+"Bei Handwerkerleistungen sind nur die in Rechnung gestellten Arbeits- und"
+" Fahrtkosten einschließlich der auf diese Kosten entfallenden "
+"Umsatzsteuer nach § 35a EStG begünstigt. Voraussetzung ist, dass die "
+"Zahlungen unbar (z.B. per Überweisung oder EC-Kartenzahlung) geleistet "
+"worden sind. Barzahlungen können nicht geltend gemacht werden.<p "
+"class='mt-2'>Handwerkerleistungen sind z. B. Reparatur, Streichen, "
+"Lackieren von Fenstern und Türen, Reparatur oder Austausch von "
+"Bodenbelägen, Modernisierung des Badezimmers oder der Einbauküche. Die "
+"Arbeitsleistung muss im eigenen Haushalt erbracht worden sein."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:162
+msgid "form.lotse.field_handwerker_summe"
+msgstr "Art der Aufwendung"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:163
+msgid "form.lotse.field_handwerker_lohn_etc_summe"
+msgstr "darin enthaltene Lohnanteile, Maschinen- und Fahrtkosten, inkl. USt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:167
+msgid "form.lotse.handwerker-title"
+msgstr "Handwerkerleistungen"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:168
+msgid "form.lotse.handwerker-intro"
+msgstr ""
+"Leistungen für Renovierungs-, Erhaltungs- und Modernisierungsmaßnahmen im"
+" eigenen Haushalt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:183
+msgid "form.lotse.subsection-spenden-title"
+msgstr "Mitgliedschaften und Spenden"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:184
+msgid "form.lotse.subsection-spenden-intro"
+msgstr "Das kommt jetzt:"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:187
+msgid "form.lotse.subsection-spenden-item-1"
+msgstr "Kirchensteuer (wenn relevant)"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:188
+msgid "form.lotse.subsection-spenden-item-2"
+msgstr "Spenden und Mitgliedsbeiträge"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:197
+msgid "form.lotse.field_religion_paid_summe"
+msgstr "Gezahlt"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:198
+msgid "form.lotse.field_religion_paid_summe-help"
+msgstr ""
+"Hier tragen Sie die Kirchensteuer ein, die Sie in 2019 gezahlt haben bzw."
+" die Ihnen in 2019 erstattet wurde (siehe Steuerbescheid, "
+"Lohnsteuerbescheinigung (nur bei Pensionen) Vorauszahlungsbescheid). "
+"Nicht einzutragen sind Kirchensteuerbeträge aus Bescheinigungen von z.B. "
+"Banken, Sparkassen und Versicherungen. Diese wurden schon bei der sog. "
+"Abgeltungsteuer steuermindernd berücksichtigt. Sie müssen nichts mehr "
+"tun."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:199
+msgid "form.lotse.field_religion_reimbursed_summe"
+msgstr "Erstattet"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:203
+msgid "form.lotse.religion-title"
+msgstr "Steuern für deine Religionsgemeinschaft"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:204
+msgid "form.lotse.religion-intro"
+msgstr ""
+"Tragen Sie hier die Summe Ihrer Kirchensteuer ein: (nicht eintragen "
+"bitte: Kirchensteuer auf Abgeltungssteuer)"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:219
+msgid "form.lotse.spenden-inland"
+msgstr "an Empfänger im Inland"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:220
+msgid "form.lotse.spenden-help"
+msgstr ""
+"Inländische Spenden und Mitgliedsbeiträge (Zuwendungen) sind gemäß §§ "
+"10b, 34g Einkommensteuergesetz (EStG) als Sonderausgaben "
+"berücksichtigungsfähig. Alle Spenden und Mitgliedsbeiträge für "
+"steuerbegünstigte Zwecke sind <strong>nur auf Anforderung</strong> des "
+"Finanzamts durch eine Bestätigung nachzuweisen."
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:221
+msgid "form.lotse.spenden-inland-parteien"
+msgstr "an inländische politische Parteien"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:225
+msgid "form.lotse.spenden-inland-title"
+msgstr "Spenden und Mitgliedsbeiträge"
+
+#: app/forms/lotse/subflow_03_steuerminderungen.py:226
+msgid "form.lotse.spenden-inland-intro"
+msgstr "Tragen Sie hier die Summe Ihrer Spenden und Mitgliedsbeiträge ein:"
+
+#: app/forms/lotse/subflow_04_confirmations.py:19
+msgid "form.lotse.section-confirmation-title"
+msgstr "4. Bestätigung"
+
+#: app/forms/lotse/subflow_04_confirmations.py:20
+msgid "form.lotse.section-confirmation-intro"
+msgstr "Du bist fast fertig! Die letzten Schritte sind:"
+
+#: app/forms/lotse/subflow_04_confirmations.py:23
+msgid "form.lotse.section-confirmation-item-1"
+msgstr "Bankverbindung angeben"
+
+#: app/forms/lotse/subflow_04_confirmations.py:24
+msgid "form.lotse.section-confirmation-item-2"
+msgstr "Alle Angaben nochmal prüfen und bei Bedarf ergänzen oder bearbeiten"
+
+#: app/forms/lotse/subflow_04_confirmations.py:25
+msgid "form.lotse.section-confirmation-item-3"
+msgstr "Bestätigen und fertige Steuererklärung abschicken"
+
+#: app/forms/lotse/subflow_04_confirmations.py:26
+msgid "form.lotse.section-confirmation-item-4"
+msgstr "Sie erhalten im Anschluss eine Bestätigung des Abschickens und ein PDF"
+
+#: app/forms/lotse/subflow_04_confirmations.py:34
+msgid "form.lotse.field_confirm_complete_correct"
+msgstr ""
+"Hiermit bestätige ich die Angaben vollständig und nach bestem Wissen und "
+"Gewissen getätigt zu haben."
+
+#: app/forms/lotse/subflow_04_confirmations.py:35
+msgid "form.lotse.field_confirm_send"
+msgstr ""
+"Ja, ich möchte diese Steuererklärung jetzt verbindlich an das zuständige "
+"Finanzamt schicken."
+
+#: app/forms/lotse/subflow_04_confirmations.py:39
+msgid "form.lotse.confirmation-title"
+msgstr "Bestätigen und Abschicken"
+
+#: app/forms/lotse/subflow_04_confirmations.py:49
+msgid "form.lotse.ack-sending"
+msgstr "Sende..."
+
+#: app/forms/lotse/subflow_04_confirmations.py:66
+#: app/forms/lotse/subflow_04_confirmations.py:86
+msgid "form.lotse.ack-title"
+msgstr "Vielen Dank! Sie haben Ihre Steuererklärung erfolgreich abgeschickt."
+
+#: app/templates/base.html:14
+msgid "page.title"
+msgstr "Steuerlotse"
+
+#: app/templates/macros.html:92 app/templates/macros.html:101
+msgid "form.back"
+msgstr "Zurück"
+
+#: app/templates/macros.html:93 app/templates/macros.html:103
+msgid "form.next"
+msgstr "Weiter"
+
+#: app/templates/macros.html:95 app/templates/macros.html:105
+msgid "form.back_to_overview"
+msgstr "Zurück zur Übersicht"
+
+#: app/templates/content/footer.html:13
+msgid "footer.info-t4g"
+msgstr "Informationen von T4G"
+
+#: app/templates/content/footer.html:19
+msgid "footer.info-bmf"
+msgstr "Informationen vom BMF"
+
+#: app/templates/content/footer.html:28
+msgid "footer.info-github"
+msgstr "GitHub Projektseite"
+
+#: app/templates/content/footer.html:33
+msgid "footer.impressum"
+msgstr "Impressum"
+
+#: app/templates/content/howitworks.html:4
+msgid "howitworks.heading"
+msgstr "So funktioniert’s"
+
+#: app/templates/content/howitworks.html:6
+msgid "howitworks.intro"
+msgstr ""
+"Auf dieser Seite finden Sie alle wichtigen Informationen, die Sie für "
+"Ihre vereinfachte digitale Steuererklärung benötigen. Klären Sie zunächst"
+" in <strong>Schritt 1</strong> ob Sie die Voraussetzungen erfüllen. "
+"Anschließend können Sie sich in <strong>Schritt 2</strong> weiter "
+"informieren. Dann kann es los gehen zum Ausfüllen zu <strong>Schritt "
+"3</strong>. Übrigens Sie haben für Ihre Steuererklärung aus dem Jahr 2020"
+" bis zum 31. Juli 2021 Zeit!"
+
+#: app/templates/content/howitworks.html:8
+msgid "howitworks.step-1.heading"
+msgstr "Schritt 1: Voraussetzungen für die vereinfachte Steuererklärung"
+
+#: app/templates/content/howitworks.html:9
+msgid "howitworks.step-1.paragraph"
+msgstr ""
+"Sie können die vereinfachte Steuererklärung nur nutzen, wenn Sie "
+"ausschließlich einfache Alterseinkünfte beziehen. Prüfen Sie schnell und "
+"ohne Ihre Daten anzugeben, ob Sie die Voraussetzungen erfüllen!"
+
+#: app/templates/content/howitworks.html:11
+msgid "howitworks.step-1.button"
+msgstr "Voraussetzungen prüfen"
+
+#: app/templates/content/howitworks.html:13
+msgid "howitworks.step-2.heading"
+msgstr "Schritt 2: Informationen zum Ablauf"
+
+#: app/templates/content/howitworks.html:48
+msgid "howitworks.step-3.heading"
+msgstr "Schritt 3: Los geht’s zur Online-Steuererklärung!"
+
+#: app/templates/content/howitworks.html:49
+msgid "howitworks.step-3.paragraph"
+msgstr ""
+"Sie erfüllen die Voraussetzungen für die vereinfachte Steuererklärung "
+"haben sich ausreichend informiert? Dann kann es jetzt losgehen zur "
+"Online-Steuererklärung. Registrieren Sie sich, fordern Sie Ihren "
+"persönlichen Code an und beginnen Sie mit dem Ausfüllen!"
+
+#: app/templates/content/howitworks.html:51
+msgid "howitworks.step-3.button"
+msgstr "Zur Online-Steuererklärung"
+
+#: app/templates/content/landing_page.html:9
+msgid "landing.hero-title"
+msgstr "Willkommen bei der vereinfachten Steuererklärung für Senior_innen!"
+
+#: app/templates/content/landing_page.html:13
+msgid "landing.hero-list-item-1"
+msgstr "vereinfachte Steuererklärung dank vorliegender Daten"
+
+#: app/templates/content/landing_page.html:14
+msgid "landing.hero-list-item-2"
+msgstr "kostenloses Online-Angebot des Bundes"
+
+#: app/templates/content/landing_page.html:15
+msgid "landing.hero-list-item-3"
+msgstr "automatische Fehlererkennung"
+
+#: app/templates/content/landing_page.html:16
+msgid "landing.hero-list-item-4"
+msgstr "zugeschnitten auf Senior_innen"
+
+#: app/templates/content/landing_page.html:22
+msgid "landing.scroll-down"
+msgstr "Mit dem Bildschirm nach unten gehen"
+
+#: app/templates/content/landing_page.html:42
+msgid "landing.card1.title"
+msgstr "Wie funktioniert die Online-Steuererklärung?"
+
+#: app/templates/content/landing_page.html:44
+msgid "landing.card1.button"
+msgstr "So funktioniert’s"
+
+#: app/templates/content/landing_page.html:50
+msgid "landing.card2.title"
+msgstr "Ich weiß Bescheid. Weiter zum Online-Formular!"
+
+#: app/templates/content/landing_page.html:52
+msgid "landing.card2.button"
+msgstr "Meine Steuererklärung"
+
+#: app/templates/content/warnheader.html:7
+msgid "warn-header.title"
+msgstr "Achtung: Dies ist eine Testseite"
+
+#: app/templates/content/warnheader.html:11
+msgid "warn-header.show-more"
+msgstr "Mehr anzeigen"
+
+#: app/templates/content/warnheader.html:19
+msgid "warn-header.show-less"
+msgstr "Weniger anzeigen"
+
+#: app/templates/content/warnheader.html:34
+msgid "warn-header.list-no-item-1"
+msgstr "Geben Sie keine personenbezogenen Daten ein."
+
+#: app/templates/content/warnheader.html:38
+msgid "warn-header.list-no-item-2"
+msgstr "Sie können keine Steuererklärungen abgeschicken."
+
+#: app/templates/content/warnheader.html:42
+msgid "warn-header.list-yes-item-1"
+msgstr "Sie können mit Testdaten experimentieren."
+
+#: app/templates/content/warnheader.html:44
+msgid "warn-header.list-yes-item-2"
+msgstr "Die Daten werden nach wenigen Stunden wieder gelöscht."
+
+#: app/templates/content/warnheader.html:49
+msgid "warn-header.feedback-paragraph"
+msgstr ""
+"Wir freuen uns über Ihr Feedback zum Formular über <a "
+"href=\"https://forms.gle/fHpjnrD6uk9hVCDB6\" target=\"_blank\"> unsere "
+"Feedbackseite</a>."
+
+#: app/templates/demo/end.html:4
+msgid "form.demo.end.description"
+msgstr ""
+
+#: app/templates/demo/hello.html:4
+msgid "form.demo.hello.description"
+msgstr ""
+
+#: app/templates/eligibility/display_failure.html:12
+#: app/templates/eligibility/display_success.html:12
+msgid "form.eligibility.reasons-and"
+msgstr "UND"
+
+#: app/templates/eligibility/display_failure.html:22
+msgid "form.eligibility.use-elster"
+msgstr "Bitte Nutzen Sie MeinELSTER."
+
+#: app/templates/eligibility/display_failure.html:23
+msgid "form.eligibility.use-elster-text"
+msgstr ""
+"Über das Portal MeinELSTER können Sie Ihre digitale Steuererklärung "
+"machen und abgeben. Bei MeinELSTER können alle Steuerfälle berücksichtigt"
+" werden."
+
+#: app/templates/eligibility/display_failure.html:27
+msgid "form.eligibility.use-elster-button"
+msgstr "Zum Steuerportal MeinELSTER"
+
+#: app/templates/eligibility/display_start.html:10
+msgid "form.eligibility.check-now-button"
+msgstr "Jetzt prüfen"
+
+#: app/templates/eligibility/display_success.html:20
+msgid "form.eligibility.continue-informations"
+msgstr "Weiter informieren"
+
+#: app/templates/login/auth.html:6
+msgid "login.auth-title"
+msgstr "Erneut einloggen"
+
+#: app/templates/login/auth.html:9
+msgid "login.auth-intro"
+msgstr ""
+"Sie haben hier schon ein Benutzerkonto erstellt? Dann loggen Sie sich "
+"jetzt wieder ein."
+
+#: app/templates/login/auth.html:13
+msgid "login.auth-mail-label"
+msgstr "E-Mail"
+
+#: app/templates/login/auth.html:14
+msgid "login.auth-mail-default"
+msgstr "erika-musterx@example.org"
+
+#: app/templates/login/auth.html:19
+msgid "login.auth-password-label"
+msgstr "Passwort"
+
+#: app/templates/login/auth.html:20
+msgid "login.auth-password-default"
+msgstr "faked_prototype"
+
+#: app/templates/login/auth.html:24
+msgid "login.auth-button"
+msgstr "Einloggen"
+
+#: app/templates/login/create-confirm.html:5
+msgid "login.create-confirm-title"
+msgstr "Ihr Code ist angefordert und Sie haben sich registriert!"
+
+#: app/templates/login/create-confirm.html:7
+msgid "login.create-confirm-intro"
+msgstr ""
+"Ihr Code wird innerhalb von 5 Werktagen zugestellt und ist 2 Wochen lang "
+"gültig."
+
+#: app/templates/login/create-confirm.html:8
+msgid "login.create-confirm-text"
+msgstr ""
+"Sie können schon jetzt mit dem Ausfüllen Ihrer Steuererklärung beginnen "
+"und diese dann nach Erhalt des Codes abschicken."
+
+#: app/templates/login/create-confirm.html:9
+msgid "login.start-filling-button"
+msgstr "Vorab ausfüllen"
+
+#: app/templates/login/create.html:6
+msgid "login.create-title"
+msgstr "Benutzerkonto erstellen"
+
+#: app/templates/login/create.html:9
+msgid "login.create-intro"
+msgstr "Code anfordern und registrieren"
+
+#: app/templates/login/create.html:13
+msgid "login.create-list-item-1"
+msgstr "sofort nach der Registrierung und bis zum 31. Juli 2021 ausfüllen"
+
+#: app/templates/login/create.html:14
+msgid "login.create-list-item-2"
+msgstr "Zustellung Ihres Codes in 5 Werktagen an Ihre Adresse"
+
+#: app/templates/login/create.html:15
+msgid "login.create-list-item-3"
+msgstr "Code innerhalb von 2 Wochen online angeben"
+
+#: app/templates/login/create.html:20
+msgid "login.create-name-label"
+msgstr "Name"
+
+#: app/templates/login/create.html:26
+msgid "login.create-idnr-label"
+msgstr "Identifikationsnummer (IdNr.)"
+
+#: app/templates/login/create.html:32
+msgid "login.create-mail-label"
+msgstr "E-Mail"
+
+#: app/templates/login/create.html:38
+msgid "login.create-password-label"
+msgstr "Passwort"
+
+#: app/templates/login/create.html:44
+msgid "login.create-password-confirm-label"
+msgstr "Passwort bestätigen"
+
+#: app/templates/login/create.html:51
+msgid "login.resume-name-input-default"
+msgstr "Erika Musterx"
+
+#: app/templates/login/create.html:52
+msgid "login.resume-idnr-input-default"
+msgstr "12 34 56 900"
+
+#: app/templates/login/create.html:53
+msgid "login.resume-email-input-default"
+msgstr "erika-musterx@example.org"
+
+#: app/templates/login/create.html:54
+msgid "login.resume-code-password-default"
+msgstr "faked_prototype"
+
+#: app/templates/login/create.html:55
+msgid "login.resume-code-password-confirm-default"
+msgstr "faked_prototype"
+
+#: app/templates/login/create.html:65
+msgid "login.create-button"
+msgstr "Code anfordern & registrieren"
+
+#: app/templates/login/resume.html:6
+msgid "login.resume-title"
+msgstr "Willkommen zurück!"
+
+#: app/templates/login/resume.html:13
+msgid "login.resume-code-title"
+msgstr "Haben Sie Ihren Code erhalten?"
+
+#: app/templates/login/resume.html:15
+msgid "login.resume-code-desc"
+msgstr "Tragen Sie hier den Code ein, den Sie per Post von ELSTER erhalten haben."
+
+#: app/templates/login/resume.html:19
+msgid "login.resume-code-input-label"
+msgstr "Code"
+
+#: app/templates/login/resume.html:21
+msgid "login.resume-code-input-placeholder"
+msgstr "0000-0000-0000"
+
+#: app/templates/login/resume.html:25
+msgid "login.resume-code-success-title"
+msgstr "Ihr Code wurde bestätigt! "
+
+#: app/templates/login/resume.html:26
+msgid "login.resume-code-success-text"
+msgstr ""
+"Ab jetzt können Sie Ihre Steuererklärung an Ihr Finanzamt schicken. Sie "
+"haben noch bis zum 31. Juli 2021 Zeit Ihre Steuererklärung abzuschicken."
+
+#: app/templates/login/resume.html:31
+msgid "login.resume-code-input-default"
+msgstr "6FG5-R32P-JJ4S"
+
+#: app/templates/login/resume.html:41
+msgid "login.resume-to-summary-title"
+msgstr "Ausfüllen und überprüfen"
+
+#: app/templates/login/resume.html:43
+msgid "login.resume-to-summary-desc"
+msgstr "Füllen Sie weiter aus oder überprüfen Sie Ihre Angaben."
+
+#: app/templates/login/resume.html:45
+msgid "login.resume-to-summary-button"
+msgstr "Zum Überblick"
+
+#: app/templates/login/welcome.html:4
+msgid "login.welcome-title"
+msgstr "Willkommen bei Ihrer Steuererklärung!"
+
+#: app/templates/login/welcome.html:11
+msgid "login.create-user-account"
+msgstr "Benutzerkonto erstellen"
+
+#: app/templates/login/welcome.html:13
+msgid "login.create-user-account-desc"
+msgstr ""
+"Sie haben noch kein Benutzerkonto? Dann registrieren Sie sich jetzt "
+"kostenlos, fordern Sie Ihren Code an und beginnen Sie mit dem Ausfüllen."
+
+#: app/templates/login/welcome.html:15
+msgid "login.create-user-account-button"
+msgstr "Registrieren"
+
+#: app/templates/login/welcome.html:21
+msgid "login.sign-in-again"
+msgstr "Erneut einloggen"
+
+#: app/templates/login/welcome.html:23
+msgid "login.sign-in-again-desc"
+msgstr ""
+"Sie haben hier schon ein Benutzerkonto erstellt? Dann loggen Sie sich "
+"jetzt wieder ein."
+
+#: app/templates/login/welcome.html:25
+msgid "login.sign-in-again-button"
+msgstr "Einloggen"
+
+#: app/templates/lotse/display_ack.html:9
+msgid "form.lotse.ack-success-title"
+msgstr "Steuererklärung als Testfall übermittelt."
+
+#: app/templates/lotse/display_ack.html:14
+msgid "form.lotse.ack-failure-title"
+msgstr "Es ist etwas schiefgelaufen"
+
+#: app/templates/lotse/display_ack.html:19
+msgid "form.lotse.ack-pdf-download-title"
+msgstr "PDF Download"
+
+#: app/templates/lotse/display_ack.html:20
+msgid "form.lotse.ack-pdf-download-text"
+msgstr ""
+"Sie können Ihre Eingangsbestätigung als PDF downloaden und anschließend "
+"speichern oder ausdrucken."
+
+#: app/templates/lotse/display_ack.html:21
+msgid "form.lotse.ack-pdf-download-button"
+msgstr "Steuererklärung als PDF"
+
+#: app/templates/lotse/display_ack.html:24
+msgid "form.lotse.ack-show-logs-title"
+msgstr "Technische Logdateien"
+
+#: app/templates/lotse/display_ack.html:43
+msgid "form.lotse.ack-next-steps"
+msgstr "Was passiert als nächstes?"
+
+#: app/templates/lotse/display_ack.html:45
+msgid "form.lotse.ack-next-steps-1"
+msgstr "Ihre Erklärung wird von Ihrem Finanzamt bearbeitet."
+
+#: app/templates/lotse/display_ack.html:46
+msgid "form.lotse.ack-next-steps-2"
+msgstr "Sie bekommen einen Steuerbescheid per Post."
+
+#: app/templates/lotse/display_ack.html:47
+msgid "form.lotse.ack-next-steps-3"
+msgstr "Sie haben Zeit für Widersprüche und Rückfragen."
+
+#: app/templates/lotse/display_ack.html:48
+msgid "form.lotse.ack-next-steps-4"
+msgstr "Die Zahlung wird fällig."
+
+#: app/templates/lotse/display_ack.html:54
+msgid "form.back-to-home"
+msgstr "Zur Startseite"
+
+#: app/templates/lotse/display_summary.html:10
+msgid "form.lotse.summary-button-edit"
+msgstr "ansehen & bearbeiten"
+
+#: app/templates/lotse/form_confirmation.html:14
+msgid "form.lotse.confirmation-footer"
+msgstr ""
+"Hinweis: Sie können die verschickte Steuererklärung nicht zurückrufen. "
+"Bei Unklarheiten kontaktiert Sie jedoch ein/e Sachbearbeiter/in Ihres "
+"Finanzamtes."
+
+#: app/templates/lotse/form_declaration_edaten.html:17
+msgid "form.lotse.declaration-edaten-footer"
+msgstr ""
+"Anmerkungen: Sind Sie damit nicht einverstanden, können Sie die "
+"vereinfachte Steuererklärung leider nicht nutzen."
+
+#: app/templates/lotse/form_declaration_incomes.html:8
+msgid "form.lotse.declaration-incomes-list-1"
+msgstr ""
+"Renteneinkünfte und / oder Pensionen, die von den "
+"Rentenversicherungsträgern oder vom Arbeitgeber elektronisch gemeldet "
+"worden sind, und ggf."
+
+#: app/templates/lotse/form_declaration_incomes.html:9
+msgid "form.lotse.declaration-incomes-list-2"
+msgstr ""
+"Kapitaleinkünfte, von denen bereits Abgeltungsteuer an das Finanzamt "
+"abgeführt oder für die der Sparer-Pauschbetrag in Anspruch genommen wurde"
+" (Freistellungsauftrag), und ggf."
+
+#: app/templates/lotse/form_declaration_incomes.html:10
+msgid "form.lotse.declaration-incomes-list-3"
+msgstr ""
+"pauschal besteuerte Einkünfte aus geringfügigen Beschäftigungen (Mini-"
+"Jobs) bis zu einer Höhe von insgesamt 450 Euro monatlich"
+
+#: app/templates/lotse/form_person_a.html:8
+#: app/templates/lotse/form_person_b.html:8
+msgid "form.lotse.person-header-allgemein"
+msgstr "Allgemeine Angaben"
+
+#: app/templates/lotse/form_person_a.html:18
+#: app/templates/lotse/form_person_b.html:18
+msgid "form.lotse.person-header-addresse"
+msgstr "Adresse"
+
+#: app/templates/lotse/form_person_a.html:32
+#: app/templates/lotse/form_person_b.html:37
+msgid "form.lotse.person-header-religion"
+msgstr "Religionszugehörigkeit"
+
+#: app/templates/lotse/form_person_a.html:37
+#: app/templates/lotse/form_person_b.html:42
+msgid "form.lotse.person-header-beh"
+msgstr "Angaben für den Pauschbetrag für behinderte Menschen"
+
+#~ msgid "locale_test_string"
+#~ msgstr "Lokaler Test Text"
+
+#~ msgid "form.eligibility.is-rentner-desc"
+#~ msgstr ""
+#~ "Sind Sie Rentner_in oder Pensionär_in "
+#~ "oder möchten Sie die Voraussetzungen für"
+#~ " die vereinfachte Steuererklärung für "
+#~ "jemanden prüfen, der/die Rentner_in oder "
+#~ "Pensionär_in ist?"
+
+#~ msgid "form.eligibility.is-rentner-title"
+#~ msgstr "Sind Sie Rentner_in oder Pensionär_in?"
+
+#~ msgid "form.eligibility.reason-only-rentner"
+#~ msgstr "Das Formular ist nur für Rentner verfügbar."
+
+#~ msgid "form.eligibility.to-simple-form"
+#~ msgstr "Direkt zur vereinfachten Steuererklärung"
+
+#~ msgid "form.eligibility.to-simple-form-text"
+#~ msgstr ""
+#~ "Sie können die vereinfache, digitale "
+#~ "Steuererklärung für Alterseinkünfte nutzen. "
+#~ "Sie ist kürzer und sicherer, da es"
+#~ " erlaubt Daten zu übernehmen, die dem"
+#~ " Finanzamt bereits vorliegen."
+
+#~ msgid "form.eligibility.to-simple-form-button"
+#~ msgstr "Zum digitalen, vereinfachten Formular"
+

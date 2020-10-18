@@ -1,0 +1,11 @@
+# ERiC Library
+erictoolkit
+include
+lib
+
+# Test account details
+datensatz*
+*.pfx
+
+# Temporary output
+print.pdf

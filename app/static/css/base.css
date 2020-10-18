@@ -1,0 +1,157 @@
+body {
+    background: #eee;
+}
+
+.warn-banner {
+    background: #EE8729;
+    color: #fff;
+}
+
+.warn-banner a {
+    color: #fff;
+    font-weight: bolder;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0px 2px 2px #ddd;
+}
+
+.header-img {
+    height: 128px;
+}
+
+@media (max-width: 575.98px) { 
+    .header-img {
+        height: 80px;
+    }
+}
+
+.main {
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 2px 2px #ddd;
+    min-height: 75vh;
+    border-top: #ddd 1px solid;
+}
+
+.main-form {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #ddd;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.nav .nav-link {
+    color: #000;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.nav .active .nav-link {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.switch-yes  {
+    background: #eee !important;
+    color: #000 !important;
+}
+
+.switch-yes.active {
+    background: rgb(196, 255, 148) !important;
+    color: #000 !important;
+}
+
+.switch-no  {
+    background: #eee !important;
+    color: #000 !important;
+}
+
+.switch-no.active {
+    background: rgb(255, 148, 148) !important;
+    color: #000 !important;
+}
+
+.btn-help {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 11px !important;
+    padding: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-row-center {
+    display: flex;
+    align-items: center
+}
+
+ul.reasons-success li {
+    margin-top: 5px;
+}
+
+ul.reasons-success li.and {
+    list-style: none;
+}
+
+.bg-greenish {
+    background: rgb(196, 255, 148);
+}
+
+.bg-redish {
+    background: rgb(255, 148, 148);
+}
+
+.card-half-transparent {
+    background-color: #ffffffd6;
+}
+
+img.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.steps-number {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: #bfd4ed;
+}
+
+.step-active small {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.step-active .steps-number {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+button.btn .control-show-more{
+    display: none;
+}
+
+button.btn .control-show-less{
+    display: block;
+}
+
+button.btn.collapsed .control-show-more{
+    display: block;
+}
+
+button.btn.collapsed .control-show-less{
+    display: none;
+}

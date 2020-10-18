@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  web:
+    restart: always
+    build: .
+    command: gunicorn --workers=16 --bind 0.0.0.0:5000 wsgi:app
+    expose:
+      - 5000
+    env_file:
+      - ./docker-configs/.env
+
+  nginx:
+    restart: always
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker-configs/nginx:/etc/nginx/conf.d
+      - ./docker-configs/certbot/conf:/etc/letsencrypt
+      - ./docker-configs/certbot/www:/var/www/certbot
+      - ./app/static:/var/www/static
+
+  mongodb:
+    restart: always
+    image: mongo:latest
+    expose:
+      - 27017
+
+  cron:
+    restart: always
+    build: ./docker-configs/cron-docker
+
+  # certbot:
+  #   image: certbot/certbot
+  #   volumes:
+  #     - ./docker-configs/certbot/conf:/etc/letsencrypt
+  #     - ./docker-configs/certbot/www:/var/www/certbot

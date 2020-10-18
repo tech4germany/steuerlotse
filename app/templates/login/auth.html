@@ -1,0 +1,25 @@
+{% extends 'base_form.html' %}
+
+{% block app_content %}
+<h3 class="mb-3">
+    <img src="/static/icons/login.png" width="32px" alt="" class="mx-2 mb-1" />
+    {{_('login.auth-title')}}
+</h3>
+<hr />
+<p class="font-weight-bolder">{{_('login.auth-intro')}}</p>
+<form>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="email">{{ _('login.auth-mail-label') }}</label>
+            <input type="email" class="form-control" id="email" value="{{ _('login.auth-mail-default') }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="password">{{ _('login.auth-password-label') }}</label>
+            <input type="password" class="form-control" id="password" value="{{ _('login.auth-password-default') }}">
+        </div>
+    </div>
+</form>
+<a href="{{ url_for('login_resume') }}" class="btn btn-primary px-4 mb-4">{{ _('login.auth-button')}}</a>
+{% endblock %}

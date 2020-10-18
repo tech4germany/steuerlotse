@@ -1,0 +1,6 @@
+SEND_FILE_MAX_AGE_DEFAULT = 60
+SECRET_KEY = 'dev'
+CERT_PIN = '123456'
+MONGO_URI = 'mongodb://localhost:27017/steuerlotse'
+LANGUAGES = ['de']
+SESSION_TTL_SECONDS = 10 * 60

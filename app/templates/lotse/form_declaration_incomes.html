@@ -1,0 +1,19 @@
+{% extends 'base_form.html' %}
+{% import "macros.html" as macros %}
+
+{% block app_content %}
+{{ macros.form_header(render_info) }}
+
+<ul>
+  <li class="mt-2">{{ _('form.lotse.declaration-incomes-list-1') }}</li>
+  <li class="mt-2">{{ _('form.lotse.declaration-incomes-list-2') }}</li>
+  <li class="mt-2">{{ _('form.lotse.declaration-incomes-list-3') }}</li>
+</ul>
+
+<form class="" method="POST" action="{{ render_info.submit_url }}">
+  {{ macros.confirmation_field(form.declaration_incomes)}}
+  {{ macros.field_errors(form.declaration_incomes)}}
+
+  {{ macros.form_nav_buttons(render_info) }}
+</form>
+{% endblock %}

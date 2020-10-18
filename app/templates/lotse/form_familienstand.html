@@ -1,0 +1,15 @@
+{% extends 'base_form.html' %}
+{% import "macros.html" as macros %}
+
+{% block app_content %}
+{{ macros.form_header(render_info) }}
+
+<form class="" method="POST" action="{{ render_info.submit_url }}">
+  {{ macros.radio_field(form.familienstand)}}
+  {{ macros.field_errors(form.familienstand)}}
+  <div class="row mt-3">
+    {{ macros.render_field_cols(form.familienstand_date, 6) }}
+  </div>
+  {{ macros.form_nav_buttons(render_info) }}
+</form>
+{% endblock %}

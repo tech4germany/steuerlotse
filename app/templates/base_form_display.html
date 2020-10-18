@@ -1,0 +1,14 @@
+{% extends 'base_form.html' %}
+{% import "macros.html" as macros %}
+
+{% block app_content %}
+{% block form_display_title %}
+{{ macros.form_header(render_info) }}
+{% endblock %}
+
+{% block form_display_content %}
+{% endblock %}
+
+{{ macros.form_display_nav_buttons(render_info) }}
+</form>
+{% endblock %}

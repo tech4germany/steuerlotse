@@ -1,0 +1,66 @@
+{% extends 'base_form.html' %}
+
+{% block app_content %}
+<h3 class="mb-3">
+    <img src="/static/icons/user_account.png" width="32px" alt="" class="mx-2 mb-1" />
+    {{_('login.create-title')}}
+</h3>
+<hr />
+<p class="font-weight-bolder">{{_('login.create-intro')}}</p>
+<ul class="list-unstyled">
+    {%- macro li(text) %}<li class="mt-1"><img src="{{ url_for('static', filename='icons/check.svg') }}"
+            class="icon" alt="">{{text}}</li>{% endmacro %}
+    {{li(_('login.create-list-item-1'))}}
+    {{li(_('login.create-list-item-2'))}}
+    {{li(_('login.create-list-item-3'))}}
+</ul>
+<form>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="name">{{ _('login.create-name-label') }}</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="idnr">{{ _('login.create-idnr-label') }}</label>
+            <input type="text" class="form-control" id="idnr">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="email">{{ _('login.create-mail-label') }}</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="password">{{ _('login.create-password-label') }}</label>
+            <input type="password" class="form-control" id="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="password-confirm">{{ _('login.create-password-confirm-label') }}</label>
+            <input type="password" class="form-control" id="password-confirm">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function ($) {
+            var fill_in_defaults = function(event) {
+                $('#name').prop('value', "{{ _('login.resume-name-input-default') }}");
+                $('#idnr').prop('value', "{{ _('login.resume-idnr-input-default') }}");
+                $('#email').prop('value', "{{ _('login.resume-email-input-default') }}");
+                $('#password').prop('value', "{{ _('login.resume-code-password-default') }}");
+                $('#password-confirm').prop('value', "{{ _('login.resume-code-password-confirm-default') }}");
+            }
+            $('#name').on('click', fill_in_defaults);
+            $('#idnr').on('click', fill_in_defaults);
+            $('#email').on('click', fill_in_defaults);
+            $('#password').on('click', fill_in_defaults);
+            $('#password-confirm').on('click', fill_in_defaults);
+        })
+    </script>
+</form>
+<a href="{{ url_for('login_create_confirm') }}" class="btn btn-primary px-4 mb-4">{{ _('login.create-button')}}</a>
+{% endblock %}
