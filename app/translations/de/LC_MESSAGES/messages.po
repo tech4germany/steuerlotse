@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-10-17 23:52+0200\n"
+"POT-Creation-Date: 2020-10-19 13:45+0200\n"
 "PO-Revision-Date: 2020-09-17 11:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -104,7 +104,7 @@ msgstr "Wann?"
 
 #: app/content/render_content.py:23
 msgid "howitworks.card-2.p1-content"
-msgstr "Ab dem 28. März 2021"
+msgstr "Ab dem 1. März 2021"
 
 #: app/content/render_content.py:24
 msgid "howitworks.card-2.p2-desc"
@@ -144,7 +144,7 @@ msgstr "Wann?"
 
 #: app/content/render_content.py:32
 msgid "howitworks.card-3.p1-content"
-msgstr "Ab dem 28. März 2021"
+msgstr "Ab dem 1. März 2021"
 
 #: app/content/render_content.py:33
 msgid "howitworks.card-3.p2-desc"
@@ -211,21 +211,21 @@ msgstr ""
 "PDF können Sie auch zusätzlich direkt nach dem Abschicken von der Website"
 " herunterladen."
 
-#: app/forms/fields.py:43
-msgid "switch.yes"
-msgstr "Ja"
-
-#: app/forms/fields.py:43
-msgid "switch.no"
-msgstr "Nein"
-
-#: app/forms/fields.py:88
+#: app/forms/fields.py:57
 msgid "confirmation_field_must_be_set"
 msgstr "Sie müssen dieses Feld auswählen, um weiter zu machen."
 
-#: app/forms/fields.py:102
+#: app/forms/fields.py:72
 msgid "jquery_entries.add"
 msgstr "Eintrag hinzufügen"
+
+#: app/forms/fields.py:133
+msgid "switch.yes"
+msgstr "Ja"
+
+#: app/forms/fields.py:133
+msgid "switch.no"
+msgstr "Nein"
 
 #: app/forms/flow_demo.py:18
 msgid "form.demo.hello-title"
