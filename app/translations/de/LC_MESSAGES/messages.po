@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-10-19 18:45+0200\n"
+"POT-Creation-Date: 2021-06-01 17:22+0200\n"
 "PO-Revision-Date: 2020-09-17 11:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1141,35 +1141,53 @@ msgstr "Ich weiß Bescheid. Weiter zum Online-Formular!"
 msgid "landing.card2.button"
 msgstr "Meine Steuererklärung"
 
+#: app/templates/content/warnheader.html:4
+msgid "info-header.heading"
+msgstr "+++ Steuerlotse seit 31. Mai 2021 live +++"
+
+#: app/templates/content/warnheader.html:5
+msgid "info-header.para-1"
+msgstr ""
+"Nach der Prototypisierung durch Tech4Germany wurde der <a "
+"href=\"https://www.digitalservice4germany.com\" "
+"target=\"_blank\">DigitalService4Germany</a> mit der Umsetzung und "
+"Weiterentwicklung des Steuerlotsen beauftragt. Rentner:innen können ihre "
+"Steuererklärung jetzt mit dem Steuerlotsen einfach und unkompliziert "
+"abgeben."
+
 #: app/templates/content/warnheader.html:7
+msgid "info-header.stl-button"
+msgstr "Jetzt Steuererklärung machen"
+
+#: app/templates/content/warnheader.html:17
 msgid "warn-header.title"
 msgstr "Achtung: Dies ist eine Testseite"
 
-#: app/templates/content/warnheader.html:11
+#: app/templates/content/warnheader.html:21
 msgid "warn-header.show-more"
 msgstr "Mehr anzeigen"
 
-#: app/templates/content/warnheader.html:19
+#: app/templates/content/warnheader.html:29
 msgid "warn-header.show-less"
 msgstr "Weniger anzeigen"
 
-#: app/templates/content/warnheader.html:34
+#: app/templates/content/warnheader.html:44
 msgid "warn-header.list-no-item-1"
 msgstr "Geben Sie keine personenbezogenen Daten ein."
 
-#: app/templates/content/warnheader.html:38
+#: app/templates/content/warnheader.html:48
 msgid "warn-header.list-no-item-2"
 msgstr "Sie können keine Steuererklärungen abgeschicken."
 
-#: app/templates/content/warnheader.html:42
+#: app/templates/content/warnheader.html:52
 msgid "warn-header.list-yes-item-1"
 msgstr "Sie können mit Testdaten experimentieren."
 
-#: app/templates/content/warnheader.html:44
+#: app/templates/content/warnheader.html:54
 msgid "warn-header.list-yes-item-2"
 msgstr "Die Daten werden nach wenigen Stunden wieder gelöscht."
 
-#: app/templates/content/warnheader.html:49
+#: app/templates/content/warnheader.html:59
 msgid "warn-header.feedback-paragraph"
 msgstr ""
 "Wir freuen uns über Ihr Feedback zum Formular über <a "

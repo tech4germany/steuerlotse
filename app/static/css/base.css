@@ -2,6 +2,20 @@ body {
     background: #eee;
 }
 
+.info-banner {
+    background: #f0b800;
+    color: #fff;
+}
+
+.info-banner h2 {
+    font-style: italic;
+}
+
+.info-banner a {
+    color: #fff;
+    font-weight: bolder;
+}
+
 .warn-banner {
     background: #EE8729;
     color: #fff;
@@ -21,7 +35,7 @@ header {
     height: 128px;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .header-img {
         height: 80px;
     }
