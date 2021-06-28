@@ -1,0 +1,231 @@
+{# TODO: Restructure and add comments for more clarity #}
+
+
+{% macro primaryButton(text, url, float_right=False) -%}
+      <a class="{% if  float_right %} float-right {% endif %} btn btn-primary" href="{{ url }}">{{ text }}</a>
+{%- endmacro %}
+
+{% macro primaryButtonWithIcon(text, url, icon, target) -%}
+    <a class="btn btn-primary" href="{{ url}}" target="{{target | default('_blank', true)}}">{{ text }} {{icon}}</a>
+{%- endmacro %}
+
+{% macro overviewButton(text, url) -%}
+    <a class="btn btn-outline-secondary" href="{{ url}}">{{ text }}</a>
+{%- endmacro %}
+
+{% macro editButton(url, text=_('form.lotse.summary-button-edit'), float_right=False) -%}
+      <a class="{% if  float_right %} float-right {% endif %} edit-button" href="{{ url }}">{{ text }}</a>
+{%- endmacro %}
+
+{% macro backLink(text, url) -%}
+          <a class='back-link' href="{{ url }}">{{text}}</a>
+{%- endmacro %}
+
+{% macro downloadLink(text, url, large=False) -%}
+    {% if large %}
+        <a href="{{ url }}" download class='download-link download-link-l'>
+            <span class="download-link-icon download-link-l"></span>
+            {{text}}
+        </a>
+    {% else %}
+        <a href="{{ url }}" download class='download-link'>
+            <span class="download-link-icon"></span>
+            {{text}}
+        </a>
+    {% endif %}
+{%- endmacro %}
+
+{% macro checkbox(field, classes="") %}
+    <div class="form-row checkbox">
+        {{ _field(field) }}
+        <label class="checkmark" for="{{ field.name }}"></label>
+        {{ field_label(field, class="col-sm-10 col-form-label ml-3 pt-0") }}
+    </div>
+{% endmacro %}
+
+{% macro consent_box(field, classes="") %}
+    <div class="form-row checkbox consent-box col-lg-10">
+        {{ _field(field) }}
+        <label class="checkmark" for="{{ field.name }}"></label>
+        {{ field_label(field, class="col-sm-10 col-form-label ml-3 pt-0") }}
+    </div>
+{% endmacro %}
+
+{% macro radio_field(field) -%}
+    {% for subfield in field %}
+        <div class="form-row-center">
+            {{ subfield(class="") }}
+            {{ field_label(subfield, class="col-sm-10 col-form-label") }}
+        </div>
+    {% endfor %}
+{%- endmacro %}
+
+{% macro field_label(field, class="") %}
+    {%- set label = field.label -%}
+    {%- set help = field.render_kw['help'] -%}
+    {%- set detail = field.render_kw['detail'] -%}
+
+    <label for="{{ label.field_id }}"
+           class="field-label  {{ class }}">{{ label.text }}
+        {% if help %}{{ help_button(label.field_id) }}{% endif %}
+    </label>
+    {%- if help %}{{ help_dialog(label.field_id, label.text, help) }}{% endif %}
+    {% if field.render_kw and "example_input" in field.render_kw %}
+        <div class="example-input">
+            {{ field.render_kw["example_input"] }}
+        </div>
+    {% endif %}
+    {%- if detail %}{{ details(detail.title, [detail.text], details_id=field.id) }}{% endif %}
+{%- endmacro %}
+
+{% macro field_errors(field) -%}
+    {% for error in field.errors %}
+        <div class="invalid-feedback d-block" role="alert">
+            <img class="invalid-feedback" src="{{ url_for('static', filename='icons/warning.svg') }}"
+                 aria-label="{{ _('errors.warning-image.aria-label') }}"> {{ error }}
+        </div>
+    {% endfor %}
+{%- endmacro %}
+
+{% macro _field(field) %}
+    {% if field.errors %}
+        {{ field(autofocus=True) }}
+    {% else %}
+        {{ field() }}
+    {% endif %}
+{% endmacro %}
+
+
+{% macro accordion(accordion) %}
+    <div id="{{ accordion.id }}" class="accordion mt-5 pb-5">
+        <h3 class="mt-5">{{ accordion.heading }}</h3>
+        <p class="mt-3 pb-2">{{ accordion.intro }}</p>
+        <div class="mt-4 pl-0">
+            {% for id, card in accordion.entries.items() -%}
+                {% set card_id = 'card-' + id -%}
+                <div class="card mt-2">
+                    <div class="card-header d-sm-flex justify-content-between align-items-center cursor-pointer"
+                         id="heading-{{ card_id }}">
+                        <div class="row collapsed w-100" data-toggle="collapse"
+                                    data-target="#{{ card_id }}"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                            <div class="col">
+                                <button class="btn-accordion" >
+                                    <h5 class="mb-0">{{ card['heading'] }}</h5>
+                                </button>
+                            </div>
+                            <div class="col-1 control-show-more">
+                                <img src="{{ url_for('static', filename='icons/plus.svg') }}"/>
+                            </div>
+                            <div class="col-1 control-show-less">
+                                <img src="{{ url_for('static', filename='icons/minus.svg') }}"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="{{ card_id }}" class="collapse" aria-labelledby="heading-{{ card_id }}"
+                        data-parent="#{{accordion.id}}">
+                        <div class="card-body-less-padding">
+                            {% for (content) in card['paragraphs'] %}
+                                <p> {{ content }}</p>
+                            {%- endfor %}
+                            {% if card['list-items'] %}
+                                <ul>
+                                    {% for listitem in card['list-items'] %}
+                                        <li class="mb-2">{{ listitem }}</li>
+                                    {%- endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro details(title, paragraphs, list_items=None, details_id='') %}
+    <div id="details-{{ details_id }}" class="details-card ml-0 pl-0">
+        <div class="card">
+            <div class="card-header unstyled-card-header d-sm-flex justify-content-between align-items-center cursor-pointer mb-0"
+                 id="heading-card_id">
+                <div class="row collapsed" data-toggle="collapse"
+                            data-target="#details-body-{{ details_id }}"
+                            aria-expanded="false" aria-controls="collapseOne">
+                    <button class="btn btn-primary container" type="button">
+                        <div class="row">
+                            <div class="details-icon col-1 control-show-more"></div>
+                            <div class="details-icon col-1 control-show-less"></div>
+                            <div class="col">
+                                    <h5 class="mb-0">{{title}}</h5>
+                            </div>
+                        </div>
+                    </button>
+
+                </div>
+
+            </div>
+            <div id="details-body-{{ details_id }}" class="collapse" aria-labelledby="heading-{{ card_id }}"
+                data-parent="#details-{{ details_id }}">
+                <div class="card-body pt-0 pl-0">
+                    <div class="row">
+                        <div class="col-1 px-0">
+                            <div class="block-quote-line"></div>
+                        </div>
+                        <div class="col details-content">
+                            {% if paragraphs is string %}
+                                <p> {{ paragraphs }}</p>
+                            {% else %}
+                                {% for (content) in paragraphs %}
+                                    <p> {{ content }}</p>
+                                {%- endfor %}
+                            {% endif %}
+                            {% if list_items %}
+                                <ul>
+                                    {% for list_item in list_items %}
+                                        <li class="mb-2">{{ list_item }}</li>
+                                    {%- endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro help_button(id) %}
+<a href="" class="btn btn-help ml-1" data-toggle="modal" data-target="#help_dialog_{{id}}" aria-label="{{ _('button.help') }}">?</a>
+{%- endmacro %}
+
+{% macro help_dialog(id, title, text) %}
+<div class="modal fade" id="help_dialog_{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mb-n2">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{ _('button.close.aria-label') }}">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">{{text}}</div>
+    </div>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro teaserCard(url, title, description, img_url, direction) %}
+    <div class="teaser-card teaser-card--{{direction}}">
+        <a href="{{ url }}">
+            <div class="teaser-card-body">
+                <h3 class="pb-3">{{ title }}</h3>
+                <p>{{ description }}</p>
+                <img src="{{ img_url }}" width="50px" alt="icon info" />
+            </div>
+        </a>
+    </div>
+{% endmacro %}

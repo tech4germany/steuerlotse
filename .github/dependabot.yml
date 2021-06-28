@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/webapp"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/erica_app"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/webapp"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/erica_app"
+    schedule:
+      interval: "daily"

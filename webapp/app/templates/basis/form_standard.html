@@ -1,0 +1,13 @@
+{% extends 'basis/base_step_form.html' %}
+{% import "macros.html" as macros %}
+
+{% block form_content %}
+    {% block intro_list %}
+    {% endblock %}
+    {% for field in form %}
+        <div class="form-row-center mt-3">
+            {{ macros.render_field(field) }}
+        </div>
+    {% endfor %}
+{% endblock %}
+

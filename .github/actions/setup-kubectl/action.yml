@@ -1,0 +1,30 @@
+name: 'Set up kubectl'
+description: 'Set up kubectl executable'
+inputs:
+  kubeconfigBase64:
+    description: 'Base64-encoded kubeconfig'
+    required: true
+outputs:
+  kubeconfigLocation:
+    description: 'Path to kubeconfig file'
+    value: /tmp/kubeconfig
+runs:
+  using: "composite"
+  steps:
+    - name: Install kubectl
+      shell: bash
+      run: |
+        set -e
+        # Following instructions from https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux
+        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+        curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+        echo "$(<kubectl.sha256) kubectl" | sha256sum --check
+        sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+    - name: Set up KUBECONFIG
+      shell: bash
+      env:
+        KUBECONFIG_BASE64: ${{ inputs.kubeconfigBase64 }}
+      run: |
+        set -e
+        echo "$KUBECONFIG_BASE64" | base64 --decode > /tmp/kubeconfig

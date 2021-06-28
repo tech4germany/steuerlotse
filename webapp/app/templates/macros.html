@@ -1,0 +1,131 @@
+{# TODO: Restructure and add comments for more clarity #}
+{% import "components.html" as components %}
+
+{% macro step_header_buttons(render_info) %}
+    {% if render_info.prev_url %}
+        <div class="mt-3 mb-5">
+            {{ components.backLink(text=_('form.back'), url=render_info.prev_url) }}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro header(title, intro, hide_intro=False) -%}
+    <div class="section-intro">
+        <h1 class="my-4">{{ title }}</h1>
+        {%- if intro and not hide_intro %}
+            <p>{{intro}}</p>
+        {% endif -%}
+    </div>
+{%- endmacro %}
+
+{% macro form_header(render_info, hide_intro=False) -%}
+    {{ header(render_info.step_title,  render_info.step_intro, hide_intro) }}
+{%- endmacro %}
+
+{# ------------------------ #}
+
+{% macro nav_item_list(nav, current_user) %}
+    <ul class="nav navbar-nav ml-auto">
+        {% for item in nav.top if not item.ident.endpoint == 'logout' or current_user.is_active -%}
+            <li class="nav-item {{ 'active' if item.is_active else '' }} pt-2 pb-2">
+                <a class="nav-link pt-0 pb-0" href="{{ item.url }}">{{ item.label }}</a>
+            </li>
+        {% endfor -%}
+    </ul>
+{% endmacro %}
+
+
+{# ------------------------ #}
+
+{% macro field_label(field, class="") %}
+    {{ components.field_label(field, class) }}
+{%- endmacro %}
+
+{% macro field_errors(field) -%}
+    {{ components.field_errors(field) }}
+{%- endmacro %}
+
+{% macro render_field(field, cols=6, class="", field_div_classes="", d_block=False, as_card=False, hide_label=False) %}
+    {% if field.type == 'ConfirmationField' %}
+        {{ _render_field(field, 12, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=True) }}
+    {% elif field.type == 'BooleanField' %}
+        {{ _render_field(field, cols, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=True) }}
+    {% else %}
+        {{ _render_field(field, cols, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=hide_label) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro _render_field(field, cols, class="", field_div_classes="", d_block=False, as_card=False, hide_label=False) %}
+    {% if field.errors %}
+        {% set field_div_classes = field_div_classes + " error-found-line" %}
+    {% endif %}
+    <div class="col-md-{{ cols }} mb-4 {% if as_card %} simple-card {% else %} px-0 {% endif %} {{ field_div_classes }}">
+        {% if not hide_label and not (field.render_kw and 'hide_label' in field.render_kw and field.render_kw["hide_label"]) %}
+            {{ field_label(field) }}
+        {% endif %}
+
+        {% set classes = "form-control " + class %}
+        {% if field.render_kw and 'class' in field.render_kw %}
+            {% set classes = classes + field.render_kw['class'] %}
+        {% elif field.errors %}
+            {% set classes = classes + " field-error-found" %}
+        {% endif %}
+
+        {% if d_block %}<div class="d-block">{% endif %}
+            {% if field.type == 'ConfirmationField' %}
+                {{ components.consent_box(field, classes=classes) }}
+            {% elif field.type == 'BooleanField' %}
+                {{ components.checkbox(field, classes=classes) }}
+            {% elif field.type == 'RadioField' %}
+                {{ components.radio_field(field) }}
+            {% else %}
+                {% if field.errors %}
+                    {{ field(class=classes, autofocus=True) }}
+                {% else %}
+                    {{ field(class=classes) }}
+                {% endif %}
+            {% endif %}
+        {% if d_block %}</div>{% endif %}
+        {{ field_errors(field) }}
+    </div>
+{% endmacro %}
+
+{# ------------------------ #}
+
+{% macro form_nav_buttons(render_info, explanatory_button_text=None) -%}
+    <div class="form-row">
+        {% if render_info.overview_url %}
+            <button type="submit"
+                    class="btn btn-outline-primary mr-2"
+                    name="overview_button">{{ _('form.back_to_overview') }}</button>
+        {% endif %}
+        {% if render_info.additional_info.next_button_label %}
+            <button type="submit" class="btn btn-primary"
+                    name="next_button">{{ render_info.additional_info.next_button_label }}</button>
+        {% else %}
+            <button type="submit" class="btn btn-primary" name="next_button">{{ _('form.next') }}</button>
+        {% endif %}
+        {% if explanatory_button_text %}
+            <small class="explanatory-button-text">{{ explanatory_button_text }}</small>
+        {% endif %}
+    </div>
+{%- endmacro %}
+
+{% macro form_display_nav_buttons(render_info, explanatory_button_text=None) -%}
+    <div class="form-row mt-4">
+        {% if render_info.overview_url %}
+            <a class="btn btn-outline-primary mr-2"
+               href="{{ render_info.overview_url }}">{{ _('form.back_to_overview') }}</a>
+        {% endif %}
+        {% if render_info.additional_info.next_button_label %}
+            <a class="btn btn-primary {% if not render_info.next_url %}invisible{% endif %}" name="next_button"
+               href="{{ render_info.next_url }}">{{ render_info.additional_info.next_button_label }}</a>
+        {% else %}
+            <a class="btn btn-primary {% if not render_info.next_url %}invisible{% endif %}" name="next_button"
+               href="{{ render_info.next_url }}">{{ _('form.next') }}</a>
+        {% endif %}
+        {% if explanatory_button_text %}
+            <small class="explanatory-button-text">{{ explanatory_button_text }}</small>
+        {% endif %}
+    </div>
+{%- endmacro %}

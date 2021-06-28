@@ -1,0 +1,20 @@
+{% extends 'basis/display_standard.html' %}
+{% import "components.html" as components %}
+
+{% block display_main_content %}
+
+    <h4>{{ _('form.lotse.filing.transfer_ticket.heading') }}</h4>
+    <p>
+        {{ _('form.lotse.filing.transfer_ticket.text') }} <br><br>
+        <span class="text-monospace font-weight-bolder">
+        {{ _('form.lotse.filing.transfer_ticket') }} {{ elster_data['transfer_ticket'] }}
+    </span>
+    </p>
+
+
+    <h4>{{ _('form.lotse.filing.pdf.heading') }}</h4>
+    <p>{{ _('form.lotse.filing.pdf.text') }}</p>
+
+    {{ components.downloadLink(text=_('form.lotse.ack-pdf-download-button'), url=url_for('download_pdf'), large=True) }}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'basis/base_step.html' %}
+{% import "macros.html" as macros %}
+
+
+{% block step_content %}
+    {% block step_intro %}
+        {{ macros.form_header(render_info) }}
+    {% endblock %}
+    <form class="container px-0" method="POST" action="{{ render_info.submit_url }}">
+        {% block form_content %}
+        {% endblock %}
+
+        {% block field_scripts %}
+        {% endblock %}
+
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+        {{ macros.form_nav_buttons(render_info, explanatory_button_text) }}
+    </form>
+{% endblock %}
+
+{% block optional_js %}
+    {# TODO Restructure and clean up the optional javascript (Use single script tag and restructure masking/validation) #}
+    <script src="{{ url_for('static', filename='js/customValidation.js') }}" type=text/javascript></script>
+    <script type="text/javascript">
+        $("[required]").each(function () {
+            if ($(this)[0].hasAttribute("input_req_err_msg")) {
+                inputMissingErrorMessageHelper($(this)[0], $(this).attr("input_req_err_msg"));
+            }
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/autonumeric.js') }}" type=text/javascript></script>
+    <script>
+        new AutoNumeric.multiple('.euro_field', {decimalCharacter: ",", digitGroupSeparator: "."});
+        // in order for AutoNumeric to work, autocomplete has to be turned off for the respective components
+        $('.euro_field').attr('autocomplete', 'off');
+    </script>
+    <script>
+        $('input[type="date"]').attr('max', '9999-12-31');
+    </script>
+    <script src="{{ url_for('static', filename='js/jquery.mask.min.js') }}" type=text/javascript></script>
+    <script>
+        $(document).ready(function(){
+            const idnr_mask = '00000000000'
+          $('.date_input').mask('00.00.0000');
+          $('#idnr').mask(idnr_mask);
+          $('#person_a_idnr').mask(idnr_mask);
+          $('#person_b_idnr').mask(idnr_mask);
+        });
+    </script>
+{% endblock %}

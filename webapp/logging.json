@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s%(levelname)s%(name)s%(message)s%(module)s%(lineno)s%(process)d%(thread)d",
+            "class": "pythonjsonlogger.jsonlogger.JsonFormatter"
+        }
+    },
+    "handlers": {
+        "wsgi": {
+            "class": "logging.StreamHandler",
+            "stream": "ext://flask.logging.wsgi_errors_stream",
+            "formatter": "default"
+        }
+    },
+    "root": {
+        "level": "INFO",
+        "handlers": ["wsgi"]
+    },
+    "loggers": {
+        "gunicorn": {
+            "level": "DEBUG"
+        }
+    },
+    "disable_existing_loggers": false
+}

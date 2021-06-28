@@ -1,0 +1,47 @@
+name: Build image
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Branch, tag or commit sha to build'
+        required: true
+      imageTag:
+        description: 'Label for the image'
+        required: true
+
+env:
+  DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code at ref
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.inputs.ref }}
+
+    - name: Build docker images
+      env:
+        DOCKER_TAG: ${{ github.event.inputs.imageTag }}
+      run: |
+        docker-compose -f docker-compose.ci.yml build
+        docker image ls
+      shell: bash
+
+    - name: Login to container repository
+      uses: docker/login-action@v1
+      with:
+        registry: ${{ env.DOCKER_REGISTRY }}
+        username: ${{ secrets.REGISTRY_USER }}
+        password: ${{ secrets.REGISTRY_PWD }}
+
+    - name: Push images
+      run: |
+        for IMAGE in web cron erica; do
+          docker tag steuerlotse_${IMAGE}:${{ github.event.inputs.imageTag }} ${{ env.DOCKER_REGISTRY }}/steuerlotse_${IMAGE}:${{ github.event.inputs.imageTag }}
+          docker push ${{ env.DOCKER_REGISTRY }}/steuerlotse_${IMAGE}:${{ github.event.inputs.imageTag }}
+        done
+      shell: bash

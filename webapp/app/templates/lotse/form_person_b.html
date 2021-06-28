@@ -1,0 +1,74 @@
+{% extends 'basis/form_full_width.html' %}
+{% import "macros.html" as macros %}
+{% import "components.html" as components %}
+
+{% block form_content %}
+
+  <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-allgemein') }}</h3>
+   <div class="form-row-center">
+    {{ macros.render_field(form.person_b_first_name) }}
+  </div>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_last_name) }}
+  </div>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_dob) }}
+  </div>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_idnr) }}
+  </div>
+
+  <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-addresse') }}</h3>
+  {{ macros.render_field(form.person_b_same_address, 10) }}
+
+  <div id="form_address_fields">
+    <div class="form-row-center">
+      {{ macros.render_field(form.person_b_street) }}
+      {{ macros.render_field(form.person_b_street_number, 2) }}
+      {{ macros.render_field(form.person_b_street_number_ext, 4) }}
+    </div>
+    <div class="form-row-center">
+      {{ macros.render_field(form.person_b_address_ext) }}
+    </div>
+    <div class="form-row-center">
+      {{ macros.render_field(form.person_b_plz) }}
+      {{ macros.render_field(form.person_b_town) }}
+    </div>
+  </div>
+
+  <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-religion') }}</h3>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_religion, 6, class=" custom-select") }}
+  </div>
+
+  <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-beh') }}</h3>
+  <p class="mb-4">{{ _('form.lotse.person-header-beh-intro') }}</p>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_beh_grad, 4) }}
+  </div>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_blind, 4, d_block=True, hide_label=True) }}
+  </div>
+  <div class="form-row-center">
+    {{ macros.render_field(form.person_b_gehbeh, 4, d_block=True, hide_label=True) }}
+  </div>
+
+{% endblock %}
+
+{% block optional_js %}
+    {{ super() }}
+    <script>
+        function show_hide_address_field() {
+            if ($("input[name$='person_b_same_address']:checked").val() === 'no') {
+                $("#form_address_fields").show();
+                $("#form_address_fields input[required_if_shown]").attr("required", true);
+            } else {
+                $("#form_address_fields").hide();
+                $("#form_address_fields input:required").removeAttr("required");
+            }
+        }
+
+        $(document).ready(show_hide_address_field);
+        $("input[name$='person_b_same_address']").change(show_hide_address_field);
+    </script>
+{% endblock %}

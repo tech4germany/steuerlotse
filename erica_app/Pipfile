@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "==8.0.1"
+fastapi = "~=0.65.2"
+freezegun = "*"
+pydantic = "~=1.8.2"
+pytest = "==6.2.4"
+uvicorn = "~=0.14.0"
+babel = "*"
+python-dotenv = "*"
+prometheus-fastapi-instrumentator = "*"
+python-json-logger = "*"
+boto3 = "*"
+
+[dev-packages]
+pytest = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.9"

@@ -1,0 +1,519 @@
+/* TODO: Restructure CSS (base.css and components.css) for more clarity. */
+
+/* BUTTONS */
+.btn-primary, a.btn-primary{
+    padding: 1rem 1.25rem calc(1rem - 4px) 1.25rem;
+
+    font-size: var(--text-base);
+    letter-spacing: var(--tracking-wide);
+    text-decoration: none;
+    color: var(--inverse-text-color);
+    background: var(--link-color);
+    background-clip: padding-box;
+    display: inline-block;
+    position: relative;
+    border: none;
+    border-radius: 0;
+    border-bottom: 4px solid var(--link-color);
+}
+
+
+.btn-primary:not(:disabled):not(.disabled):active, a.btn-primary:not(:disabled):not(.disabled):active{
+    background: var(--link-color) !important;
+    border:none !important;
+    border-bottom: 4px solid var(--link-color) !important;
+}
+
+
+
+.btn-primary:hover, a.btn-primary:hover{
+    background: var(--link-hover-color);
+    border: none;
+    border-bottom: 4px solid var(--link-hover-color);
+}
+
+
+
+.btn-primary:focus, a.btn-primary:focus{
+    color: var(--focus-text-colour);
+
+    background: var(--focus-colour);
+
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 4px solid var(--focus-border-colour);
+}
+
+.btn-outline-primary, a.btn-outline-primary{
+    padding: 1rem 1.25rem calc(1rem - 4px) 1.25rem; /* The calculation subtracts the border-bottom height. We need a border-bottom for the focus state. */
+
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-wide);
+    text-decoration: none;
+    color: var(--link-color);
+
+
+    background: white;
+    background-clip: padding-box;
+
+    border: 0;
+    border-radius: 0;
+    border: 1px solid var(--border-colour);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, a.btn-outline-primary:not(:disabled):not(.disabled):active{
+    color: var(--link-active-color);
+    background-color: inherit;
+    border: 1px solid var(--link-active-color);
+}
+
+.btn-outline-primary:hover, a.btn-outline-primary:hover {
+    color: var(--link-hover-color);
+    background: white;
+    border: 1px solid var(--link-hover-color);
+}
+
+.btn-outline-primary:focus, a.btn-outline-primary:focus{
+    color: var(--focus-colour);
+
+    outline:none;
+    box-shadow: none;
+    border: 1px solid var(--focus-border-colour);
+}
+
+
+.btn-help  {
+    background: var(--link-color);
+    color: var(--inverse-text-color) !important;
+    text-decoration: none;
+}
+
+.btn-help:hover  {
+    background: var(--link-hover-color);
+    color: var(--inverse-text-color) !important;
+    text-decoration: none;
+}
+
+.btn-help:focus  {
+    background: var(--focus-colour);
+    color: var(--text-color) !important;
+    text-decoration: none;
+}
+
+.remove-button{
+    cursor: pointer;
+    margin-left: 5px;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    text-decoration: none;
+    color: var(--inverse-text-color) !important;
+    background: var(--link-color);
+    border: none;
+}
+
+.remove-button:hover{
+    text-decoration: none;
+    color: var(--inverse-text-color) !important;
+    background: var(--link-hover-color);
+}
+
+.remove-button:focus{
+    text-decoration: none;
+    color: var(--text-color) !important;
+    background: var(--focus-colour);
+    box-shadow: none;
+    outline: 0;
+}
+
+
+/* ACCORDION */
+.accordion .card{
+    border: 0;
+    border-bottom: 1px solid var(--link-underline-color);
+    border-radius: 0;
+    background: inherit;
+    padding-bottom: .75rem;
+}
+
+.accordion .card-header{
+    border: 0;
+    background: inherit;
+    padding: .75rem 0;
+}
+
+.accordion .card-header h5{
+    font-size: var(--text-medium);
+    font-weight: var( --font-bold);
+}
+
+.accordion .card-header button:focus{
+    color: var(--text-colour);
+
+    background: var(--focus-colour);
+
+    outline:none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 4px solid var(--focus-border-colour);
+}
+
+.accordion .card-header button{
+    text-align: left;
+    color: var(--text-colour);
+    background: inherit;
+    border: 0;
+}
+
+.accordion .card-header button:hover, .accordion .card-header button:active{
+    color: var(--link-hover-color);
+}
+
+.accordion .card-header .control-show-more{
+    display: none;
+}
+
+.accordion .card-header .control-show-less{
+    display: block;
+}
+
+.accordion .card-header .collapsed .control-show-more{
+    display: block;
+}
+
+.accordion .card-header .collapsed .control-show-less{
+    display: none;
+}
+
+/* DETAILS */
+.details-card .card{
+    border: 0;
+    border-radius: 0;
+    background: inherit;
+}
+
+.details-card .card-header{
+    border: 0;
+    background: inherit;
+}
+
+.details-card .card-header h5{
+    color: var(--text-color);
+    font-size: var(--text-medium);
+    font-weight: var( --font-bold);
+}
+
+.details-card .card-header button{
+    text-align: left;
+    color: var(--text-colour);
+    background: inherit;
+    border: 0;
+}
+
+.details-card .card-header .collapsed h5{
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-color: var(--icon-default-colour);
+}
+
+.details-card .card-header .collapsed h5:hover{
+    color: var(--link-hover-color);
+    text-decoration-color: var(--link-hover-color);
+}
+
+.details-card .card-header button:focus h5{
+    color: var(--focus-text-colour);
+    text-decoration: underline;
+    text-decoration-color: var(--focus-text-colour);
+
+    background: var(--focus-colour);
+
+    outline:none;
+    box-shadow: none;
+    border: 0;
+}
+
+.details-card .card-header .details-icon{
+    width: 100%;
+    background:  url("/static/icons/details_arrow_down.svg") no-repeat center;
+}
+
+.details-card .card-header .collapsed:hover .details-icon{
+    background:  url("/static/icons/details_arrow_right_hover.svg") no-repeat center;
+}
+
+.details-card .card-header .collapsed button:focus .details-icon{
+    background:  url("/static/icons/details_arrow_right_focus.svg") no-repeat center;
+}
+
+.details-card .card-header .collapsed .details-icon{
+    background:  url("/static/icons/details_arrow_right.svg") no-repeat center;
+}
+
+.details-card .card-body {
+    border: 0;
+}
+
+.details-card .details-content{
+    padding: 1em 1em 0 1em;
+}
+
+.card-body-less-padding {
+    padding: 1em 1em var(--spacing-01) var(--spacing-01);
+}
+
+
+.details-card .card-body .block-quote-line{
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: var(--border-colour);
+}
+
+.details-card .card-header button:hover, .accordion .card-header button:active{
+    color: var(--link-hover-color);
+}
+
+.details-card .card-header .control-show-more{
+    display: none;
+}
+
+.details-card .card-header .control-show-less{
+    display: block;
+}
+
+.details-card .card-header .collapsed .control-show-more{
+    display: block;
+}
+
+.details-card .card-header .collapsed .control-show-less{
+    display: none;
+}
+
+
+
+/* LINKS */
+.back-link {
+    position: relative;
+    margin-left: calc(var(--back-link-size) + 7px); /* Use the margin to push the back-link the width of the before-element to the right. Plus 7px because the before element is positioned -10px to the left with a margin of +3px = 7px.*/
+
+    font-weight: var(--font-bold);
+    font-size: var(--text-sm);
+    line-height: var(--lineheight-s);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-extra-wide);
+}
+
+.back-link::before {
+    --total-line-height: var(--lineheight-s);
+    --size: var(--back-link-size);
+    content: "";
+    margin: 3px;
+    position: absolute;
+
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--total-line-height);
+    width: var(--size);
+    height: var(--size);
+
+    text-align: center;
+    color: var(--text-color);
+
+    background: var(--icon-default-colour) url("/static/icons/arrow_back.svg") no-repeat center/var(--size);
+
+    border-radius: 50%;
+}
+
+a.back-link{
+    text-decoration: none;
+}
+
+a.back-link:focus{
+    text-decoration: none;
+}
+
+a.back-link:visited{
+    color: var(--text-color);
+}
+
+a.back-link:focus a.back-link:active{
+    color: var(--text-color);
+    background-color:none;
+}
+
+.edit-button {
+    font-weight: var(--font-bold);
+    text-decoration: none;
+}
+
+.download-link{
+    --total-line-height: var(--lineheight-l);
+    --font-size: var(--text-base);
+    position: relative;
+
+    font-weight: var(--font-bold);
+    font-size: var(--font-size);
+    line-height: var(--total-line-height);
+}
+.download-link-icon{
+    --total-line-height: var(--lineheight-l);
+    --size: 1.6em;
+    --adjust-position: -0.4;
+    --margin-right: 6px;
+    content: "";
+    display: inline-block;
+    margin: 0 var(--margin-right) calc(var(--adjust-position) * var(--size)) 0;
+    top: 0;
+
+    line-height: var(--total-line-height);
+    width: var(--size);
+    height: var(--size);
+
+    text-align: center;
+    font-weight: var(--font-bold);
+    color: var(--text-color);
+
+    background: var(--icon-default-colour) url("/static/icons/download_icon.svg") no-repeat center/var(--size);
+
+    border-radius: 50%;
+
+}
+
+.download-link-l{
+    --adjust-position: -0.2;
+    --margin-right: 14px;
+    --font-size: var(--text-xl);
+}
+
+/* CHECKBOX / CONSENT-BOX */
+
+.checkbox {
+    padding: 0;
+    margin-bottom: var(--spacing-02);
+    margin-top: var(--spacing-02);
+    flex-wrap: inherit;
+}
+
+.consent-box {
+    background-color: var(--bg-highlight-colour);
+    padding: var(--spacing-04);
+}
+
+.checkbox input {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+}
+
+.checkbox input:focus + label {
+    box-shadow: 0 0 0 3px var(--focus-colour);
+    background-color: var(--focus-colour);
+}
+
+.checkbox input:checked + label {
+    background-color: var(--link-color);
+    background-image: url("../images/checked.svg");
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: center;
+}
+
+.checkmark {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: white;
+    position: absolute;
+    border: 2px solid var(--text-color);
+}
+
+/* SECONDARY */
+.switch-yes, .switch-no {
+    padding: 1rem 1.45rem;
+    color: var(--text-color) !important;
+    background: var(--bg-white) !important;
+    font-size: var(--text-s);
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid var(--border-colour) !important;
+}
+
+.switch-yes.focus, .switch-no.focus {
+    color: var(--focus-text-colour) !important;
+    background: var(--focus-colour) !important;
+
+    box-shadow: none;
+    border: 1px solid var(--text-color) !important;
+    border-bottom: 4px solid var(--text-color) !important;
+}
+
+.switch-yes.active, .switch-no.active {
+    color: var(--inverse-text-color) !important;
+    background: var(--link-color) !important;
+    border-radius: 0;
+    border: 1px solid var(--link-color) !important;
+}
+
+.switch-yes.active.focus, .switch-no.active.focus {
+    box-shadow: 0 0 0 3px var(--focus-colour) !important;
+}
+
+.switch-yes.active:hover, .switch-no.active:hover {
+    background: var(--link-hover-color) !important;
+    border: 1px solid var(--link-hover-color) !important;
+}
+
+
+/* RADIO BUTTONS */
+input[type="radio"] {
+    opacity: 0;
+}
+
+input[type="radio"] + *::before {
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    background: white;
+}
+
+input[type="radio"]:checked + *::before {
+    background: radial-gradient(var(--link-active-color) 40%, var(--bg-white) 40%, transparent 0%, transparent);
+    border-color: var(--link-active-color);
+}
+
+input[type="radio"]:checked + *:hover::before{
+    background: radial-gradient(var(--hover-border-colour) 40%, var(--bg-white) 40%, transparent 0%, transparent);
+    border-color: var(--hover-border-colour);
+}
+
+input[type="radio"]:checked + *:focus::before{
+    background: var(--focus-color);
+    border-color: black;
+    box-shadow: 0 0 0 2px var(--focus-color);
+}
+
+.field-label{
+    margin-bottom: 0 !important;
+    font-size: var(--text-l);
+}
+
+/* ALERTS */
+.alert-success{
+    color: var(--inverse-text-color);
+    background-color: var(--success-colour);
+    border: 0;
+    border-radius: 0;
+}
+
+.alert-danger{
+    color: var(--inverse-text-color);
+        background-color: var(--error-colour);
+        border: 0;
+    border-radius: 0;
+}

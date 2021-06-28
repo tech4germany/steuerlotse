@@ -1,0 +1,12 @@
+{% extends 'basis/base_step_display.html' %}
+
+{% block display_content %}
+    <div class="alert alert-danger" role="alert">
+        <h1 class="alert-heading">{{ _('form.lotse.filing.failure.alert.title') }}</h1>
+        {% for error in elster_data['validation_problems'] %}
+            <ul>
+                <li>{{ error }}</li>
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock %}

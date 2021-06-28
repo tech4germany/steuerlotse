@@ -1,0 +1,13 @@
+{% extends 'basis/display_success.html' %}
+{% import "macros.html" as macros %}
+{% import "components.html" as components %}
+
+{% block display_success_content %}
+    <div class="row m-0 pt-4">
+        <h4>{{ _('form.eligibility.success-next-step') }}</h4>
+        <p>{{ _('form.eligibility.success-next-step-text') }}</p>
+    </div>
+    <div class="row m-0 pt-4">
+        {{ components.primaryButton( text=_('form.eligibility.use-register-button'), url=url_for('unlock_code_request')) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'basis/base_step_form.html' %}
+{% import "macros.html" as macros %}
+
+{% block form_content %}
+    {% for field in form %}
+        {{ macros.render_field(field, 12) }}
+    {% endfor %}
+{% endblock %}

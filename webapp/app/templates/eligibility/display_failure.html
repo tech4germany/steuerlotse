@@ -1,0 +1,54 @@
+{% extends 'basis/display_failure.html' %}
+{% import "macros.html" as macros %}
+{% import "components.html" as components %}
+
+{% block errors %}
+
+    <div class="row m-0 pt-4 mt-4 simple-card">
+        <p class="font-weight-bolder">{{ _('form.eligibility.intro-errors') }}</p>
+        {% if errors is defined %}
+            <ul>
+                {%- for error in errors[:-1] %}
+                    <li>
+                        {{ error }}
+                    </li>
+                {% endfor -%}
+                {%- for error in errors[-1:] %}
+                    <li>
+                        {{ error }}
+                    </li>
+                {% endfor -%}
+            </ul>
+        {% endif %}
+
+    </div>
+{% endblock %}
+
+{% block display_failure_content %}
+
+
+    <div class="row m-0 pt-4">
+        <h4>{{ _('form.eligibility.use-elster') }}</h4>
+        <p>{{ _('form.eligibility.use-elster-text') }}</p>
+        <ol>
+            <li>{{ _('form.eligibility.use-elster.list-item-1') }}</li>
+            <li>{{ _('form.eligibility.use-elster.list-item-2') }}</li>
+        </ol>
+    </div>
+
+
+    <div class="row m-0 pt-4">
+        {{ components.primaryButtonWithIcon(
+            text=_('form.eligibility.use-elster-button'),
+            url="https://www.elster.de/eportal/start",
+            icon="↗",
+            target="_blank"
+        )}}
+    </div>
+
+    <div class="row m-0 pt-4">
+        <h4>{{ _('form.eligibility.impact-development') }}</h4>
+        <p>{{ _('form.eligibility.impact-development-text') }}</p>
+
+    </div>
+{% endblock %}

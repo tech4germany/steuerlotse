@@ -1,0 +1,12 @@
+{
+  "name": "stl-acceptance-tests",
+  "description": "Steuerlotse acceptance tests",
+  "private": true,
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "dependencies": {
+    "cypress": "^7.0.1"
+  }
+}

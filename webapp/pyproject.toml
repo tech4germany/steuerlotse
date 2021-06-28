@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+addopts = "--durations=10 --verbose"
+testpaths = [
+    "tests",
+]

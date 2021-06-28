@@ -1,0 +1,50 @@
+name: Acceptance tests
+
+on: workflow_dispatch
+
+jobs:
+  acceptance-test-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+
+    - name: Cache node modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-acceptance-test-node-modules-${{ hashFiles('acceptance_tests/package-lock.json') }}
+
+    - name: Install dependencies
+      run: cd acceptance_tests && npm install
+      shell: bash
+
+    - name: Run acceptance tests
+      env:
+        CYPRESS_STAGING_AUTH_PASSWORD: ${{ secrets.CYPRESS_STAGING_AUTH_PASSWORD }}
+        NO_COLOR: 1
+      run: cd acceptance_tests && npm run cy:run | tee ../acceptance-test-report.log
+      shell: bash
+
+    - name: Archive test logs
+      uses: actions/upload-artifact@v1
+      with:
+        name: acceptance-test-report.log
+        path: acceptance-test-report.log
+
+    - name: Archive test screenshots
+      uses: actions/upload-artifact@v1
+      with:
+        name: screenshots
+        path: acceptance_tests/cypress/screenshots
+      if: ${{ failure() }}
+
+    - name: Archive test videos
+      uses: actions/upload-artifact@v1
+      with:
+        name: videos
+        path: acceptance_tests/cypress/videos
+      if: ${{ failure() }}

@@ -1,0 +1,55 @@
+{% extends 'basis/form_full_width.html' %}
+{% import "macros.html" as macros %}
+{% import "components.html" as components %}
+
+{% block form_content %}
+
+    <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-allgemein') }}</h3>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_first_name) }}
+    </div>
+
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_last_name) }}
+    </div>
+
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_dob) }}
+    </div>
+
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_idnr) }}
+    </div>
+
+    <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-addresse') }}</h3>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_street) }}
+        {{ macros.render_field(form.person_a_street_number, 2, field_div_classes="px-2") }}
+        {{ macros.render_field(form.person_a_street_number_ext, 4) }}
+    </div>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_address_ext) }}
+    </div>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_plz) }}
+        {{ macros.render_field(form.person_a_town, 6, field_div_classes="pl-2") }}
+    </div>
+
+    <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-religion') }}</h3>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_religion) }}
+    </div>
+
+    <h3 class="mt-5 my-3">{{ _('form.lotse.person-header-beh') }}</h3>
+    <p class="mb-4">{{ _('form.lotse.person-header-beh-intro') }}</p>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_beh_grad, 4) }}
+    </div>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_blind, 4, d_block=True, hide_label=True) }}
+    </div>
+    <div class="form-row-center">
+        {{ macros.render_field(form.person_a_gehbeh, 4, d_block=True, hide_label=True) }}
+    </div>
+
+{% endblock %}
