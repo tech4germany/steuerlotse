@@ -105,9 +105,25 @@ context('Acceptance tests', () => {
         cy.visit('/')
     });
 
+    it('Check that registration and revocation are clickable', () => {
+        cy.get('a').contains(/^Registrieren$/)
+            .should('have.class', 'nav-link')
+            .should('not.have.class', 'inactive')
+        cy.get('a').contains(/^Freischaltcode Stornierung$/)
+            .should('not.have.class', 'inactive')
+    })
+
     context('When I am logged in', () => {
         beforeEach(() => {
             login()
+        })
+
+        it('Check that registration and revocation are disabled', () => {
+            cy.get('span').contains(/^Registrieren$/)
+                .should('have.class', 'nav-link')
+                .should('have.class', 'inactive')
+            cy.get('span').contains(/^Freischaltcode Stornierung$/)
+                .should('have.class', 'inactive')
         })
 
         it('Enter different familienstands', () => {
