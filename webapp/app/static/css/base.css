@@ -139,6 +139,7 @@ img.invalid-feedback{
 }
 
 .error-found-line{
+    margin-left: var(--spacing-02);
     padding-left: var(--spacing-04) !important;
     border-left: 2px solid var(--error-colour);
 }
@@ -689,7 +690,14 @@ footer a{
 
 .form-row-center {
     display: flex;
-    align-items: center
+    align-items: baseline;
+    /* This moved the border further outside to allow for the children to fill that space with margin,
+    allowing the children to have space between them. See the bootstrap row/column technique. */
+    margin: 0 calc(-1 * var(--spacing-02));
+}
+
+.form-row-center > * {
+    margin: 0 var(--spacing-02);
 }
 
 .section-intro p {
