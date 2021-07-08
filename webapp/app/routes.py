@@ -11,7 +11,8 @@ from werkzeug.exceptions import InternalServerError
 from app import app, nav, login_manager, limiter
 from app.data_access.db_model.user import User
 from app.elster_client.elster_errors import GeneralEricaError
-from app.forms.flows.eligibility_flow import EligibilityMultiStepFlow, IncorrectEligibilityData
+from app.forms.flows.eligibility_step_chooser import EligibilityStepChooser
+from app.forms.steps.eligibility_steps import IncorrectEligibilityData
 from app.forms.flows.logout_flow import LogoutMultiStepFlow
 from app.forms.flows.lotse_flow import LotseMultiStepFlow
 from app.forms.flows.unlock_code_activation_flow import UnlockCodeActivationMultiStepFlow
@@ -102,8 +103,7 @@ def add_http_header(response):
 
 @app.route('/eligibility/step/<step>', methods=['GET', 'POST'])
 def eligibility(step):
-    flow = EligibilityMultiStepFlow(endpoint='eligibility')
-    return flow.handle(step_name=step)
+    return EligibilityStepChooser(endpoint='eligibility').get_correct_step(step_name=step).handle()
 
 
 @app.route('/lotse/step/<step>', methods=['GET', 'POST'])

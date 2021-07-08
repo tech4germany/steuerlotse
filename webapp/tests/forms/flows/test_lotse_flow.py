@@ -181,7 +181,7 @@ class TestLotseInit(unittest.TestCase):
         ]
 
     def test_if_request_has_params_then_set_attributes_correctly(self):
-        # Only current session and link_overview are set from request
+        # Only link_overview is set from request
         with app.app_context() and app.test_request_context() as req:
             req.request.args = {'link_overview': self.set_link_overview}
 
@@ -193,7 +193,6 @@ class TestLotseInit(unittest.TestCase):
             self.assertEqual(StepSummary, flow.overview_step)
 
     def test_if_request_has_no_params_then_set_correct_defaults(self):
-        # Only current session and link_overview are set from request
         with app.app_context() and app.test_request_context():
             flow = LotseMultiStepFlow(endpoint=self.endpoint_correct)
 
@@ -615,42 +614,35 @@ class TestLotseHandleSpecificsForStep(unittest.TestCase):
             self.valid_idnr = '02293417683'
 
             prev_step, self.middle_step, next_step = self.flow._generate_steps(MockMiddleStep.name)
-            self.render_info_middle_step = RenderInfo(flow_title=self.flow.title, step_title=self.middle_step.title,
+            self.render_info_middle_step = RenderInfo(step_title=self.middle_step.title,
                                                       step_intro=self.middle_step.intro, form=None,
                                                       prev_url=self.flow.url_for_step(prev_step.name),
                                                       next_url=self.flow.url_for_step(next_step.name),
                                                       submit_url=self.flow.url_for_step(self.middle_step.name),
-                                                      overview_url="Overview URL",
-                                                      flow_nav=self.flow._get_flow_nav(self.middle_step))
+                                                      overview_url="Overview URL")
 
             prev_step, self.form_step, next_step = self.flow._generate_steps(MockFormStep.name)
-            self.render_info_form_step = RenderInfo(flow_title=self.flow.title, step_title=self.form_step.title,
-                                                    step_intro=self.form_step.intro, form=None,
-                                                    prev_url=self.flow.url_for_step(prev_step.name),
+            self.render_info_form_step = RenderInfo(step_title=self.form_step.title, step_intro=self.form_step.intro,
+                                                    form=None, prev_url=self.flow.url_for_step(prev_step.name),
                                                     next_url=self.flow.url_for_step(next_step.name),
                                                     submit_url=self.flow.url_for_step(self.form_step.name),
-                                                    overview_url="Overview URL",
-                                                    flow_nav=self.flow._get_flow_nav(self.form_step))
+                                                    overview_url="Overview URL")
 
             prev_step, self.confirmation_step, next_step = self.flow._generate_steps(MockConfirmationStep.name)
-            self.render_info_confirmation_step = RenderInfo(flow_title=self.flow.title,
-                                                            step_title=self.confirmation_step.title,
+            self.render_info_confirmation_step = RenderInfo(step_title=self.confirmation_step.title,
                                                             step_intro=self.confirmation_step.intro, form=None,
                                                             prev_url=None,
                                                             next_url=self.flow.url_for_step(next_step.name),
                                                             submit_url=self.flow.url_for_step(
                                                                 self.confirmation_step.name),
-                                                            overview_url="Overview URL",
-                                                            flow_nav=self.flow._get_flow_nav(self.confirmation_step))
+                                                            overview_url="Overview URL")
 
             prev_step, self.filing_step, next_step = self.flow._generate_steps(MockFilingStep.name)
-            self.render_info_filing_step = RenderInfo(flow_title=self.flow.title, step_title=self.filing_step.title,
-                                                      step_intro=self.filing_step.intro, form=None,
-                                                      prev_url=None,
+            self.render_info_filing_step = RenderInfo(step_title=self.filing_step.title,
+                                                      step_intro=self.filing_step.intro, form=None, prev_url=None,
                                                       next_url=self.flow.url_for_step(next_step.name),
                                                       submit_url=self.flow.url_for_step(self.filing_step.name),
-                                                      overview_url=None,  # do not display
-                                                      flow_nav=self.flow._get_flow_nav(self.filing_step))
+                                                      overview_url=None)
             self.ack_elster_data = {'was_successful': True,
                                     'pdf': 'PDF CONTENT',
                                     'eric_response': 'Could we get the bill, please?',
@@ -658,79 +650,66 @@ class TestLotseHandleSpecificsForStep(unittest.TestCase):
                                     'transfer_ticket': 'Passierschein A38'}
 
             prev_step, self.summary_step, next_step = self.flow._generate_steps(MockSummaryStep.name)
-            self.render_info_summary_step = RenderInfo(flow_title=self.flow.title, step_title=self.filing_step.title,
+            self.render_info_summary_step = RenderInfo(step_title=self.filing_step.title,
                                                        step_intro=self.filing_step.intro, form=None,
                                                        prev_url=self.flow.url_for_step(prev_step.name),
                                                        next_url=self.flow.url_for_step(self.filing_step.name),
                                                        submit_url=self.flow.url_for_step(self.filing_step.name),
-                                                       overview_url=None,
-                                                       flow_nav=self.flow._get_flow_nav(self.filing_step))
+                                                       overview_url=None)
 
             prev_step, self.declaration_incomes_step, next_step = self.flow._generate_steps(
                 MockDeclarationIncomesStep.name)
-            self.render_info_declaration_incomes_step = RenderInfo(flow_title=self.flow.title,
-                                                                   step_title=self.declaration_incomes_step.title,
+            self.render_info_declaration_incomes_step = RenderInfo(step_title=self.declaration_incomes_step.title,
                                                                    step_intro=self.declaration_incomes_step.intro,
                                                                    form=None,
                                                                    prev_url=self.flow.url_for_step(prev_step.name),
                                                                    next_url=self.flow.url_for_step(next_step.name),
                                                                    submit_url=self.flow.url_for_step(
                                                                        self.declaration_incomes_step.name),
-                                                                   overview_url="Overview URL",
-                                                                   flow_nav=self.flow._get_flow_nav(
-                                                                       self.declaration_incomes_step))
+                                                                   overview_url="Overview URL")
 
             prev_step, self.declaration_edaten_step, next_step = self.flow._generate_steps(
                 MockDeclarationEdatenStep.name)
-            self.render_info_declaration_edaten_step = RenderInfo(flow_title=self.flow.title,
-                                                                  step_title=self.declaration_edaten_step.title,
+            self.render_info_declaration_edaten_step = RenderInfo(step_title=self.declaration_edaten_step.title,
                                                                   step_intro=self.declaration_edaten_step.intro,
                                                                   form=None,
                                                                   prev_url=self.flow.url_for_step(prev_step.name),
                                                                   next_url=self.flow.url_for_step(next_step.name),
                                                                   submit_url=self.flow.url_for_step(
                                                                       self.declaration_edaten_step.name),
-                                                                  overview_url="Overview URL",
-                                                                  flow_nav=self.flow._get_flow_nav(
-                                                                      self.declaration_edaten_step))
+                                                                  overview_url="Overview URL")
 
             prev_step, self.familienstand_step, next_step = self.flow._generate_steps(MockFamilienstandStep.name)
-            self.render_info_familienstand_step = RenderInfo(flow_title=self.flow.title,
-                                                             step_title=self.familienstand_step.title,
+            self.render_info_familienstand_step = RenderInfo(step_title=self.familienstand_step.title,
                                                              step_intro=self.familienstand_step.intro, form=None,
                                                              prev_url=self.flow.url_for_step(prev_step.name),
                                                              next_url=self.flow.url_for_step(next_step.name),
                                                              submit_url=self.flow.url_for_step(
                                                                  self.familienstand_step.name),
-                                                             overview_url="Overview URL",
-                                                             flow_nav=self.flow._get_flow_nav(self.familienstand_step))
+                                                             overview_url="Overview URL")
 
             prev_step, self.personA_step, next_step = self.flow._generate_steps(MockPersonAStep.name)
-            self.render_info_personA_step = RenderInfo(flow_title=self.flow.title, step_title=self.personA_step.title,
+            self.render_info_personA_step = RenderInfo(step_title=self.personA_step.title,
                                                        step_intro=self.personA_step.intro, form=None,
                                                        prev_url=self.flow.url_for_step(prev_step.name),
                                                        next_url=self.flow.url_for_step(next_step.name),
                                                        submit_url=self.flow.url_for_step(self.personA_step.name),
-                                                       overview_url="Overview URL",
-                                                       flow_nav=self.flow._get_flow_nav(self.personA_step))
+                                                       overview_url="Overview URL")
 
             prev_step, self.personB_step, next_step = self.flow._generate_steps(MockPersonBStep.name)
-            self.render_info_personB_step = RenderInfo(flow_title=self.flow.title, step_title=self.personB_step.title,
+            self.render_info_personB_step = RenderInfo(step_title=self.personB_step.title,
                                                        step_intro=self.personB_step.intro, form=None,
                                                        prev_url=self.flow.url_for_step(prev_step.name),
                                                        next_url=self.flow.url_for_step(next_step.name),
                                                        submit_url=self.flow.url_for_step(self.personB_step.name),
-                                                       overview_url="Overview URL",
-                                                       flow_nav=self.flow._get_flow_nav(self.personB_step))
+                                                       overview_url="Overview URL")
 
             prev_step, self.iban_step, next_step = self.flow._generate_steps(MockIbanStep.name)
-            self.render_info_iban_step = RenderInfo(flow_title=self.flow.title, step_title=self.iban_step.title,
-                                                    step_intro=self.iban_step.intro, form=None,
-                                                    prev_url=self.flow.url_for_step(prev_step.name),
+            self.render_info_iban_step = RenderInfo(step_title=self.iban_step.title, step_intro=self.iban_step.intro,
+                                                    form=None, prev_url=self.flow.url_for_step(prev_step.name),
                                                     next_url=self.flow.url_for_step(next_step.name),
                                                     submit_url=self.flow.url_for_step(self.iban_step.name),
-                                                    overview_url="Overview URL",
-                                                    flow_nav=self.flow._get_flow_nav(self.iban_step))
+                                                    overview_url="Overview URL")
 
             self.data_married = {'familienstand': 'married',
                                  'familienstand_married_lived_separated': 'no',
@@ -748,15 +727,11 @@ class TestLotseHandleSpecificsForStep(unittest.TestCase):
             self.data_st_mind_yes = {'steuerminderung': 'yes'}
             self.data_st_mind_no = {'steuerminderung': 'no'}
             prev_step, self.st_mind_yesno_step, next_step = self.flow._generate_steps(MockStrMindYNStep.name)
-            self.render_info_st_mind_yesno_step = RenderInfo(flow_title=self.flow.title,
-                                                             step_title=self.st_mind_yesno_step.title,
+            self.render_info_st_mind_yesno_step = RenderInfo(step_title=self.st_mind_yesno_step.title,
                                                              step_intro=self.st_mind_yesno_step.intro, form=None,
                                                              prev_url=self.flow.url_for_step(prev_step.name),
-                                                             next_url=None,
-                                                             submit_url=self.flow.url_for_step(
-                                                                 self.st_mind_yesno_step.name),
-                                                             overview_url="Overview URL",
-                                                             flow_nav=self.flow._get_flow_nav(self.st_mind_yesno_step))
+                                                             next_url=None, submit_url=self.flow.url_for_step(
+                    self.st_mind_yesno_step.name), overview_url="Overview URL")
             self.st_mind_yesno_url = '/' + self.endpoint_correct + '/step/' + StepSteuerminderungYesNo.name + \
                                      '?link_overview=' + str(self.flow.has_link_overview)
             self.st_mind_yes_url = self.render_info_st_mind_yesno_step.next_url
@@ -767,29 +742,25 @@ class TestLotseHandleSpecificsForStep(unittest.TestCase):
                                            'stmind_haushaltsnahe_entries': 'Dach'}
             self.data_haushaltsnahe_no = {}
             prev_step, self.haushaltsnahe_step, next_step = self.flow._generate_steps(MockHaushaltsnaheStep.name)
-            self.render_info_haushaltsnahe_step = RenderInfo(flow_title=self.flow.title,
-                                                             step_title=self.haushaltsnahe_step.title,
+            self.render_info_haushaltsnahe_step = RenderInfo(step_title=self.haushaltsnahe_step.title,
                                                              step_intro=self.haushaltsnahe_step.intro, form=None,
                                                              prev_url=self.flow.url_for_step(prev_step.name),
                                                              next_url=self.flow.url_for_step(next_step.name),
                                                              submit_url=self.flow.url_for_step(
                                                                  self.haushaltsnahe_step.name),
-                                                             overview_url="Overview URL",
-                                                             flow_nav=self.flow._get_flow_nav(self.haushaltsnahe_step))
+                                                             overview_url="Overview URL")
 
             self.data_handwerker_yes = {'stmind_handwerker_summe': Decimal(1.0),
                                         'stmind_handwerker_entries': 'Badezimmer',
                                         'stmind_handwerker_lohn_etc_summe': Decimal(0.0)}
             self.data_handwerker_no = {}
             prev_step, self.handwerker_step, next_step = self.flow._generate_steps(MockHandwerkerStep.name)
-            self.render_info_handwerker_step = RenderInfo(flow_title=self.flow.title,
-                                                          step_title=self.handwerker_step.title,
+            self.render_info_handwerker_step = RenderInfo(step_title=self.handwerker_step.title,
                                                           step_intro=self.handwerker_step.intro, form=None,
                                                           prev_url=self.flow.url_for_step(prev_step.name),
                                                           next_url=self.flow.url_for_step(next_step.name),
                                                           submit_url=self.flow.url_for_step(self.handwerker_step.name),
-                                                          overview_url="Overview URL",
-                                                          flow_nav=self.flow._get_flow_nav(self.handwerker_step))
+                                                          overview_url="Overview URL")
             self.handwerker_url = '/' + self.endpoint_correct + '/step/' + StepHandwerker.name + \
                                   '?link_overview=' + str(self.flow.has_link_overview)
             self.handwerker_yes_url = self.render_info_handwerker_step.next_url
@@ -800,16 +771,12 @@ class TestLotseHandleSpecificsForStep(unittest.TestCase):
                                     '?link_overview=' + str(self.flow.has_link_overview)
 
             prev_step, self.religion_step, next_step = self.flow._generate_steps(MockReligionStep.name)
-            self.render_info_religion_step = RenderInfo(flow_title=self.flow.title,
-                                                        step_title=self.religion_step.title,
+            self.render_info_religion_step = RenderInfo(step_title=self.religion_step.title,
                                                         step_intro=self.religion_step.intro, form=None,
                                                         prev_url=self.flow.url_for_step(prev_step.name),
                                                         next_url=self.flow.url_for_step(next_step.name),
                                                         submit_url=self.flow.url_for_step(
-                                                            self.religion_step.name),
-                                                        overview_url="Overview URL",
-                                                        flow_nav=self.flow._get_flow_nav(
-                                                            self.religion_step))
+                                                            self.religion_step.name), overview_url="Overview URL")
             self.religion_url = '/' + self.endpoint_correct + '/step/' + StepReligion.name + \
                                 '?link_overview=' + str(self.flow.has_link_overview)
 

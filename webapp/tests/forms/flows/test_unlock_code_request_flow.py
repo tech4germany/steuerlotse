@@ -33,7 +33,7 @@ class UnlockCodeRequestInit(unittest.TestCase):
         ]
 
     def test_if_request_has_params_then_set_attributes_correctly(self):
-        # Only current session and link_overview are set from request
+        # Only current link_overview is set from request
         with app.app_context() and app.test_request_context() as req:
             req.request.args = {'link_overview': self.set_link_overview}
 
@@ -45,7 +45,6 @@ class UnlockCodeRequestInit(unittest.TestCase):
             self.assertIsNone(flow.overview_step)
 
     def test_if_request_has_no_params_then_set_correct_defaults(self):
-        # Only current session and link_overview are set from request
         with app.app_context() and app.test_request_context():
             flow = UnlockCodeRequestMultiStepFlow(endpoint=self.endpoint_correct)
 
@@ -157,23 +156,21 @@ class TestUnlockCodeRequestHandleSpecificsForStep(unittest.TestCase):
                                      'registration_confirm_e_data': True}
 
             prev_step, self.success_step, next_step = self.flow._generate_steps(MockUnlockCodeRequestSuccessStep.name)
-            self.render_info_success_step = RenderInfo(flow_title=self.flow.title, step_title=self.success_step.title,
+            self.render_info_success_step = RenderInfo(step_title=self.success_step.title,
                                                        step_intro=self.success_step.intro, form=None,
                                                        prev_url=self.flow.url_for_step(prev_step.name),
-                                                       next_url=self.flow.url_for_step(next_step.name) if next_step else None,
+                                                       next_url=self.flow.url_for_step(
+                                                           next_step.name) if next_step else None,
                                                        submit_url=self.flow.url_for_step(self.success_step),
-                                                       overview_url="Overview URL",
-                                                       flow_nav=self.flow._get_flow_nav(self.success_step))
+                                                       overview_url="Overview URL")
 
             prev_step, self.input_step, next_step = self.flow._generate_steps(MockUnlockCodeRequestInputStep.name)
-            self.render_info_input_step = RenderInfo(flow_title=self.flow.title, step_title=self.input_step.title,
-                                                     step_intro=self.input_step.intro, form=None,
-                                                     prev_url=self.flow.url_for_step(prev_step.name),
+            self.render_info_input_step = RenderInfo(step_title=self.input_step.title, step_intro=self.input_step.intro,
+                                                     form=None, prev_url=self.flow.url_for_step(prev_step.name),
                                                      next_url=self.flow.url_for_step(
-                                                           next_step.name) if next_step else None,
+                                                         next_step.name) if next_step else None,
                                                      submit_url=self.flow.url_for_step(self.input_step),
-                                                     overview_url="Overview URL",
-                                                     flow_nav=self.flow._get_flow_nav(self.input_step))
+                                                     overview_url="Overview URL")
 
     def test_if_success_step_then_remove_next_url(self):
         with app.app_context() and app.test_request_context():
