@@ -22,7 +22,7 @@ class SteuerlotseStringField(StringField):
 
 class MultipleInputFieldWidget(TextInput):
     """A divided input field."""
-    separator = ''
+    sub_field_separator = ''
     input_field_lengths = []
     input_field_labels = []
 
@@ -36,8 +36,9 @@ class MultipleInputFieldWidget(TextInput):
             kwargs['maxlength'] = input_field_length
 
             sub_field_id = f'{field.id}_{idx + 1}'
-            kwargs['value'] = field._value()[idx] if len(field._value()) >= idx + 1 else ''
             kwargs['id'] = sub_field_id
+            kwargs['value'] = field._value()[idx] if len(field._value()) >= idx + 1 else ''
+
             if len(self.input_field_labels) > idx:
                 joined_input_fields += Markup(
                     f'<div>'
@@ -46,15 +47,15 @@ class MultipleInputFieldWidget(TextInput):
                 joined_input_fields += Markup('</div>')
             else:
                 joined_input_fields += (super(MultipleInputFieldWidget, self).__call__(field, **kwargs))
-            if self.separator and idx < len(self.input_field_lengths) - 1:
-                joined_input_fields += Markup(self.separator)
+            if self.sub_field_separator and idx < len(self.input_field_lengths) - 1:
+                joined_input_fields += Markup(self.sub_field_separator)
 
         return Markup(joined_input_fields)
 
 
 class UnlockCodeWidget(MultipleInputFieldWidget):
     """A divided input field with three text input fields, limited to four chars."""
-    separator = '-'
+    sub_field_separator = '-'
     input_field_lengths = [4, 4, 4]
 
 
@@ -99,6 +100,61 @@ class SteuerlotseDateField(DateField):
             return [self.data.day, self.data.month, self.data.year]
         else:
             return self.raw_data if self.raw_data else []
+
+
+class IdNrWidget(MultipleInputFieldWidget):
+    """A divided input field with four text input fields, limited to two to three chars."""
+    sub_field_separator = ''
+    input_field_lengths = [2, 3, 3, 3]
+
+
+class IdNrField(SteuerlotseStringField):
+    """
+        Field to store the IdNr in four separate input fields.
+
+        We get the formdata as a list of four strings (e.g. ['04', '452', '397', '687'])
+        but want to handle it in the rest of the program as one string (e.g. '04452397687').
+        At the same time, in case of a validation error (e.g. for ['04', '452', '3', '687']) we want to keep the order
+        of inputs to not confuse the user. Thus, we only concatenate the strings to one string on succeeded validation
+        in post_validate().
+        Once the input validates, we can be sure to have the complete, valid string in our data and
+        can split it into the expected chunks as seen in _value().
+    """
+    def __init__(self, label='', validators=None, **kwargs):
+        super(IdNrField, self).__init__(label, validators, **kwargs)
+        self.widget = IdNrWidget()
+
+    def process_formdata(self, valuelist):
+        # The formdata (from the request) is written to self.data as is (as a list of inputted strings)
+        if valuelist:
+            self.data = valuelist
+        elif self.data is None:
+            self.data = []
+
+    def _value(self):
+        """ Returns the representation of data as needed by the widget. In this case: a list of strings. """
+        # In case the validation was not successful, we already have the data as a list of strings
+        # (as it is not concatenated in post_validate()).
+        if isinstance(self.data, list):
+            return self.data
+
+        # Once the validation has gone through, post_validate() stores the data as string.
+        # As we know that it is correct, we can just separate it in chunks here.
+        split_data = []
+        chunk_sizes = self.widget.input_field_lengths
+        start_idx = 0
+        for chunk_size in chunk_sizes:
+            end_index = start_idx + chunk_size
+            if self.data:
+                split_data.append(self.data[start_idx: end_index])
+            start_idx = end_index
+        return split_data
+
+    def post_validate(self, form, validation_stopped):
+        # Once the validation has gone through, we know that the idnr is correct.
+        # We can therefore store it as a string and just separate it into chunks in self._value().
+        if not validation_stopped and len(self.errors) == 0:
+            self.data = ''.join(self.data)
 
 
 class EuroFieldWidget(TextInput):

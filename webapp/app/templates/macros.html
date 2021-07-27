@@ -54,7 +54,7 @@
         {{ _render_field(field, 12, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=True, hide_errors=hide_errors, first_field=first_field) }}
     {% elif field.type == 'BooleanField' %}
         {{ _render_field(field, cols, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=True, hide_errors=hide_errors, first_field=first_field) }}
-    {% elif field.type == 'RadioField' or field.type == 'UnlockCodeField' or field.type == 'SteuerlotseDateField' %}
+    {% elif field.type == 'RadioField' or field.type == 'UnlockCodeField' or field.type == 'IdNrField' or field.type == 'SteuerlotseDateField' %}
         {{ _render_field(field, cols, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=True, hide_errors=True, first_field=first_field) }}
     {% else %}
         {{ _render_field(field, cols, class=class, field_div_classes=field_div_classes, d_block=d_block, as_card=as_card, hide_label=hide_label, hide_errors=hide_errors, first_field=first_field) }}
@@ -67,7 +67,11 @@
     {% endif %}
     <div class="col-md-{{ cols }} {% if as_card %} simple-card {% else %} px-0 {% endif %} {{ field_div_classes }}">
         {% if not hide_label and not (field.render_kw and 'hide_label' in field.render_kw and field.render_kw["hide_label"]) %}
-            {{ field_label(field) }}
+            {% if as_card %}
+                {{ field_label(field) }}
+            {% else %}
+                {{ field_label(field, class="text-input-field-label") }}
+            {% endif %}
         {% endif %}
 
         {% set classes = "form-control " + class %}
@@ -83,7 +87,7 @@
                 {{ components.checkbox(field, classes=classes, first_field=first_field) }}
             {% elif field.type == 'RadioField' %}
                 {{ components.radio_field(field, first_field=first_field) }}
-            {% elif field.type == 'UnlockCodeField' or field.type == 'SteuerlotseDateField' %}
+            {% elif field.type == 'UnlockCodeField' or field.type == 'IdNrField' or field.type == 'SteuerlotseDateField' %}
                 {{ components.separated_field(field, first_field=first_field) }}
             {% else %}
                 {% if first_field or field.errors %}
@@ -100,7 +104,7 @@
 {# ------------------------ #}
 
 {% macro form_nav_buttons(render_info, explanatory_button_text=None) -%}
-    <div class="form-row">
+    <div class="form-row nav-button-row">
         {% if render_info.overview_url %}
             <button type="submit"
                     class="btn btn-outline-primary mr-2"
