@@ -134,27 +134,39 @@ msgstr ""
 "Bitte prüfen Sie Ihre Angaben. Es sind nicht alle notwendigen "
 "Formularfelder ausgefüllt."
 
-#: app/forms/fields.py:96
-msgid "fields.euro_field.example_input.text"
-msgstr "z.B. 343,20"
+#: app/forms/fields.py:78
+msgid "date-field.day"
+msgstr "Tag"
 
-#: app/forms/fields.py:136 app/forms/fields.py:139
+#: app/forms/fields.py:78
+msgid "date-field.month"
+msgstr "Monat"
+
+#: app/forms/fields.py:78
+msgid "date-field.year"
+msgstr "Jahr"
+
+#: app/forms/fields.py:89 app/forms/fields.py:92
 msgid "fields.date_field.example_input.text"
 msgstr "z.B. 31.06.1951"
 
-#: app/forms/fields.py:147
+#: app/forms/fields.py:133
+msgid "fields.euro_field.example_input.text"
+msgstr "z.B. 343,20"
+
+#: app/forms/fields.py:164
 msgid "confirmation_field_must_be_set"
 msgstr "Sie müssen dieses Feld auswählen, um weiter zu machen."
 
-#: app/forms/fields.py:166
+#: app/forms/fields.py:183
 msgid "jquery_entries.add"
 msgstr "Weiteren Eintrag hinzufügen"
 
-#: app/forms/fields.py:229
+#: app/forms/fields.py:246
 msgid "switch.yes"
 msgstr "Ja"
 
-#: app/forms/fields.py:229
+#: app/forms/fields.py:246
 msgid "switch.no"
 msgstr "Nein"
 
