@@ -35,25 +35,32 @@
     {% endif %}
 {%- endmacro %}
 
-{% macro checkbox(field, classes="", first_field=False) %}
+{% macro render_detail(field) %}
+    {%- set detail = field.render_kw['detail'] -%}
+    {%- if detail %}
+        {{ details(detail.title, [detail.text], details_id=field.id) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro checkbox(field, classes="", position_details_after=False, first_field=False) %}
     <div class="form-row checkbox">
         {{ _field(field, first_field=first_field) }}
         <label class="checkmark" for="{{ field.name }}"></label>
-        {{ field_label(field, class="col-sm-10 col-form-label ml-3 pt-0") }}
+        {{ field_label(field, class="col-sm-10 col-form-label ml-3 pt-0", position_details_after=position_details_after) }}
     </div>
 {% endmacro %}
 
-{% macro consent_box(field, classes="", first_field=False) %}
+{% macro consent_box(field, classes="", position_details_after=False, first_field=False) %}
     <div class="form-row checkbox consent-box col-lg-10">
         {{ _field(field, first_field=first_field) }}
         <label class="checkmark" for="{{ field.name }}"></label>
-        {{ field_label(field, class="col-sm-10 col-form-label ml-3 pt-0") }}
+        {{ field_label(field, class="col-sm-10 col-form-label ml-3 pt-0", position_details_after=position_details_after) }}
     </div>
 {% endmacro %}
 
-{% macro radio_field(field, first_field=False) -%}
+{% macro radio_field(field, position_details_after=False, first_field=False) -%}
     <fieldset class="grouped-input-fields">
-        {{ field_label(field, class="text-input-field-label") }}
+        {{ field_label(field, class="text-input-field-label", position_details_after=position_details_after) }}
         {% for subfield in field %}
             <div>
                 {% if field.errors and loop.index0==0 %}
@@ -61,29 +68,35 @@
                 {% else %}
                     {{ subfield(class="") }}
                 {% endif%}
-                {{ field_label(subfield, class="col-sm-10 col-form-label") }}
+                {{ field_label(subfield, class="col-sm-10 col-form-label", position_details_after=position_details_after) }}
             </div>
         {% endfor %}
+        {%- if position_details_after %}
+            {{ render_detail(field) }}
+        {% endif %}
         {{ field_errors(field) }}
     </fieldset>
 {%- endmacro %}
 
-{% macro yes_no_field(field, first_field=False) %}
-    {{ field_label(field, class='text-input-field-label') }}
+{% macro yes_no_field(field, position_details_after=False, first_field=False) %}
+    {{ field_label(field, class='text-input-field-label', position_details_after=position_details_after) }}
     {{ _field(field, first_field=first_field) }}
 {% endmacro %}
 
-{% macro separated_field(field,first_field=False) -%}
+{% macro separated_field(field, position_details_after=False, first_field=False) -%}
     <fieldset id="{{ field.id }}">
-        {{ field_label(field, class="text-input-field-label") }}
+        {{ field_label(field, class="text-input-field-label", position_details_after=position_details_after) }}
         <div class="form-row-center separated-field">
             {{ _field(field, first_field=first_field) }}
         </div>
+        {%- if position_details_after %}
+            {{ render_detail(field) }}
+        {% endif %}
         {{ field_errors(field) }}
     </fieldset>
 {%- endmacro %}
 
-{% macro field_label(field, class="", optional=False) %}
+{% macro field_label(field, class="", position_details_after=False, optional=False) %}
     {%- set label = field.label -%}
     {%- set help = field.render_kw['help'] -%}
     {%- set detail = field.render_kw['detail'] -%}
@@ -108,7 +121,7 @@
             {{ field.render_kw["example_input"] }}
         </div>
     {% endif %}
-    {%- if detail %}{{ details(detail.title, [detail.text], details_id=field.id) }}{% endif %}
+    {%- if detail and not position_details_after %}{{ details(detail.title, [detail.text], details_id=field.id) }}{% endif %}
 {%- endmacro %}
 
 {% macro field_errors(field) -%}
