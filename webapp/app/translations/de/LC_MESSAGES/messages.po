@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-05 10:53+0200\n"
+"POT-Creation-Date: 2021-08-05 10:47+0200\n"
 "PO-Revision-Date: 2020-09-17 11:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -328,7 +328,7 @@ msgstr "Was war Ihr letzter Familienstand im Jahr 2020?"
 
 #: app/forms/steps/eligibility_steps.py:186
 msgid "form.eligibility.marital_status.married"
-msgstr "verheiratet"
+msgstr "verheiratet / in eingetragener Lebenspartnerschaft"
 
 #: app/forms/steps/eligibility_steps.py:187
 msgid "form.eligibility.marital_status.single"
@@ -336,7 +336,7 @@ msgstr "ledig"
 
 #: app/forms/steps/eligibility_steps.py:188
 msgid "form.eligibility.marital_status.divorced"
-msgstr "geschieden"
+msgstr "geschieden / Lebenspartnerschaft aufgehoben"
 
 #: app/forms/steps/eligibility_steps.py:189
 msgid "form.eligibility.marital_status.widowed"
@@ -488,7 +488,7 @@ msgstr ""
 #: app/forms/steps/eligibility_steps.py:317
 msgid "form.eligibility.alimony.multiple.no"
 msgstr ""
-"Nein, weder zahle, noch beziehen ich oder mein Partner bzw. meine "
+"Nein, weder zahlen, noch beziehen ich oder mein Partner bzw. meine "
 "Partnerin Unterhalt."
 
 #: app/forms/steps/eligibility_steps.py:328
@@ -507,7 +507,9 @@ msgid "form.eligibility.user_a_has_elster_account.detail.text"
 msgstr ""
 "ELSTER steht für »Elektronische Steuererklärung« und ist die offizielle "
 "Plattform der deutschen Finanzverwaltung. Der Steuerlotse nutzt die "
-"Infrastruktur von ELSTER für die Übermittlung Ihrer Daten."
+"Infrastruktur von ELSTER für die Übermittlung Ihrer Daten. Bei „Mein "
+"ELSTER” können Privatpersonen die für die Einkommensteuererklärung "
+"notwendigen Formulare ausfüllen und abschicken."
 
 #: app/forms/steps/eligibility_steps.py:336
 #: app/forms/steps/eligibility_steps.py:438
@@ -527,10 +529,9 @@ msgstr ""
 "Freischaltcode. Dieser Freischaltcode wird von ELSTER erstellt und per "
 "Post versendet. Aus technischen Gründen geschieht das allerdings nur, "
 "wenn Sie noch kein Konto bei Mein ELSTER haben. Zurzeit können Sie den "
-"Steuerlotsen daher nicht nutzen, wenn Sie bereits ein Konto bei Mein "
-"ELSTER haben.</p><p>Es gibt bereits Überlegungen, den Steuerlotsen so "
-"weiterzuentwickeln, dass er auch genutzt werden kann, wenn bereits ein "
-"Konto bei Mein ELSTER  vorhanden ist."
+"Steuerlotsen daher nicht nutzen.</p><p>Es gibt bereits Überlegungen, den "
+"Steuerlotsen so weiterzuentwickeln, dass er auch genutzt werden kann, "
+"wenn bereits ein Konto bei Mein ELSTER vorhanden ist."
 
 #: app/forms/steps/eligibility_steps.py:354
 msgid "form.eligibility.user_b_has_elster_account-title"
@@ -559,9 +560,9 @@ msgstr ""
 " einem Träger erhalten, der nicht genannt wurde, Sie aber sicherstellen "
 "können, dass der Träger Ihre Rentenbezugsmitteilungen elektronisch an die"
 " Finanzverwaltung übermittelt, ist dies kein Ausschlussgrund für die "
-"Nutzung des Steuerlotsen.</p><p>Wir können dies im Einzelfall jedoch "
-"zurzeit nicht prüfen, arbeiten aber an einer Möglichkeit das machen zu "
-"können. "
+"Nutzung des Steuerlotsen.</p><p>Wir können dies im Einzelfall zurzeit "
+"nicht prüfen, arbeiten aber an einer Möglichkeit, Ihnen mehr "
+"Informationen zur Verfügung zu stellen."
 
 #: app/forms/steps/eligibility_steps.py:456
 msgid "form.eligibility.pension-title"
@@ -613,8 +614,8 @@ msgid "form.eligibility.investment_income.detail.text"
 msgstr ""
 "Kapitalerträge sind die Gewinne aus Geldanlagen. Hierzu gehören z.B. "
 "Kursgewinne beim Verkauf von Aktien, Zinsen vom Sparkonto oder Dividenden"
-" aus Aktien oder GmbH-Anteilen. Zu Kapitalerträgen fällt aber z.B. auch, "
-"wenn Sie privat Geld verliehen haben und dafür Zinsen erhalten."
+" aus Aktien oder GmbH-Anteilen. Unter Kapitalerträge fällt aber z.B. "
+"auch, wenn Sie privat Geld verliehen haben und dafür Zinsen erhalten."
 
 #: app/forms/steps/eligibility_steps.py:492
 msgid "form.eligibility.investment_income.yes"
@@ -654,7 +655,9 @@ msgstr ""
 
 #: app/forms/steps/eligibility_steps.py:523
 msgid "form.eligibility.minimal_investment_income.yes"
-msgstr "Ja, die Kapitalerträge liegen unter dem Sparer-Pauschbetrag."
+msgstr ""
+"Ja, alle meine Kapitalerträge liegen unter dem Sparerpauschbetrag, den "
+"ich in Anspruch genommen habe."
 
 #: app/forms/steps/eligibility_steps.py:524
 msgid "form.eligibility.minimal_investment_income.no"
@@ -857,8 +860,8 @@ msgstr "Nein, wir haben keine weiteren Einkünfte."
 #: app/forms/steps/eligibility_steps.py:688
 msgid "form.eligibility.foreign_country_failure-error"
 msgstr ""
-"Wenn Sie im Ausland leben, müssen Sie Angaben im Steuerformular machen, "
-"die der Steuerlotse zurzeit nicht abbildet."
+"Wenn Sie letztes Jahr im Ausland gelebt haben, müssen Sie Angaben im "
+"Steuerformular machen, die der Steuerlotse zurzeit nicht abbildet."
 
 #: app/forms/steps/eligibility_steps.py:698
 msgid "form.eligibility.foreign-country-title"
@@ -875,9 +878,9 @@ msgstr "Ab welcher Dauer lebt man dauerhaft im Ausland?"
 #: app/forms/steps/eligibility_steps.py:716
 msgid "form.eligibility.foreign-country.detail.text"
 msgstr ""
-"Haben Sie länger als 183 Tage in einem anderen Land gelebt, sind Sie in "
-"Deutschland nicht mehr steuerpflichtig. Sollte dies der Fall sein, wählen"
-" Sie »Ja« aus."
+"Sie leben dauerhaft im Ausland, wenn Sie länger als 183 Tage im Jahr in "
+"einem anderen Land gelebt haben. Sollte dies der Fall sein, wählen Sie "
+"»Ja« aus. "
 
 #: app/forms/steps/eligibility_steps.py:706
 msgid "form.eligibility.foreign-country.yes"
@@ -5133,52 +5136,4 @@ msgstr ""
 #: app/templates/unlock_code/registration_success.html:21
 msgid "register.success.preparation.button"
 msgstr "Vorbereitungshilfe herunterladen"
-
-#~ msgid "form.lotse.field_person_b_same_address"
-#~ msgstr "Mein Partner / Meine Partnerin und ich wohnen zusammen."
-
-#~ msgid "form.eligibility.marital_status-label"
-#~ msgstr "Familienstand"
-
-#~ msgid "form.eligibility.separated_since_last_year-label"
-#~ msgstr "Getrennt lebend"
-
-#~ msgid "form.eligibility.joint_taxes-label"
-#~ msgstr "Zusammenveranlagung"
-
-#~ msgid "form.eligibility.alimony-label"
-#~ msgstr "Unterhaltszahlungen"
-
-#~ msgid "form.eligibility.user_a_has_elster_account-label"
-#~ msgstr "Person A Elsterkonto"
-
-#~ msgid "form.eligibility.user_b_has_elster_account-label"
-#~ msgstr "Person B hat Elster Konto"
-
-#~ msgid "form.eligibility.pension-label"
-#~ msgstr "Pensionen"
-
-#~ msgid "form.eligibility.investment_income-label"
-#~ msgstr "Kapitalerträge"
-
-#~ msgid "form.eligibility.minimal_investment_income-label"
-#~ msgstr "Kapitalerträge unter Pausch-Betrag"
-
-#~ msgid "form.eligibility.taxed_investment-label"
-#~ msgstr "Abgeltungssteuer"
-
-#~ msgid "form.eligibility.cheaper_check-label"
-#~ msgstr "Günstigerprüfung"
-
-#~ msgid "form.eligibility.employment_income-label"
-#~ msgstr "Einkommen aus Erwerbstätigkeit"
-
-#~ msgid "form.eligibility.marginal_employment-label"
-#~ msgstr "Geringfügige Beschäftigung"
-
-#~ msgid "form.eligibility.income-other-label"
-#~ msgstr "Weitere Einkünfte"
-
-#~ msgid "form.eligibility.foreign-country-label"
-#~ msgstr "Im Ausland lebend"
 
