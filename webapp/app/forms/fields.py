@@ -15,12 +15,22 @@ from babel.numbers import format_decimal, parse_decimal
 from app.forms.validators import ValidElsterCharacterSet
 
 
+class NumericInputMixin:
+
+    @staticmethod
+    def set_inputmode(kwargs):
+        kwargs.setdefault('inputmode', 'numeric')
+        kwargs.setdefault('pattern', '[0-9]*')
+        return kwargs
+
+
 class BaselineBugFixMixin:
     """ Safari and Firefox have a bug where empty input fields do not align correctly with baseline alignment. The reason is that
     if an input field is empty its bottom border is used as the baseline instead of the baseline of the text input.
     This can be fixed by setting a placeholder text. """
 
-    def __call__(self, field, **kwargs):
+    @staticmethod
+    def set_placeholder(kwargs):
         # Safari and Firefox have has a bug where empty input fields do not align correctly with baseline alignment.
         # Thus, we add a placeholder.
         kwargs.setdefault('placeholder', ' ')
@@ -33,6 +43,22 @@ class SteuerlotseStringField(StringField):
         ValidElsterCharacterSet().__call__(form, self)
 
 
+class SteuerlotseIntegerField(NumericInputMixin, IntegerField):
+
+    def __call__(self, *args, **kwargs):
+        kwargs = self.set_inputmode(kwargs)
+
+        return super().__call__(**kwargs)
+
+
+class SteuerlotseNumericStringField(NumericInputMixin, StringField):
+
+    def __call__(self, *args, **kwargs):
+        kwargs = self.set_inputmode(kwargs)
+
+        return super().__call__(**kwargs)
+
+
 class MultipleInputFieldWidget(TextInput, BaselineBugFixMixin):
     """A divided input field."""
     sub_field_separator = ''
@@ -40,7 +66,7 @@ class MultipleInputFieldWidget(TextInput, BaselineBugFixMixin):
     input_field_labels = []
 
     def __call__(self, field, **kwargs):
-        kwargs = BaselineBugFixMixin.__call__(self, field, **kwargs)
+        kwargs = self.set_placeholder(kwargs)
 
         if 'required' not in kwargs and 'required' in getattr(field, 'flags', []):
             kwargs['required'] = True
@@ -94,10 +120,15 @@ class UnlockCodeField(SteuerlotseStringField):
         return self.data.split('-') if self.data else ''
 
 
-class SteuerlotseDateWidget(MultipleInputFieldWidget):
+class SteuerlotseDateWidget(NumericInputMixin, MultipleInputFieldWidget):
     separator = ''
     input_field_lengths = [2, 2, 4]
     input_field_labels = [_l('date-field.day'), _l('date-field.month'), _l('date-field.year')]
+
+    def __call__(self, *args, **kwargs):
+        kwargs = self.set_inputmode(kwargs)
+
+        return super().__call__(*args, **kwargs)
 
 
 class SteuerlotseDateField(DateField):
@@ -122,10 +153,15 @@ class SteuerlotseDateField(DateField):
             return self.raw_data if self.raw_data else []
 
 
-class IdNrWidget(MultipleInputFieldWidget):
+class IdNrWidget(NumericInputMixin, MultipleInputFieldWidget):
     """A divided input field with four text input fields, limited to two to three chars."""
     sub_field_separator = ''
     input_field_lengths = [2, 3, 3, 3]
+
+    def __call__(self, *args, **kwargs):
+        kwargs = self.set_inputmode(kwargs)
+
+        return super().__call__(*args, **kwargs)
 
 
 class IdNrField(SteuerlotseStringField):
@@ -177,10 +213,12 @@ class IdNrField(SteuerlotseStringField):
             self.data = ''.join(self.data)
 
 
-class EuroFieldWidget(TextInput):
+class EuroFieldWidget(NumericInputMixin, TextInput):
     """A simple Euro widget that uses Bootstrap features for nice looks."""
 
     def __call__(self, field, **kwargs):
+        kwargs = self.set_inputmode(kwargs)
+        kwargs['pattern'] = '[0-9,.]*'
         kwargs['class'] = 'euro_field form-control'
         kwargs['onwheel'] = 'this.blur()'
         markup_input = super(EuroFieldWidget, self).__call__(field, **kwargs)
