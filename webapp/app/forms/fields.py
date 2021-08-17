@@ -67,6 +67,23 @@ class SteuerlotseNameStringField(StringField):
         return super().__call__(**kwargs)
 
 
+class SteuerlotseIbanField(SteuerlotseStringField):
+
+    def __call__(self, *args, **kwargs):
+        if 'class' in kwargs:
+            kwargs['class'] = kwargs['class'] + ' iban-input'
+        else:
+            kwargs['class'] = 'iban-input'
+
+        kwargs.setdefault('data-mask', 'AA00 0000 0000 0000 0000 00## ##')
+
+        return super().__call__(**kwargs)
+
+    def process_formdata(self, valuelist):
+        valuelist = [value.upper() for value in valuelist]
+        super().process_formdata(valuelist)
+
+
 class MultipleInputFieldWidget(TextInput, BaselineBugFixMixin):
     """A divided input field."""
     sub_field_separator = ''
