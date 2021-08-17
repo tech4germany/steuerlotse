@@ -42,8 +42,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.session_protection = 'strong'
 
-# Set pool_pre_ping to fix problems with stale connection we've been seeing.
-db = SQLAlchemy(app, engine_options={'pool_pre_ping': True})
+# SQLAlchemy options
+# - pool_pre_ping: fix problems with stale connection we've been seeing (see also:
+#   https://docs.syseleven.de/syseleven-stack/de/reference/network/known-issues#idle-tcp-sessions-being-closed).
+# - hide_parameters: don't log any parameters with errors or when logging SQL statements (
+#   https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine.params.hide_parameters)
+db = SQLAlchemy(app, engine_options={'pool_pre_ping': True, 'hide_parameters': True})
 migrate = Migrate(app, db)
 
 register_commands(app)

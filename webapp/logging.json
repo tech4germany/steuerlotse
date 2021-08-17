@@ -20,6 +20,9 @@
     "loggers": {
         "gunicorn": {
             "level": "DEBUG"
+        },
+        "sqlalchemy.engine": {
+            "level": "INFO"
         }
     },
     "disable_existing_loggers": false
