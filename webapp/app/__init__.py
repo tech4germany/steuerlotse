@@ -1,10 +1,8 @@
 from decimal import Decimal, ROUND_UP
-from logging.config import dictConfig
-import json
-import os
 
-with open(os.path.join(os.path.dirname(__file__), '..', 'logging.json')) as f:
-    dictConfig(json.load(f))
+# This needs to be run before any extensions and libraries configure their logging.
+from .logging import configure_logging
+configure_logging()
 
 from flask import Flask
 from flask_babel import Babel

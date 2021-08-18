@@ -15,3 +15,4 @@ with open('logging.json') as f:
 workers = 4
 bind = '0.0.0.0:5000'
 worker_tmp_dir = '/tmp'
+access_log_format = '%({x-request-id}i)s %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
