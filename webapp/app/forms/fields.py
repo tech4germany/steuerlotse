@@ -15,12 +15,28 @@ from babel.numbers import format_decimal, parse_decimal
 from app.forms.validators import ValidElsterCharacterSet
 
 
+def _add_classes_to_kwargs(kwargs, classes):
+    joined_classes = ' '.join(classes)
+    if 'class' in kwargs:
+        kwargs['class'] += ' ' + joined_classes
+    else:
+        kwargs['class'] = joined_classes
+
+
 class NumericInputMixin:
 
     @staticmethod
     def set_inputmode(kwargs):
         kwargs.setdefault('inputmode', 'numeric')
         kwargs.setdefault('data-mask', '0#')
+        return kwargs
+
+
+class AlphaNumericInputMixin:
+
+    @staticmethod
+    def set_inputmode(kwargs):
+        kwargs.setdefault('data-mask', 'A#')
         return kwargs
 
 
@@ -70,11 +86,7 @@ class SteuerlotseNameStringField(StringField):
 class SteuerlotseIbanField(SteuerlotseStringField):
 
     def __call__(self, *args, **kwargs):
-        if 'class' in kwargs:
-            kwargs['class'] = kwargs['class'] + ' iban-input'
-        else:
-            kwargs['class'] = 'iban-input'
-
+        _add_classes_to_kwargs(kwargs, ['iban-input'])
         kwargs.setdefault('data-mask', 'AA00 0000 0000 0000 0000 00## ##')
 
         return super().__call__(**kwargs)
@@ -95,7 +107,7 @@ class MultipleInputFieldWidget(TextInput, BaselineBugFixMixin):
 
         if 'required' not in kwargs and 'required' in getattr(field, 'flags', []):
             kwargs['required'] = True
-        kwargs['class'] = 'form-control'
+        _add_classes_to_kwargs(kwargs, ['form-control'])
 
         joined_input_fields = Markup()
         for idx, input_field_length in enumerate(self.input_field_lengths):
@@ -105,7 +117,7 @@ class MultipleInputFieldWidget(TextInput, BaselineBugFixMixin):
             sub_field_id = f'{field.id}_{idx + 1}'
             kwargs['id'] = sub_field_id
             kwargs['value'] = field._value()[idx] if len(field._value()) >= idx + 1 else ''
-            kwargs['class'] = kwargs.get('class', '') + f' input-width-{input_field_length}'
+            _add_classes_to_kwargs(kwargs, [f'input-width-{input_field_length}'])
 
             if idx > 0:
                 # Make sure that autofocus is only set for the first input field
@@ -128,25 +140,38 @@ class MultipleInputFieldWidget(TextInput, BaselineBugFixMixin):
                                       input_field_lengths=self.input_field_lengths))
 
 
-class UnlockCodeWidget(MultipleInputFieldWidget):
+class UnlockCodeWidget(AlphaNumericInputMixin, MultipleInputFieldWidget):
     """A divided input field with three text input fields, limited to four chars."""
     sub_field_separator = '-'
     input_field_lengths = [4, 4, 4]
 
+    def __call__(self, *args, **kwargs):
+        kwargs = self.set_inputmode(kwargs)
 
-class UnlockCodeField(SteuerlotseStringField):
+        return super().__call__(*args, **kwargs)
+
+
+class UnlockCodeField(StringField):
     def __init__(self, label='', validators=None, **kwargs):
         super(UnlockCodeField, self).__init__(label, validators, **kwargs)
         self.widget = UnlockCodeWidget()
 
+    def __call__(self, *args, **kwargs):
+        kwargs['class'] = kwargs.get('class', '') + ' unlock-input'
+
+        return super().__call__(**kwargs)
+
     def process_formdata(self, valuelist):
         if valuelist:
-            self.data = '-'.join(valuelist)
+            self.data = '-'.join(valuelist).upper()
         elif self.data is None:
             self.data = ''
 
     def _value(self):
         return self.data.split('-') if self.data else ''
+
+    def pre_validate(self, form):
+        ValidElsterCharacterSet().__call__(form, self)
 
 
 class SteuerlotseDateWidget(NumericInputMixin, MultipleInputFieldWidget):
@@ -166,7 +191,7 @@ class SteuerlotseDateField(DateField):
         kwargs.setdefault('format', "%d %m %Y")
 
         if kwargs.get('render_kw'):
-            kwargs['render_kw']['class'] = kwargs['render_kw'].get('class', '') + " date_input form-control"
+            _add_classes_to_kwargs(kwargs['render_kw'], ['date_input', 'form-control'])
             kwargs['render_kw']['example_input'] = kwargs['render_kw'].get('example_input',
                                                                            _('fields.date_field.example_input.text'))
         else:
@@ -247,8 +272,7 @@ class EuroFieldWidget(NumericInputMixin, TextInput):
 
     def __call__(self, field, **kwargs):
         kwargs = self.set_inputmode(kwargs)
-        kwargs['pattern'] = '[0-9,.]*'
-        kwargs['class'] = 'euro_field form-control'
+        _add_classes_to_kwargs(kwargs, ['euro_field form-control'])
         kwargs['onwheel'] = 'this.blur()'
         markup_input = super(EuroFieldWidget, self).__call__(field, **kwargs)
 
@@ -294,7 +318,7 @@ class SteuerlotseSelectField(SelectField):
     def __init__(self, **kwargs):
         if kwargs.get('render_kw'):
             if kwargs['render_kw'].get('class'):
-                kwargs['render_kw']['class'] = kwargs['render_kw']['class'] + " custom-select steuerlotse-select"
+                _add_classes_to_kwargs(kwargs['render_kw'], ['custom-select', 'steuerlotse-select'])
             else:
                 kwargs['render_kw']['class'] = "custom-select steuerlotse-select"
         else:

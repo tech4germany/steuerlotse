@@ -542,6 +542,10 @@ input[type="radio"]:checked:focus + label::before{
 }
 
 /* INPUT FIELDS */
+.unlock-input{
+    text-transform: uppercase;
+}
+
 .iban-input{
     text-transform: uppercase;
 }
