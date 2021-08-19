@@ -3,7 +3,7 @@ from logging.config import dictConfig
 import json
 import os
 
-from flask import has_request_context, request
+from flask import current_app, has_request_context, request
 
 
 def configure_logging():
@@ -19,3 +19,7 @@ class AddRequestIdFilter(logging.Filter):
             record.request_id = request.headers['X-Request-ID']
 
         return True
+
+
+def log_flask_request():
+    current_app.logger.info(f'Received request: {request.method} {request.path}')
