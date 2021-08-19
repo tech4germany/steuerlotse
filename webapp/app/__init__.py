@@ -13,6 +13,7 @@ from flask_migrate import Migrate
 from flask_navigation import Navigation
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
+from prometheus_client import Gauge
 from prometheus_flask_exporter.multiprocess import GunicornInternalPrometheusMetrics
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -54,7 +55,9 @@ app.json_decoder = SteuerlotseJSONDecoder
 
 if app.config['PROMETHEUS_EXPORTER_ENABLED']:
     metrics = GunicornInternalPrometheusMetrics(app)
-    metrics.info('up', 'WebApp is up')
+    up_gauge = Gauge('up', 'WebApp is up')
+    up_gauge.set(1.0)
+    app.before_first_request(lambda: up_gauge.set(1.0))
 
 
 @babel.localeselector
