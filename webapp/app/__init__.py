@@ -1,7 +1,7 @@
 from decimal import Decimal, ROUND_UP
 
 # This needs to be run before any extensions and libraries configure their logging.
-from .logging import configure_logging
+from .logging import configure_logging, log_flask_request
 configure_logging()
 
 from flask import Flask
@@ -55,6 +55,9 @@ app.json_decoder = SteuerlotseJSONDecoder
 if app.config['PROMETHEUS_EXPORTER_ENABLED']:
     metrics = GunicornInternalPrometheusMetrics(app)
     metrics.info('up', 'WebApp is up')
+
+
+app.before_request(log_flask_request)
 
 
 @babel.localeselector
