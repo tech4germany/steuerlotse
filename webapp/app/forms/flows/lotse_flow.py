@@ -1,4 +1,5 @@
 import datetime
+import logging
 from decimal import Decimal
 
 from flask import request, flash, url_for
@@ -7,7 +8,7 @@ from flask_login import current_user
 from pydantic import ValidationError, MissingError
 from wtforms.fields.core import UnboundField, SelectField, BooleanField, RadioField
 
-from app import app
+from app.config import Config
 from app.data_access.audit_log_controller import create_audit_log_confirmation_entry
 from app.data_access.user_controller import store_pdf_and_transfer_ticket, check_idnr
 from app.elster_client.elster_errors import ElsterGlobalValidationError, ElsterTransferError, EricaIsMissingFieldError, \
@@ -28,6 +29,9 @@ from app.model.form_data import MandatoryFormData, FamilienstandModel, Mandatory
     IdNrMismatchInputValidationError
 
 SPECIAL_RESEND_TEST_IDNRS = ['04452397687', '02259674819']
+
+
+logger = logging.getLogger(__name__)
 
 
 class LotseMultiStepFlow(MultiStepFlow):
@@ -216,18 +220,18 @@ class LotseMultiStepFlow(MultiStepFlow):
                     render_info.redirect_url = self.url_for_step(StepConfirmation.name)
                 except (MandatoryFieldMissingValidationError, InputDataInvalidError, EricaIsMissingFieldError,
                         ElsterInvalidBufaNumberError) as e:
-                    app.logger.info("Fields are missing or incorrect", exc_info=True)
+                    logger.info("Fields are missing or incorrect", exc_info=True)
                     flash(e.message, 'warn')
                     render_info.redirect_url = self.url_for_step(StepSummary.name)
                 except ElsterGlobalValidationError as e:
-                    app.logger.info("Could not send est", exc_info=True)
+                    logger.info("Could not send est", exc_info=True)
                     render_info.additional_info['elster_data'] = {
                         'was_successful': False,
                         'eric_response': e.eric_response,
                         'server_response': '',
                         'validation_problems': e.validation_problems}
                 except ElsterTransferError as e:
-                    app.logger.info("Could not send est", exc_info=True)
+                    logger.info("Could not send est", exc_info=True)
                     render_info.additional_info['elster_data'] = {
                         'was_successful': False,
                         'eric_response': e.eric_response,
@@ -244,7 +248,7 @@ class LotseMultiStepFlow(MultiStepFlow):
             try:
                 self._validate_mandatory_fields(stored_data)
             except MandatoryFieldMissingValidationError as e:
-                app.logger.info(f"Mandatory est fields missing: {e.missing_fields}", exc_info=True)
+                logger.info(f"Mandatory est fields missing: {e.missing_fields}", exc_info=True)
                 # prevent flashing the same message two times
                 if request.method == 'GET':
                     flash(e.get_message(), 'warn')
@@ -468,7 +472,7 @@ def show_person_b(personal_data):
 
 
 def is_test_user(user):
-    if app.config['ALLOW_RESEND_FOR_TEST_USER']:
+    if Config.ALLOW_RESEND_FOR_TEST_USER:
         return any([check_idnr(user, special_idnr) for special_idnr in SPECIAL_RESEND_TEST_IDNRS])
     else:
         return False
