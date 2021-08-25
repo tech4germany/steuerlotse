@@ -80,8 +80,7 @@ class TestSendEst(unittest.TestCase):
         with patch('requests.post', side_effect=MockErica.mocked_elster_requests), \
                 patch('app.elster_client.elster_client.current_user', MagicMock(is_active=True)), \
                 patch('app.elster_client.elster_client._log_address_data'), \
-                patch('app.elster_client.elster_client.create_audit_log_entry') as audit_log_fun, \
-                app.app_context():
+                patch('app.elster_client.elster_client.create_audit_log_entry') as audit_log_fun:
             send_est_with_elster(self.valid_form_data, 'IP', include_elster_responses=False)
             audit_log_fun.assert_called()
 
