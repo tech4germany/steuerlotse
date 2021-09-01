@@ -32,5 +32,4 @@ FROM base AS cron
 CMD ["/usr/sbin/cron", "-f"]
 
 FROM base AS webapp
-CMD [ "gunicorn", "--config", "gunicorn_config.py", "app:app" ]
-
+CMD [ "gunicorn", "--config", "gunicorn_config.py", "autoapp:app" ]
