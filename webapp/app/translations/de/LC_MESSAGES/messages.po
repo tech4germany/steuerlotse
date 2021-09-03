@@ -481,15 +481,11 @@ msgstr "Nein, weder zahle, noch beziehe ich Unterhalt."
 
 #: app/forms/steps/eligibility_steps.py:315
 msgid "form.eligibility.alimony.multiple.yes"
-msgstr ""
-"Ja, ich oder mein Partner bzw. meine Partnerin zahlen oder beziehen "
-"Unterhalt."
+msgstr "Ja, eine Person von uns bzw. wir beide zahlen oder beziehen Unterhalt."
 
 #: app/forms/steps/eligibility_steps.py:316
 msgid "form.eligibility.alimony.multiple.no"
-msgstr ""
-"Nein, weder zahlen, noch beziehen ich oder mein Partner bzw. meine "
-"Partnerin Unterhalt."
+msgstr "Nein, niemand von uns zahlt oder bezieht Unterhalt."
 
 #: app/forms/steps/eligibility_steps.py:327
 #: app/forms/steps/eligibility_steps.py:429
