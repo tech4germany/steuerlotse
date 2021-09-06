@@ -2977,10 +2977,10 @@ msgstr "Präambel"
 msgid "agb.preambel-p1"
 msgstr ""
 "Die Software Steuerlotse ist eine webbasierte Anwendung („Anwendung“), "
-"welche die DigitalService4Germany GmbH, Choriner Straße 46, 10435 Berlin "
-"(„wir“, „uns“, „unser“), im Auftrag der Bundesrepublik Deutschland, "
-"vertreten durch das Bundesministerium der Finanzen (BMF), entwickelt hat "
-"und betreibt"
+"welche die DigitalService4Germany GmbH, Prinzessinenstraße 8-14, 10969 "
+"Berlin („wir“, „uns“, „unser“), im Auftrag der Bundesrepublik "
+"Deutschland, vertreten durch das Bundesministerium der Finanzen (BMF), "
+"entwickelt hat und betreibt"
 
 #: app/templates/content/agb.html:10
 msgid "agb.preambel-p2"
@@ -3817,9 +3817,10 @@ msgid "data_privacy.contact-organisation-text"
 msgstr ""
 "Die datenschutzrechtlich Verantwortliche für die auf unserer Website "
 "stattfindenden Datenverarbeitungen ist die <br/><br/> "
-"DigitalService4Germany GmbH<br/> Choriner Straße 46 <br/> 10435 Berlin "
-"<br/> Handelsregister: HRB 212879 B <br/> Registergericht: Charlottenburg"
-" <br/><br/> Vertreten durch: <br/> Frau Christina Lang <br/> E-Mail: <a "
+"DigitalService4Germany GmbH<br/> Prinzessinenstraße 8-14 <br/> 10969 "
+"Berlin <br/> Handelsregister: HRB 212879 B <br/> Registergericht: "
+"Charlottenburg <br/><br/> Vertreten durch: <br/> Frau Christina Lang "
+"<br/> E-Mail: <a "
 "href=\"mailto:datenschutz@4germany.org\">datenschutz@4germany.org</a>"
 
 #: app/templates/content/data_privacy.html:23
@@ -4544,7 +4545,7 @@ msgstr "Angaben gemäß § 5 TMG"
 #: app/templates/content/imprint.html:9
 msgid "imprint.operator-text-p1"
 msgstr ""
-"DigitalService4Germany GmbH<br/>Choriner Straße 46<br/>10435 "
+"DigitalService4Germany GmbH<br/>Prinzessinenstraße 8-14<br/>10969 "
 "Berlin<br/>Deutschland"
 
 #: app/templates/content/imprint.html:10
@@ -4668,8 +4669,8 @@ msgstr "Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV"
 #: app/templates/content/imprint.html:27
 msgid "imprint.responsible-text"
 msgstr ""
-"DigitalService4Germany GmbH<br/>Frau Christina Lang<br/>Choriner Straße "
-"46<br/>10435 Berlin"
+"DigitalService4Germany GmbH<br/>Frau Christina "
+"Lang<br/>Prinzessinnenstraße 8-14<br/>10969 Berlin"
 
 #: app/templates/content/interviews.html:5
 msgid "interviews.heading"
@@ -4808,7 +4809,7 @@ msgstr ""
 "Sie können Ihre Steuererklärung online über das Steuerportal Mein ELSTER "
 "machen."
 
-#: app/templates/eligibility/display_failure.html:37
+#: app/templates/eligibility/display_failure.html:35
 msgid "form.eligibility.use-elster-button"
 msgstr "Zu Mein ELSTER"
 
