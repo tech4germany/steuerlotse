@@ -4899,7 +4899,7 @@ msgstr ""
 
 #: app/templates/eligibility/display_success.html:30
 msgid "form.eligibility.success-attention.heading"
-msgstr "Bitte beachten Sie."
+msgstr "Bitte beachten Sie"
 
 #: app/templates/eligibility/display_success.html:40
 msgid "form.eligibility.use-register-button"
