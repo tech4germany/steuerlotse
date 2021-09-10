@@ -125,10 +125,21 @@ msgid "500.header-title"
 msgstr "Fehler 500 - Der Steuerlotse für Rente und Pension"
 
 #: app/elster_client/elster_errors.py:99
-msgid "form.lotse.input_invalid.InvalidTaxNumber"
+#, fuzzy
+msgid "form.lotse.input_invalid.InvalidBufaNumber"
 msgstr "Bitte überprüfen Sie Ihre angegebene Steuernummer."
 
-#: app/elster_client/elster_errors.py:131
+#: app/elster_client/elster_errors.py:106
+msgid "form.lotse.input_invalid.InvalidTaxNumber"
+msgstr ""
+"Wir bekommen von ELSTER die Rückmeldung, dass Ihre Steuernummer nicht "
+"korrekt ist. Es tut uns Leid, dass Sie nicht mit Ihrer Steuererklärung "
+"fortfahren können. Bitte wenden Sie sich mit einer Email an <a "
+"href=\"mailto:kontakt@steuerlotse-rente.de\">kontakt@steuerlotse-"
+"rente.de</a>. Vermeiden Sie es unbedingt, uns persönliche Daten, wie "
+"Ihren Freischaltcode oder Ihre Steueridentifikationsnummer zu senden."
+
+#: app/elster_client/elster_errors.py:138
 msgid "form.lotse.input_invalid.MissingFieldsInputValidationError"
 msgstr ""
 "Bitte prüfen Sie Ihre Angaben. Es sind nicht alle notwendigen "
@@ -2793,6 +2804,11 @@ msgstr "Fehler: "
 msgid "skip-to-content-link"
 msgstr "Direkt zum Seiteninhalt"
 
+#: app/templates/basis/display_failure_icon.html:14
+#: app/templates/eligibility/display_success.html:15
+msgid "success_icon"
+msgstr "Abgehakt Icon auf grünem Kreis"
+
 #: app/templates/basis/footer.html:6
 msgid "footer.help-contact"
 msgstr "Hilfe und Kontakt"
@@ -4825,28 +4841,23 @@ msgstr ""
 msgid "landing.interviews-link"
 msgstr "Mehr erfahren"
 
-#: app/templates/eligibility/display_failure.html:14
-#: app/templates/eligibility/display_success.html:14
-msgid "success_icon"
-msgstr "Abgehakt Icon auf grünem Kreis"
-
-#: app/templates/eligibility/display_failure.html:24
+#: app/templates/eligibility/display_failure_icon.html:15
 msgid "form.eligibility.use-elster"
 msgstr "Wie geht es weiter?"
 
-#: app/templates/eligibility/display_failure.html:26
+#: app/templates/eligibility/display_failure_icon.html:17
 msgid "form.eligibility.use-elster-text"
 msgstr ""
 "Es gibt zwei mögliche Wege Ihre Steuererklärung ohne den Steuerlotsen zu "
 "machen:"
 
-#: app/templates/eligibility/display_failure.html:28
+#: app/templates/eligibility/display_failure_icon.html:19
 msgid "form.eligibility.use-elster.list-item-1"
 msgstr ""
 "Sie können die vollumfänglichen Steuererklärungsvordrucke nutzen. Die "
 "notwendigen Formulare dazu erhalten Sie zum Beispiel in Ihrem Finanzamt."
 
-#: app/templates/eligibility/display_failure.html:29
+#: app/templates/eligibility/display_failure_icon.html:20
 msgid "form.eligibility.use-elster.list-item-2"
 msgstr ""
 "Sie können Ihre Steuererklärung online über das Steuerportal Mein ELSTER "
@@ -4856,11 +4867,11 @@ msgstr ""
 msgid "form.eligibility.use-elster-button"
 msgstr "Zu Mein ELSTER"
 
-#: app/templates/eligibility/display_success.html:24
+#: app/templates/eligibility/display_success.html:25
 msgid "form.eligibility.success-next-step"
 msgstr "Wie geht es weiter?"
 
-#: app/templates/eligibility/display_success.html:25
+#: app/templates/eligibility/display_success.html:26
 msgid "form.eligibility.success-next-step-text"
 msgstr ""
 "Als Nächstes können Sie sich registrieren. Dazu brauchen Sie Ihre Steuer-"
@@ -4870,7 +4881,7 @@ msgstr ""
 msgid "form.eligibility.success-attention.heading"
 msgstr "Bitte beachten Sie"
 
-#: app/templates/eligibility/display_success.html:40
+#: app/templates/eligibility/display_success.html:41
 msgid "form.eligibility.use-register-button"
 msgstr "Registrieren"
 
@@ -5035,9 +5046,26 @@ msgstr ""
 " Transferticket notiert und Ihre Übersicht der übermittelten Daten "
 "gespeichert oder ausgedruckt? Dann melden Sie sich ab. "
 
-#: app/templates/lotse/display_filing_failure.html:5
+#: app/templates/lotse/display_filing_failure.html:3
 msgid "form.lotse.filing.failure.alert.title"
-msgstr "Da ist etwas schiefgegangen."
+msgstr "Ihre Steuererklärung kann nicht übermittelt werden."
+
+#: app/templates/lotse/display_filing_failure.html:8
+msgid "form.filing.failure.next-step.heading"
+msgstr "Wie geht es weiter?"
+
+#: app/templates/lotse/display_filing_failure.html:9
+msgid "form.filing.failure.next-step.text"
+msgstr ""
+"Bitte wenden Sie sich mit einer E-Mail an <a href=\"mailto:kontakt"
+"@steuerlotse-rente.de\">kontakt@steuerlotse-rente.de</a> und schildern "
+"Sie uns das Problem. Vermeiden Sie aber unbedingt, uns persönliche Daten,"
+" wie Ihren Freischaltcode oder Ihre Steuer-Identifikationsnummer zu "
+"senden."
+
+#: app/templates/lotse/display_filing_failure.html:14
+msgid "form.filing.failure.text-us"
+msgstr "Schreiben Sie uns"
 
 #: app/templates/lotse/display_filing_success.html:6
 msgid "form.lotse.filing.transfer_ticket.heading"
