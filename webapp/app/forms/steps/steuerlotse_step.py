@@ -5,6 +5,7 @@ from flask import request, session, url_for, render_template
 from flask_babel import ngettext
 from werkzeug.utils import redirect
 
+from app.forms import SteuerlotseBaseForm
 from app.forms.flows.multistep_flow import RenderInfo
 from app.forms.session_data import serialize_session_data, override_session_data
 
@@ -24,7 +25,7 @@ class SteuerlotseStep(object):
                  session_data_identifier='form_data'):
         self.endpoint = endpoint
         self.header_title = header_title
-        self.stored_data = stored_data
+        self.stored_data = stored_data if stored_data is not None else {}
         self.overview_step = overview_step
         self._prev_step = prev_step
         self._next_step = next_step
@@ -73,7 +74,8 @@ class SteuerlotseStep(object):
         if self.render_info.redirect_url:
             return redirect(self.render_info.redirect_url)
 
-    def number_of_users(self, input_data=None):
+    @classmethod
+    def number_of_users(cls, input_data=None):
         return 1
 
     def render(self, **kwargs):
@@ -94,11 +96,15 @@ class SteuerlotseStep(object):
 class FormSteuerlotseStep(SteuerlotseStep):
     template = 'basis/form_full_width.html'
 
-    def __init__(self, form, endpoint, header_title, stored_data=None, overview_step=None, default_data=None,
-                 prev_step=None, next_step=None, session_data_identifier='form_data'):
-        super(FormSteuerlotseStep, self).__init__(endpoint, header_title, stored_data, overview_step, default_data, prev_step,
-                                                  next_step, session_data_identifier=session_data_identifier)
-        self.form = form
+    class InputForm(SteuerlotseBaseForm):
+        pass
+
+    def __init__(self, endpoint, header_title, stored_data=None, overview_step=None, default_data=None, prev_step=None,
+                 next_step=None, session_data_identifier='form_data'):
+        super().__init__(endpoint, header_title, stored_data, overview_step, default_data, prev_step, next_step,
+                         session_data_identifier=session_data_identifier)
+        # TODO rename this to form_class once MultiStepFlow is obsolete
+        self.form = self.InputForm
 
     def _pre_handle(self):
         super()._pre_handle()
@@ -120,7 +126,8 @@ class FormSteuerlotseStep(SteuerlotseStep):
             return redirect(self.render_info.next_url)
         return self.render()
 
-    def create_form(self, request, prefilled_data):
+    @classmethod
+    def create_form(cls, request, prefilled_data):
         # If `form_data` is present it will always override `data` during
         # value binding. For `BooleanFields` an empty/missing value in the `form_data`
         # will lead to an unchecked box.
@@ -128,7 +135,7 @@ class FormSteuerlotseStep(SteuerlotseStep):
         if len(form_data) == 0:
             form_data = None
 
-        return self.form(form_data, **prefilled_data)
+        return cls.InputForm(form_data, **prefilled_data)
 
     def render(self, **kwargs):
         """
