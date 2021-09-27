@@ -53,6 +53,14 @@ This serves up JS/CSS/etc from the React app and proxies everything else to `loc
 
 Runs eslint and shows information about coding errors.
 
+### `yarn prepare`
+
+Installs a pre-commit hook that automatically formats JS and CSS files before writing commits. You only need to run this once when you check out the repository for the first time.
+
+### `yarn format`
+
+Auto-format JS and CSS files. You do not need to run this manually unless you want to view the results before committing.
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder. You generally don't need to do this - it happens automatically in the deploy pipeline.

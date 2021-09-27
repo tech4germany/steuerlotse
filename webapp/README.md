@@ -12,7 +12,7 @@ cd webapp/
 pipenv install
 
 # Install client-side dependencies
-cd client/ && yarn install && cd ..
+cd client/ && yarn install && yarn prepare && cd ..
 
 # Ensure required environment variables are set
 cp .env.example .env
