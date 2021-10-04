@@ -411,10 +411,11 @@
         },
         "prometheus-flask-exporter": {
             "hashes": [
-                "sha256:fc487e385d95cb5efd045d6a315c4ecf68c42661e7bfde0526af75ed3c4f8c1b"
+                "sha256:96013537284154a83d90cedaf0bcd5011c6053d8f1a50e775dfebdb491eba7c7",
+                "sha256:abc8207c74096444580771fa5899df6dfaa5834229c2a62f12dd31817f5f373a"
             ],
             "index": "pypi",
-            "version": "==0.18.2"
+            "version": "==0.18.3"
         },
         "psycopg2-binary": {
             "hashes": [
