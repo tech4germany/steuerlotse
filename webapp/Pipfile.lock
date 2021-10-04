@@ -547,11 +547,11 @@
         },
         "python-stdnum": {
             "hashes": [
-                "sha256:2e2c56c548ca166b95547a8d748f4d71320a5b4896960717c8e6380e08d993a5",
-                "sha256:4248d898042a801fc4eff96fbfe4bf63a43324854efe3b5534718c1c195c6f43"
+                "sha256:374e2b5e13912ccdbf50b0b23fca2c3e0531174805c32d74e145f37756328340",
+                "sha256:a46e6cf9652807314d369b654b255c86a59f93d18be2834f3d567ed1a346c547"
             ],
             "index": "pypi",
-            "version": "==1.16"
+            "version": "==1.17"
         },
         "pytz": {
             "hashes": [
