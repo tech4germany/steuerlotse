@@ -555,10 +555,10 @@
         },
         "pytz": {
             "hashes": [
-                "sha256:83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da",
-                "sha256:eb10ce3e7736052ed3623d49975ce333bcd712c7bb19a58b9e2089d4057d0798"
+                "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c",
+                "sha256:acad2d8b20a1af07d4e4c9d2e9285c5ed9104354062f275f3fcd88dcef4f1326"
             ],
-            "version": "==2021.1"
+            "version": "==2021.3"
         },
         "redis": {
             "hashes": [
@@ -578,11 +578,11 @@
         },
         "schwifty": {
             "hashes": [
-                "sha256:01b512fc49818c8eab22fc1c40fd1fcb634ebd49755c663fa4e8f559f4bde779",
-                "sha256:38a06c568387f94505499c7f83a1b99690a60ebcd82410ada91377a4a11d908f"
+                "sha256:179a32dd1078eb9820dba54819da0084c19766d914b1617d7fae2b11f020f3e0",
+                "sha256:52f689633b200a2ad0142220c27abbf7adf1d62766efa1eb49c6337fb149b19b"
             ],
             "index": "pypi",
-            "version": "==2021.6.1"
+            "version": "==2021.10.0"
         },
         "six": {
             "hashes": [
