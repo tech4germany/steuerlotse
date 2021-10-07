@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-10-07 14:39+0200\n"
+"POT-Creation-Date: 2021-10-07 19:56+0200\n"
 "PO-Revision-Date: 2020-09-17 11:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -4976,6 +4976,10 @@ msgstr ""
 #: app/templates/error/incorrect_eligiblity_data.html:9
 msgid "form.eligibility.back-to-form"
 msgstr "Zurück zu Nutzung prüfen"
+
+#: app/templates/error/js_disabled.html:2
+msgid "js_disabled.headline"
+msgstr "Warum sehe ich den Steuerlotsen nicht?"
 
 #: app/templates/error/js_disabled.html:4
 msgid "js_disabled.info-text"
