@@ -5302,22 +5302,3 @@ msgstr ""
 #: app/templates/unlock_code/registration_success.html:21
 msgid "register.success.preparation.button"
 msgstr "Vorbereitungshilfe herunterladen"
-
-#~ msgid "unlock-code-activation.idnr"
-#~ msgstr "Steuer-Identifikationsnummer"
-
-#~ msgid "unlock-code-activation.unlock-code"
-#~ msgstr "Freischaltcode"
-
-#~ msgid "unlock-code-request.unlock-code.help-title"
-#~ msgstr "Wo finde ich diese Nummer?"
-
-#~ msgid "unlock-code-request.unlock-code.help-text"
-#~ msgstr ""
-#~ "Wenn Sie sich beim Steuerlotsen "
-#~ "erfolgreich registriert haben, bekommen Sie"
-#~ " von Ihrer Finanzverwaltung einen Brief "
-#~ "mit Ihrem persönlichen Freischaltcode "
-#~ "zugeschickt. Den Freischaltcode finden Sie "
-#~ "auf der letzten Seite des Briefes."
-
