@@ -55,31 +55,31 @@
             </noscript>
             <div id="main_content" class="container-fluid p-0 d-flex flex-column min-vh-100">
                 {% block flashed_messages %}
-                {% for category, message in get_flashed_messages(with_categories=True) %}
-                {% if category == 'success' %}
-                <div class="alert alert-success" role="alert">
-                    {{ message }}
-                </div>
-                {% else %}
-                <div class="alert alert-warning" role="alert">
-                    {{ message }}
-                </div>
-                {% endif %}
-                {% endfor %}
+                    {% for category, message in get_flashed_messages(with_categories=True) %}
+                        {% if category == 'success' %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% else %}
+                            <div class="alert alert-warning" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 {% endblock %}
                 {% block main_content %}
-                <div class="main-content">
-                    <div class="mt-4">
-                        <div class="col-lg-9 col-md-10 col-xs-12 p-0">
-                            <div class="header-navigation">
-                                {% block header_navigation %}
+                    <div class="main-content">
+                        <div class="mt-4">
+                            <div class="col-lg-9 col-md-10 col-xs-12 p-0">
+                                <div class="header-navigation">
+                                    {% block header_navigation %}
+                                    {% endblock %}
+                                </div>
+                                {% block content %}
                                 {% endblock %}
                             </div>
-                            {% block content %}
-                            {% endblock %}
                         </div>
                     </div>
-                </div>
                 {% endblock %}
                 {% block full_width_final_area %}
                 {% endblock %}
