@@ -4,11 +4,9 @@
 
 🇬🇧 This is the code repository of the _Steuerlotse_ project by Tech4Germany.
 You can use this code under the terms of the provided license.
-A live demo is available at: https://steuerlotse.tech4germany.org
 
 🇩🇪 Die ist das Quellcodearchiv des _Steuerlotsenprojekts_ von Tech4Germany.
 Sie können den Code unter den Bedingungen der angegeben Lizenz nutzen.
-Ein Onlineprotyp ist verfügbar unter: https://steuerlotse.tech4germany.org
 
 ## General Information / Generelle Informationen
 
